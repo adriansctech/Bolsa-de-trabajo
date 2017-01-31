@@ -15,6 +15,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 //Perfiles
+Route::get('/perfil/{id}', 'PerfilController@getPerfil');
+Route::post('/perfil/edit/{id}', 'PerfilController@editUser');
 
 //Ofertas
 Route::get('/ofertas','OfertasController@getOfertas');
@@ -22,3 +24,4 @@ Route::get('/ofertas/{curso}','OfertasController@getOfertasCurso');
 Route::post('/ofertas/create','OfertasController@postOferta');
 
 //User
+Route::delete('/user/delete/{id}','UsersController@deleteUser');
