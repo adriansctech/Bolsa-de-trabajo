@@ -10,7 +10,15 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/home', 'HomeController@index');
+
+//Perfiles
+
+//Ofertas
+Route::get('/ofertas','OfertasController@getOfertas');
+Route::get('/ofertas/{curso}','OfertasController@getOfertasCurso');
+Route::post('/ofertas/create','OfertasController@postOferta');
+
+//User
