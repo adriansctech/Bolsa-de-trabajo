@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+	<!--Metaetiquetas que sirven para seo y demás -->
 	<meta charset="UTF-8">
-	<meta name="author" content="aulaclic">
+	<meta name="author" content="adri, sandra, sergio, angel">
 	<meta name="description" content="Bolsa de trabajo">
 	<meta name="keywords" content="laravel, HTML5, JS, PHP, DAW">
 	<meta name="application-name" content="Bolsa de trabajo" /> 
@@ -12,12 +13,16 @@
 	<meta http-equiv=""X-UA-Compatible" content="IE=edge, chrome=1" />
 	<meta name="lang" content="es-ES" />
 	<meta name="viewport" content="width=device-width initial-scale=1.0" />
+	<!-- fin de metaetiquetas -->
+	<!-- hojas de estilos -->
 	<link rel="stylesheet" href="custom.css">
 	<link rel="stylesheet" href="generic.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- fin de hojas de estilos-->
 	<title>Registro</title>
 </head>
 <body>
+	<!--inicio de navbar -->
 	<nav class="navbar navbar-default">
         <div class="container-fluid">
           <div class="navbar-header">
@@ -28,10 +33,11 @@
               <span class="icon-bar"></span>
             </button>
             <div id="logoempresa" class="flotar_izq">
-            	<img width="75" src="statics/img/cipfpbatoi.jpg" alt="logo">            	
+            	<img width="75" src="statics/img/cipfpbatoi.jpg" alt="logo">           	
             </div>            
-        	
+        	<!-- div de el encabezado -->
             <div class="flotar_izq" id="formempresa">
+            	<!-- inicio de formulario -->
             	<form action="" method="" >
             		<div class="flotar_izq">
 	            		<input type="email" placeholder="Introduce tu email">
@@ -41,8 +47,9 @@
 	            		<input type="submit" value="Enviar">
 	            	</div>
             	</form>
+            	<!-- fin de formulario -->
         	</div>
-        	
+        	<!-- fin de div del encabezado -->
             	
             <!--<a class="navbar-brand" href="#">Project name</a>-->
           </div>
@@ -73,13 +80,19 @@
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>
-   
+      <!-- fin de navbar -->
+   	<!-- inicio de id wrapper, es un envoltorio simplemente -->
 	<div id="wrapper">
+		<!-- inicio de main o parte principal de la página -->
 		<main>
+			<!--inicio de div de acceso  -->
 			<div id="acceso" class="text-center">
-				
-				<form action="" class="align-left">
+				<!--inicio de formulario de registro -->
+				<form action="" class="align-left" method="POST">
+					<!-- inicio de trabla del formulario -->
+					<!-- el uso de la tabla es solo para organizar los ELEMENTOS -->
 					<table>
+						<!-- encabezado de la tabla -->
 						<thead class="txt-algn-cntr">
 							<tr>
 								<th>
@@ -88,7 +101,7 @@
 									</h3>
 								</th>								
 							</tr>
-						</thead>
+						</thead><!-- fin de encabezado de la tabla -->
 						<tr>
 							<td>
 								<label>Correo electrónico</label>
@@ -107,17 +120,20 @@
 						</tr>	
 						<tr>	
 							<td>
-									<label>Tipo de usuario</label>							
+								<label>Tipo de usuario</label>							
 							</td>
 							<td>
 							
 							</td>
 						</tr>					
-					</table>
-				</form>
-			</div>
-		</main>
-	</div>	
+					</table><!-- fin de tabla del formulario -->
+				</form><!-- fin de formulario de registro -->
+			</div> <!-- fin de div acceso-->
+		</main> <!-- fin de main -->
+		
+	</div><!-- fin de wrapper -->
+	
+	<!-- scripts necesarios -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
