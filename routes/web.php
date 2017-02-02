@@ -19,9 +19,11 @@ Route::get('/perfil/{id}', 'PerfilController@getPerfil');
 Route::post('/perfil/edit/{id}', 'PerfilController@editUser');
 
 //Ofertas
-Route::get('/ofertas','OfertasController@getOfertas');
+Route::get('/ofertas','OfertasController@getAllOfertas');
+Route::get('/ofertas/{id}','OfertasController@getOferta');
 Route::get('/ofertas/{curso}','OfertasController@getOfertasCurso');
 Route::post('/ofertas/create','OfertasController@postOferta');
+Route::delete('/ofertas/delete/{id}','OfertasController@deleteOferta');
 
 //User
 Route::delete('/user/delete/{id}','UsersController@deleteUser');
