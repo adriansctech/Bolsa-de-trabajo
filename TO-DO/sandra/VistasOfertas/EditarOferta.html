@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+<div class="Principal">
+<!--En esta vista deberan aparecer todos los campos rellenados-->
+<form action="" method="">
+<h1>Editar oferta</h1>
+
+<div class="datosSecundarios">
+<br/>	
+	<label>Puesto de trabajo :</label>
+	<input type="text" name="nombrePC">
+	<br/>
+	<label>Ciclos :</label>
+	<!--Aqui se cargaran todos los ciclos de batoi seleccionados-->
+	<div id="ciclosBatoy">
+		<input type="checkbox" name="ciclo" value="ciclo1">ciclo1 <br>
+		<input type="checkbox" name="ciclo" value="ciclo2"> ciclo2<br>
+	</div>
+	<br/>
+	<label>Idiomas requeridos</label><br/>
+	<!--Aqui se cargaran todos los idiomas con sus niveles, seleccionados -->
+	<select multiple=true>
+	  <option value="idioma" selected>Selecciona </option>
+	</select>
+	<br/>
+	<label>Tipo de contrato</label>
+	<!--Aqui se cargaran todos los tipos de contratos, con una opcion seleccionada -->
+	<select>
+	  <option value="contrato" selected>Selecciona </option>
+	</select>
+	<br/><br/><label>Descripción:</label><br/>
+	<input type="text" name="descripcion" class="cajadetexto">
+	</div>
+
+	<input type="submit" name="guardar" value="Guardar">
+
+
+</form>
+</div>
+</body>
+</html>
