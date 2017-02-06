@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Ciclo extends Model
 {
-    protected $fillable = ['ciclos', 'responsable', 'departamento'];
+    protected $fillable = ['id', 'ciclo', 'responsable', 'departamento'];
 }
