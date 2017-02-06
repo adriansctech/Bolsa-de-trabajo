@@ -3,8 +3,8 @@
 namespace Bolsa\Http\Controllers\Auth;
 
 use Bolsa\User;
+use Validator;
 use Bolsa\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
@@ -23,7 +23,7 @@ class RegisterController extends Controller
     use RegistersUsers;
 
     /**
-     * Where to redirect users after registration.
+     * Where to redirect users after login / registration.
      *
      * @var string
      */
@@ -48,9 +48,9 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
+           
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
-            'tipo' => 'required'
         ]);
     }
 
@@ -62,10 +62,14 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'tipo' => $data['tipo'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-        ]);
+       
+            return User::create([
+               
+                'email' => $data['email'],
+                'password' => bcrypt($data['password']),
+               
+            ]);
+        
+        
     }
 }

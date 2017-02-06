@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersTable extends Migration
+class CreateIdiomasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
-    //      $table->increments('id');
-    //      $table->string('name');
-            $table->string('email',125)->unique();
-            $table->string('password',125);
-            $table->rememberToken();
+        Schema::create('idiomas', function (Blueprint $table) {
+            $table->integer('id')->unique();
+            $table->string('idioma',45);
+            $table->string('nivel',2);
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('idiomas');
     }
 }
