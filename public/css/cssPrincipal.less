@@ -1,0 +1,53 @@
+@import "variables.less";
+@import "Mixins.less";
+
+body{
+    font-family: Calibri, Arial;
+    background-color: @colorFondo;
+
+}
+
+header,.navCustom{
+   margin-bottom: 10px;
+   background-color: @colorFondoHeader;
+   border-radius: 10px;
+}
+footer{
+	background-color: @colorFondoFooter;
+
+	div{
+		margin: 10px;
+	}
+
+}
+
+small{
+	font-size: 1em;
+	color: #e7e9ec;
+
+}
+
+.imagenEncabezado{
+	width: 75px;
+	margin-left: 100px;
+	margin-top: 5px;
+	border-radius: 20px;
+}
+.botonSalir{
+
+	float: right;
+	margin-right: 5px;
+	margin-top: 5px;
+	width: 80px;
+	height: 80px;
+	border-radius: 20px;
+	background-image: url('@{dirImagenes}/salir.png') no-repeat;
+	background-size: 90% 90%
+}
+.contenido{
+	background-color: @colorFondoContenido;
+	width: 800px;
+	margin-left: 200px;
+	box-shadow: 3px 3px 7px #999;
+	border-radius: 5px;
+}
