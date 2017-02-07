@@ -1,0 +1,57 @@
+body{
+    font-family: Calibri, Arial;
+}
+#divgeneral{
+    border: 1px solid black;    
+}
+.genericsize {
+    width: 600px;
+    margin: auto;
+}
+.customnav {
+    height: 80px;
+}
+#infouser{
+    border: 1px solid gray;
+    margin-right: 50px;
+    margin-left: 50px;
+    height: 100px;
+    margin-top: 10px;
+}
+#ofertas{
+    border: 1px solid gray;
+    margin-right: 50px;
+    margin-left: 50px;
+    height: 400px;
+    margin-top: 10px;
+}
+#fotouser{
+    width: 100px;
+    float: left;
+}
+#enlaceeditar{
+    float: right;
+    width: 40px;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+#datosuser{
+    float: left;
+    margin-left: 11px;
+    margin-top: 11px;
+}
+#labelnombre{
+    font-size: 20px;
+    font-weight: bold;
+}
+#labelcorreo{
+    font-size: 18px;
+}
+#listaofertas{
+    border: 1px solid gray;
+    overflow-y: scroll;
+    height: 330px;
+}
+#wrapper{
+    height: 600px;
+}

@@ -1,0 +1,97 @@
+body{
+	font-size: 15px;
+	font-family: Calibri,Arial;
+	background-color: #e7e9ec;
+
+}
+
+form{
+	float:left;
+	margin: 20px;
+}
+h1{
+	font-family: Papyrus,Cambria,'Book Antiqua','Book Antiqua';
+	font-size: 3.0em;
+}
+
+h2{
+	font-family: Papyrus,Cambria,'Book Antiqua','Book Antiqua';
+	font-size: 1.5em;
+}
+.masInfo{
+	background: #4f4f4f;
+	width: auto;
+	height: auto;
+	padding: 10px;
+	border-radius: 15px;
+}
+span.adicional{
+	font-size: 0.8em;
+	font-family: 'Courier New','Lucida Sans Typewriter';
+	text-align: right;
+	color: #e7e9ec ;
+	background: #4f4f4f;
+}
+
+.Principal{
+	margin-right: 200px;
+	margin-left: 200px;
+	margin-bottom: 100px;
+	
+	overflow: hidden;
+}
+
+.imagen{
+	width: 300px;
+	border:1px solid #000;
+	float: left;
+	margin: 10px;
+}
+.datosPrincipales{
+	width: 500px;
+	float: right;
+	padding: .5em;
+	margin-top: 50px;
+
+}
+.ciclos{
+	width: 500px;
+	/**float: left;**/
+	padding: .5em;
+	margin-top: 10px;
+	
+}
+.ciclos div{
+	overflow-y: scroll;
+	width: 306px;
+}
+.cambioContraseña{
+	width: 500px;
+	float: right;
+	padding: .5em;
+	margin-bottom: 20px;
+	
+
+}
+.ciclosCursados{
+	width: 580px;
+	/**float: left;**/
+	padding: .5em;
+	margin-top: 10px;
+}
+
+.datosSecundarios{
+	width: 580px;
+	/**float: left;**/
+	padding: .5em;
+	margin-top: 10px;
+}
+
+.cajadetexto{
+	width:450px;
+	height: 200px;
+}
+
+select[multiple]{
+	width: 200px;
+}
