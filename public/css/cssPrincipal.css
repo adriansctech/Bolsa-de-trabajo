@@ -4,7 +4,7 @@ body{
 
 }
 
-header{
+header,.navCustom{
    margin-bottom: 10px;
    background-color: #535353;
    border-radius: 10px;
