@@ -1,28 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+    <!-- metaetiquetas-->
+    <meta charset="UTF-8">
+    <meta name="author" content="aulaclic">
+    <meta name="description" content="Bolsa de trabajo">
+    <meta name="keywords" content="laravel, HTML5, JS, PHP, DAW">
+    <meta name="application-name" content="Bolsa de trabajo" /> 
+    <meta name="generator" content="Sublime text Editor" />
+    <meta name="keywords" content="Javascript, web, cipfpbatoi, html" />    
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta http-equiv=""X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="lang" content="es-ES" />
+    <meta name="viewport" content="width=device-width initial-scale=1.0" />
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="img/Gris_Blan_Curt_Text.jpg" sizes="32x32"/>
+    <!--<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">-->
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    
+    <!-- Titulo de la aplicacion -->
+    <title>Bolsa de trabajo CIP de FP Batoi</title>
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
+    <link href="/css/cssPrincipal.css" rel="stylesheet">
 
     <!-- Scripts -->
-    <script>
+    <!--<script>
         window.Laravel = {!! json_encode([
             'csrfToken' => csrf_token(),
         ]) !!};
-    </script>
+    </script>-->
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
+        <nav class="navbar navbar-default navbar-static-top navCustom">
             <div class="container">
                 <div class="navbar-header">
 
@@ -36,8 +53,10 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        
                     </a>
+                    <!-- Insertamos el logotipo de CIPFPBATOI -->
+                    <img src="img/Gris_Blan_Curt_Text.jpg" alt="Logotipo de batoi" class="imagenEncabezado">
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
@@ -80,8 +99,20 @@
 
         @yield('content')
     </div>
-
+    <footer>
+        <hr>
+        <div class="datosBatoi">
+            <small>CIP de FP Batoi, Carrer La Serreta, 5 (03802) Alcoi</small>
+            <br/>
+            <small>Tel.: 966 52 76 60, Fax: 966 52 76 61</small>
+            <br/>
+            <small>Correu electrònic: 03012165.secret@gva.es</small>
+            <br/>
+            <br/>
+        </div>
+    </footer>
     <!-- Scripts -->
     <script src="/js/app.js"></script>
+    <script src="/js/less.js"></script>
 </body>
 </html>
