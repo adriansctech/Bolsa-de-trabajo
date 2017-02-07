@@ -1,29 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">	
+	<meta charset="UTF-8">
+	<title>Crear empresa</title>
 	<link rel="stylesheet" type="text/css" href="../style.css">
-	<title></title>
-	
 </head>
 <body>
 	<div id="wrapper">
 		<main>
 			<div class="Principal">
-				<h1>Perfil en edición</h1>
+				<h1>Crear empresa</h1>
 				<form action="" method="">
 					<div class="imagen">
 						<!--Foto de prefil-->
-						<img src="../img/user.jpg">
-					</div>
-
+							<img src="../img/user.jpg">
+						</div>
+					
 					<div class="datosPrincipales"> 
 						<!-- Datos de la empresa parte 1-->
 						<label for="name">Nombre:</label>
 						<input type="text" name="nombre" id="name">
 						<br/>
-						<label for="CIF">CIF</label>
-						<input type="text" name="cif" id="CIF">
+						<label for="cif">CIF</label>
+						<input type="text" name="cif" id="cif">
 						<br/>
 						<label for="address">Domicilio</label>
 						<input type="text" name="domicilio" id="address">
@@ -49,7 +48,7 @@
 						<label>Cambio de contraseña</label>
 						<br/> 
 						<label for="actualpass">Contraseña actual:</label>
-						<input type="password" name="contraseñaActual" id="actualpass"> 
+						<input type="password" name="contraseñaActual" id="actualpass">
 						<br/>
 						<label for="newpass">Nueva Contraseña:</label>
 						<input type="password" name="nuevaContraseña" id="newpass">
@@ -58,12 +57,14 @@
 						<input type="password" name="repeticionContraseña" id="repeatpass">
 						<br/><br/><br/>
 					</div> 
-					
+
+
+
 					<div class="datosSecundarios">
 						<br/>
 						<!--Div donde vamos a poner la persona de contacto de la empresa-->
 						<h2>Persona de contacto</h2>
-						<label for=contactname>Nombre :</label>
+						<label for="contactname">Nombre :</label>
 						<input type="text" name="nombrePC" id="contactname">
 						<br/>
 						<label for="contactposition">Cargo :</label>
@@ -76,13 +77,11 @@
 						<input type="email" name="emailPC" id="contactemail">
 						<br/>
 					</div>
-
+					
 					<input type="submit" name="guardar" value="Guardar">
 				</form>
-			</div>
-		</main>
-		
-	</div>
-	
+			</div>	
+		</main>		
+	</div>	
 </body>
 </html>
