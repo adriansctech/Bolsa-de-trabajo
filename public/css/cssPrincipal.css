@@ -1,7 +1,6 @@
 body{
     font-family: Calibri, Arial;
     background-color: #e7e9ec
-
 }
 
 header,.navCustom{
@@ -9,9 +8,9 @@ header,.navCustom{
    background-color: #535353;
    border-radius: 10px;
 }
+
 footer{
 	background-color: #535353;
-
 }
 
 footer div{

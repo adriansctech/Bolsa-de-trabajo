@@ -29,7 +29,7 @@
     <!-- Styles -->
     <!--<link href="/css/app.css" rel="stylesheet">-->
     <!--<link href="/css/cssPrincipal.css" rel="stylesheet">-->
-    <link rel='stylesheet/less' type='text/css' href="/css/cssPrincipal.less" />
+    <link rel='stylesheet/less' type='text/css' href="css/cssPrincipal.less" />
 
     <!-- Scripts -->
     <!--<script>
@@ -43,14 +43,15 @@
         <nav class="navbar navbar-default navbar-static-top navCustom">
             <div class="container">
                 <div class="navbar-header">
-
+                    
                     <!-- Collapsed Hamburger -->
+                    <!--
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
                         <span class="sr-only">Toggle Navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
-                    </button>
+                    </button>-->
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
@@ -113,7 +114,7 @@
         </div>
     </footer>
     <!-- Scripts -->
-    <script src="/js/app.js"></script>
-    <script src="/js/less.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/less.js"></script>
 </body>
 </html>
