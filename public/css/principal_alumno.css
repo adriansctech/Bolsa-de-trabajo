@@ -10,35 +10,35 @@ body{
     margin: auto;
 }
 .customnav {
-    height: 80px;
+    height: 80px;/*@pixel80*/
 }
 
 #infouser{
     border: 1px solid gray;
-    margin-right: 50px;
-    margin-left: 50px;
-    height: 100px;
-    margin-top: 10px;
+    margin-right: 50px;/*@pixel50*/
+    margin-left: 50px;/*@pixel50*/
+    height: 100px;/*@pixel100*/
+    margin-top: 10px;/*@pixel10*/
 }
 
 #ofertas{
     border: 1px solid gray;
-    margin-right: 50px;
-    margin-left: 50px;
+    margin-right: 50px;/*@pixel50*/
+    margin-left: 50px;/*@pixel50*/
     height: 400px;
-    margin-top: 10px;
+    margin-top: 10px;/*@pixel10*/
 }
 
 #fotouser{
-    width: 100px;
+    width: 100px;/*@pixel100*/
     float: left;
 }
 
 #enlaceeditar{
     float: right;
     width: 40px;
-    margin-right: 5px;
-    margin-top: 5px;
+    margin-right: 5px;/*@pixel5*/
+    margin-top: 5px;/*@pixel5*/
 }
 
 #datosuser{
@@ -48,7 +48,7 @@ body{
 }
 
 #labelnombre{
-    font-size: 20px;
+    font-size: 20px;/*@pixel20*/
     font-weight: bold;
 }
 
@@ -57,7 +57,7 @@ body{
 }
 
 #tituloofertas{
-    margin-left: 10px;
+    margin-left: 10px;/*@pixel10*/
 }
 
 #listaofertas{

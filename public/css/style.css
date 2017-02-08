@@ -7,7 +7,7 @@ body{
 
 form{
 	float:left;
-	margin: 20px;
+	margin: 20px;/*@pixel20*/
 }
 h1{
 	font-family: Papyrus,Cambria,'Book Antiqua','Book Antiqua';
@@ -22,7 +22,7 @@ h2{
 	background: #4f4f4f;
 	width: auto;
 	height: auto;
-	padding: 10px;
+	padding: 10px;/*@pixel10*/
 	border-radius: 15px;
 }
 span.adicional{
@@ -36,7 +36,7 @@ span.adicional{
 .Principal{
 	margin-right: 200px;
 	margin-left: 200px;
-	margin-bottom: 100px;
+	margin-bottom: 100px;/*@pixel100*/
 	
 	overflow: hidden;
 }
@@ -45,20 +45,20 @@ span.adicional{
 	width: 300px;
 	border:1px solid #000;
 	float: left;
-	margin: 10px;
+	margin: 10px;/*@pixel10*/
 }
 .datosPrincipales{
 	width: 500px;
 	float: right;
 	padding: .5em;
-	margin-top: 50px;
+	margin-top: 50px;/*@pixel50*/
 
 }
 .ciclos{
 	width: 500px;
 	/**float: left;**/
 	padding: .5em;
-	margin-top: 10px;
+	margin-top: 10px;/*@pixel10*/
 	
 }
 .ciclos div{
@@ -69,7 +69,7 @@ span.adicional{
 	width: 500px;
 	float: right;
 	padding: .5em;
-	margin-bottom: 20px;
+	margin-bottom: 20px;/*@pixel20*/
 	
 
 }
@@ -77,14 +77,14 @@ span.adicional{
 	width: 580px;
 	/**float: left;**/
 	padding: .5em;
-	margin-top: 10px;
+	margin-top: 10px;/*@pixel10*/
 }
 
 .datosSecundarios{
 	width: 580px;
 	/**float: left;**/
 	padding: .5em;
-	margin-top: 10px;
+	margin-top: 10px;/*@pixel10*/
 }
 
 .cajadetexto{

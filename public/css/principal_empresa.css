@@ -23,57 +23,56 @@ body{
     background-color: #ffffff;
     border:1px solid #00a0dc;
     color: #00a0dc;
-    border-radius: 10px;
+    border-radius: 10px;/*@pixel10*/
 }
 .ofertaboton input:hover{
     background-color: #00a0dc;
-    color: #ffffff;
+    color: #ffffff;/*@pixel5*/
 }
 #infouser{
     border: 1px solid gray;
-    margin-right: 50px;
-    margin-left: 50px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    height: 100px;
-    border-radius: 10px;
+    margin-right: 50px;/*@pixel50*/
+    margin-left: 50px;/*@pixel50*/
+    margin-top: 10px;/*@pixel10*/
+    margin-bottom: 10px;/*@pixel10*/
+    height: 100px;/*@pixel100*/
+    border-radius: 10px;/*@pixel10*/
     box-shadow: 2px 2px 5px #999;  
 }
 
-#ofertas{
-   
-    margin-right: 50px;
-    margin-left: 50px;
+#ofertas{   
+    margin-right: 50px;/*@pixel50*/
+    margin-left: 50px;/*@pixel50*/
     height: 400px;
-    margin-top: 10px;
+    margin-top: 10px;/*@pixel10*/
 }
+
 .oferta{
     color: #4d4d4d ;
     border: 1px solid #cccccc;
-    margin:10px;
-    border-radius: 10px;
+    margin:10px;/*@pixel10*/
+    border-radius: 10px;/*@pixel10*/
 }
 .oferta:hover{
     background-color: #cccccc;
-
 }
 
 #fotouser{
     width: 97px;
     float: left;
-    border-radius: 10px;
+    border-radius: 10px;/*@pixel10*/
 }
 
 #enlaceeditar{
     float: right;
     width: 40px;
-    margin-right: 5px;
-    margin-top: 5px;
+    margin-right: 5px;/*@pixel5*/
+    margin-top: 5px;/*@pixel5*/
 }
 #enlaceeditar:hover{
     width: 45px;
     border:1px solid  #00a0dc;
-    border-radius: 5px;
+    border-radius: 5px;/*@pixel5*/
 }
 
 #datosuser{
@@ -83,7 +82,7 @@ body{
 }
 
 #labelnombre{
-    font-size: 20px;
+    font-size: 20px;/*@pixel20*/
     font-weight: bold;
 }
 
@@ -92,7 +91,7 @@ body{
 }
 
 #tituloofertas{
-    margin-left: 10px;
+    margin-left: 10px;/*@pixel10*/
 }
 
 #listaofertas{
