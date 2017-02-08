@@ -6,6 +6,7 @@ use Bolsa\User;
 use Validator;
 use Bolsa\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -73,10 +74,5 @@ class RegisterController extends Controller
         
         
     }
-    protected function addTipo(){
 
-        
 
-        
-    }
-}
