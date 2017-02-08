@@ -1,3 +1,6 @@
+@import "variables.less";
+@import "Mixins.less";
+
 body{
     font-family: Calibri, Arial;
 }
