@@ -56,7 +56,8 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
-                    </button>-->
+                    </button>
+			-->
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
@@ -64,20 +65,17 @@
                     </a>
                     <!-- Insertamos el logotipo de CIPFPBATOI -->
                     <img src="img/Gris_Blan_Curt_Text.jpg" alt="Logotipo de batoi" class="imagenEncabezado">
-                </div>
 
-                <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                        &nbsp;
-                    </ul>
-                   
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
-                            <li><a href="{{ url('/login') }}">Login</a></li>
-                            <li><a href="{{ url('/register') }}">Register</a></li>
+                            <li class="listaencabezado">
+                                <a href="{{ url('/login') }}" class="enlaceencabezado">Login</a>
+                            </li>
+                            <li class="listaencabezado">
+                                <a href="{{ url('/register') }}" class="enlaceencabezado">Register</a>
+                            </li>
                         @else                           
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -99,6 +97,17 @@
                             </li>
                         @endif
                     </ul>
+
+
+                </div>
+
+                <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                    <!-- Left Side Of Navbar -->
+                    <ul class="nav navbar-nav">
+                        
+                    </ul>
+                   
+
                 </div>
             </div>
         </nav>
