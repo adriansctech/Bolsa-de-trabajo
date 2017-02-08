@@ -21,7 +21,7 @@ footer{
 }
 
 small{
-	font-size: 1em;
+	font-size: 0.8em;
 	color: #e7e9ec;
 
 }
@@ -29,9 +29,32 @@ small{
 .imagenEncabezado{
 	width: 75px;/*@pixel75*/
 	margin-left: 100px;/*@pixel100*/
-	margin-top: 5px;/*@pixel5*/
+	margin-top: 10px;/*@pixel5*/
 	border-radius: 20px;/*@pixel20*/
+	margin-bottom:10px;
 }
+.listaencabezado{
+	list-style:none;
+	margin:10px;
+	background-color:@colorFondoContenido;
+	box-shadow: 3px 3px 7px #999;
+	border-radius: 5px;/*@pixel5*/
+	float:right;
+	padding:5px;
+	.enlaceencabezado{
+		font-size:0.8em;
+		text-decoration: none;
+		 
+	}
+	&:hover{
+		color:#ffffff;
+		background-color:#0077B5;
+	}	
+}
+.navbar-right{
+	float:right;
+}
+
 
 .botonSalir{
 	float: right;
@@ -44,10 +67,45 @@ small{
 	background-size: 90% 90%
 }
 
+
 .contenido{
 	background-color: @colorFondoContenido;
 	width: 800px;
 	margin-left: 200px;
 	box-shadow: 3px 3px 7px #999;
 	border-radius: 5px;/*@pixel5*/
+
+	
+}
+.login{
+	font-size:1em;
+	background-color: @colorFondoContenido;
+	width: 300px;
+	margin-left: 40%;
+	box-shadow: 3px 3px 7px #999;
+	border-radius: 5px;/*@pixel5*/
+
+	.row{
+		margin:10px;
+		padding: 10px;
+		
+	}	
+}
+.botonlogin{
+	color:#0077B5;
+	background-color:#ffffff;
+	border:1px solid #0077B5;
+	box-shadow: 3px 3px 7px #999;
+	border-radius: 5px;/*@pixel5*/
+	margin:10px;
+	&:hover{
+		color:#ffffff;
+		background-color:#0077B5;
+	}
+
+}
+.btn-link{
+	margin:10px;
+	font-size:0.8em;
+	
 }
