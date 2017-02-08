@@ -16,5 +16,22 @@ class PerfilController extends Controller
         $this->middleware('auth');
     }
 
-    
+        protected function editAlumno(Request $request){
+            
+            $a = new Alumno;
+            $a->fill($request->all());
+
+        }
+
+        protected function editEmpresa(Request $request){
+            $e = new Empresa;
+            $e->fill($request->all());
+        }
+
+        protected function editResponsable(Request $request){
+            $r = new Responsable;
+            $r->fill($request->all());
+        }
+
+    }
 }

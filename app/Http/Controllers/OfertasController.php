@@ -20,11 +20,18 @@ class OfertasController extends Controller
 
     //Recoge todas las ofertas de la base de datos y las pasa como parametro "ofertas" a la vista "allOfertas"
     public function getAllOfertas(){
+        $datosUsuario = array(
+            'email' => Auth::User()->email,
+            'nombre' => Auth::User()->Tipo->nombre,
+            'apellidos' => Auth::User()->Tipo->apellidos,
+            'foto' => Auth::User()->Tipo->foto,
+            );
 
-
-        return view('allOfertas.show', array('ofertas'=>Oferta::all()));
-
+        return view('allOfertas.show', array('ofertas'=>Oferta::all(),'usuario'=>$datosUsuario));
     }
+
+
+
     //Recoge el id y devuelve la vista con la oferta asociada a este
     public function getOferta($id){
 
