@@ -21,7 +21,12 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
+    <!-- Scripts -->
+    <script>
+        window.Laravel = <?php echo json_encode([
+            'csrfToken' => csrf_token(),
+        ]); ?>
+    </script>
     
     <!-- Titulo de la aplicacion -->
     <title>Bolsa de trabajo CIP de FP Batoi</title>

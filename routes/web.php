@@ -12,7 +12,7 @@
 */
 Auth::routes();
 
-Route::get('/', 'HomeController@index');
+Route::get('/', 'OfertasController@getAllOfertas');
 
 //Perfiles
 
@@ -25,15 +25,23 @@ Route::get('/ofertas/{curso}','OfertasController@getOfertasCurso');
 Route::post('/ofertas/create','OfertasController@postOferta');
 Route::delete('/ofertas/delete/{id}','OfertasController@deleteOferta');
 
+//RUTAS DE LOS PERFILES
+Route::get('/perfil/alumno', 'PerfilController@perfilAlumno');
+Route::get('/perfil/empresa', 'PerfilController@perfilEmpresa');
+Route::get('/perfil/responsable', 'PerfilController@perfilResponsable');
+
+
 //User
 //Route::delete('/user/delete/{id}','UsersController@deleteUser');
 
-Route::group(['middleware' => 'tipo:alumno'], function(){
-    Route::get('/perfil', 'PerfilController@getPerfilAlumno');
+    Route::group(['middleware' => 'tipo:alumno'], function(){
+    Route::post('/perfil', 'PerfilController@editAlumno');
+    Route::post('/perfil', 'PerfilController@editAlumno');
     Route::get('/ofertas', 'PerfilController@getPerfilAlumno');
 
 
 });
+
 
 Route::group(['middleware' => 'tipo:empresa'], function(){
     Route::get('/perfil', 'PerfilController@getPerfilEmpresa');

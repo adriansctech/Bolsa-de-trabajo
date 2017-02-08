@@ -4,6 +4,7 @@ namespace Bolsa;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Auth;
 
 class User extends Authenticatable
 {
@@ -30,15 +31,15 @@ class User extends Authenticatable
 
     public function Tipo(){
 
-        if (Auth::User()->tipo=='Alumno') {
+        //if (Auth::User()->tipo=='Alumno') {
             return $this->hasOne(Alumno::getClass(),'email','email');
-
+/*
         }elseif (Auth::User()->tipo=='Empresa') {
 
             return $this->hasOne(Empresa::getClass(),'email','email');
 
         }else{
-            return $this->hasOne(Responsable::getClass(),'email','email');}
+            return $this->hasOne(Responsable::getClass(),'email','email');}*/
         
     }
 

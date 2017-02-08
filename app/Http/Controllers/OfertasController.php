@@ -4,6 +4,7 @@ namespace Bolsa\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Oferta;
+use Auth;
 
 class OfertasController extends Controller
 {
@@ -26,8 +27,9 @@ class OfertasController extends Controller
             'apellidos' => Auth::User()->Tipo->apellidos,
             'foto' => Auth::User()->Tipo->foto,
             );
+        $ofertas=Oferta::all();
 
-        return view('allOfertas.show', array('ofertas'=>Oferta::all(),'usuario'=>$datosUsuario));
+        return view('home.show', array('ofertas'=>$ofertas,'usuario'=>$datosUsuario));
     }
 
 
