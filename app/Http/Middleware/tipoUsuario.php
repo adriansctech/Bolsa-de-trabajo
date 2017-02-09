@@ -3,6 +3,7 @@
 namespace Bolsa\Http\Middleware;
 
 use Closure;
+use Auth;
 
 class tipoUsuario
 {
@@ -15,8 +16,8 @@ class tipoUsuario
      */
     public function handle($request, Closure $next, $tipo)
     {
-        
-        if (Auth::User->tipo==$tipo) {
+
+        if (Auth::User()->tipo==$tipo) {
            return $next($request);
         }
         else{abort(404);}
