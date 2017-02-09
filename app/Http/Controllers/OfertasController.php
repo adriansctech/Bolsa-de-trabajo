@@ -24,7 +24,8 @@ class OfertasController extends Controller
     //Recoge todas las ofertas de la base de datos y las pasa como parametro "ofertas" a la vista "allOfertas"
     public function getAllOfertas(){
         $usuario = User::findOrFail(Auth::User()->email);
-        if ($usuario!=null) {
+
+        if ($usuario->Tipo!=null) {
 
 
            $datosUsuario = array(
