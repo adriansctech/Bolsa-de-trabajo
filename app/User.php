@@ -31,15 +31,21 @@ class User extends Authenticatable
 
     public function Tipo(){
 
-        //if (Auth::User()->tipo=='Alumno') {
-            return $this->hasOne(Alumno::getClass(),'email','email');
-/*
-        }elseif (Auth::User()->tipo=='Empresa') {
+        if (Auth::User()->tipo=='alumno') {
+        
+              return  $this->hasOne('\Bolsa\Alumno','email','email');
 
-            return $this->hasOne(Empresa::getClass(),'email','email');
+        }
 
-        }else{
-            return $this->hasOne(Responsable::getClass(),'email','email');}*/
+        elseif (Auth::User()->tipo=='empresa') {
+
+            return $this->hasOne('\Bolsa\Empresa','email','email');
+
+        }
+
+        else{
+            return $this->hasOne('\Bolsa\Responsable','email','email');
+        }
         
     }
 

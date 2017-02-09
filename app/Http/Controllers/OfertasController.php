@@ -2,9 +2,11 @@
 
 namespace Bolsa\Http\Controllers;
 
+
 use Illuminate\Http\Request;
-use Oferta;
+use Bolsa\Oferta;
 use Auth;
+use Bolsa\User;
 
 class OfertasController extends Controller
 {
@@ -21,15 +23,30 @@ class OfertasController extends Controller
 
     //Recoge todas las ofertas de la base de datos y las pasa como parametro "ofertas" a la vista "allOfertas"
     public function getAllOfertas(){
-        $datosUsuario = array(
-            'email' => Auth::User()->email,
-            'nombre' => Auth::User()->Tipo->nombre,
-            'apellidos' => Auth::User()->Tipo->apellidos,
-            'foto' => Auth::User()->Tipo->foto,
-            );
+        $usuario = User::findOrFail(Auth::User()->email);
+        if ($usuario!=null) {
+
+
+           $datosUsuario = array(
+               'email' => Auth::User()->email,
+               'nombre' => $usuario->Tipo->nombre,
+               'apellidos' => $usuario->Tipo->apellidos,
+               'foto' => $usuario->Tipo->foto,
+               );
+        }else{
+
+            $datosUsuario = array(
+                'email' => Auth::User()->email,
+                'nombre' => '',
+                'apellidos' => '',
+                'foto' => '',
+                );
+
+        }
+      
         $ofertas=Oferta::all();
 
-        return view('home.show', array('ofertas'=>$ofertas,'usuario'=>$datosUsuario));
+        return view('home', array('ofertas'=>$ofertas,'usuario'=>$datosUsuario));
     }
 
 

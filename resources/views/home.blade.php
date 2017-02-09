@@ -11,7 +11,7 @@
                     <div id="datosuser">
                             <label id="labelNombre">Nombre y Apellidos</label><br>
                             <label id="labelNombre"></label><br>  
-                        <label id="labelCorreo">{{ Auth::User()->email }}</label>
+                        <label id="labelCorreo">{{ $usuario['nombre'] }} {{ $usuario['apellidos'] }}</label>
                     </div>
                     <img src="img/editar.png" id="enlaceeditar">
                 </div>
