@@ -9,9 +9,8 @@
                 <div class="panel-heading" >
                     <img src="img/user.jpg" id="fotouser">
                     <div id="datosuser">
-                            <label id="labelNombre">Nombre y Apellidos</label><br>
-                            <label id="labelNombre"></label><br>  
-                        <label id="labelCorreo">{{ $usuario['nombre'] }} {{ $usuario['apellidos'] }}</label>
+                        <label id="labelNombre">{{ $usuario['nombre'] }} {{ $usuario['apellidos'] }}</label>
+                        <label id="labelCorreo">{{ $usuario['email'] }}</label>
                     </div>
                     <img src="img/editar.png" id="enlaceeditar">
                 </div>
