@@ -22,7 +22,7 @@ class OfertasController extends Controller
     }
 
     //Recoge todas las ofertas de la base de datos y las pasa como parametro "ofertas" a la vista "allOfertas"
-    public function getAllOfertas(){
+    public function getOfertasAlumno(){
         $usuario = User::findOrFail(Auth::User()->email);
 
         if ($usuario->Tipo!=null) {
@@ -34,6 +34,7 @@ class OfertasController extends Controller
                'apellidos' => $usuario->Tipo->apellidos,
                'foto' => $usuario->Tipo->foto,
                );
+
         }else{
 
             $datosUsuario = array(
@@ -47,7 +48,7 @@ class OfertasController extends Controller
       
         $ofertas=Oferta::all();
 
-        return view('home', array('ofertas'=>$ofertas,'usuario'=>$datosUsuario));
+        return view('principales.alumno', array('ofertas'=>$ofertas,'usuario'=>$datosUsuario));
     }
 
 

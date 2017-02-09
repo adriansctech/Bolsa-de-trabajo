@@ -12,7 +12,7 @@
 */
 Auth::routes();
 
-Route::get('/', 'OfertasController@getAllOfertas');
+
 
 //Perfiles
 
@@ -35,9 +35,9 @@ Route::get('/perfil/responsable', 'PerfilController@perfilResponsable');
 //Route::delete('/user/delete/{id}','UsersController@deleteUser');
 
     Route::group(['middleware' => 'tipo:alumno'], function(){
+    Route::get('/', 'OfertasController@getOfertasAlumno');
     Route::post('/perfil', 'PerfilController@editAlumno');
     Route::post('/perfil', 'PerfilController@editAlumno');
-    Route::get('/ofertas', 'PerfilController@getPerfilAlumno');
 
 
 });
@@ -45,14 +45,14 @@ Route::get('/perfil/responsable', 'PerfilController@perfilResponsable');
 
 Route::group(['middleware' => 'tipo:empresa'], function(){
     Route::get('/perfil', 'PerfilController@getPerfilEmpresa');
-
+  //  Route::get('/', 'OfertasController@getOfertasEmpresa');
 
 
 });
 
 Route::group(['middleware' => 'tipo:responsable'], function(){
     Route::get('/perfil', 'PerfilController@getPerfilResponsable');
-
+  //  Route::get('/', 'OfertasController@getOfertasResponsable');
 
 
 });

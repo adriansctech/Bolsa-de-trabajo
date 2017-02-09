@@ -15,6 +15,7 @@ class tipoUsuario
      */
     public function handle($request, Closure $next, $tipo)
     {
+        
         if (Auth::User->tipo==$tipo) {
            return $next($request);
         }
