@@ -35,6 +35,9 @@
     <!--<link href="/css/app.css" rel="stylesheet">-->
     <!--<link href="/css/cssPrincipal.css" rel="stylesheet">-->
     <link rel='stylesheet/less' type='text/css' href="css/cssPrincipal.less" />
+    <link rel='stylesheet/less' type='text/css' href="css/custom.less" />
+    <link rel='stylesheet/less' type='text/css' href="css/paginas_principales_usuarios.less" />
+    <link rel='stylesheet/less' type='text/css' href="css/style.less" />
 
     <!-- Scripts -->
     <!--<script>
