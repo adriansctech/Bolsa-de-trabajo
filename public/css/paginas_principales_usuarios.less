@@ -1,11 +1,8 @@
 @import "variables.less";
 @import "Mixins.less";
 
-body{
-    font-family: Calibri, Arial;
-}
 
-#divgeneral{
+.divgeneral{
     width: 80%;
     background-color: #ffffff;
     box-shadow: 2px 2px 5px #999; 
@@ -33,7 +30,7 @@ body{
         color: @colorFondoContenido;/*@pixel5*/
     }
 }
-#infouser{
+.infouser{
     border: 1px solid gray;
     margin-right: @pixel50;/*@pixel50*/
     margin-left: @pixel50;/*@pixel50*/
@@ -44,7 +41,7 @@ body{
     box-shadow: 2px 2px 5px #999;  
 }
 
-#ofertas{   
+.ofertas{   
     margin-right: @pixel50;/*@pixel50*/
     margin-left: @pixel50;/*@pixel50*/
     height: 400px;
@@ -61,13 +58,13 @@ body{
     }
 }
 
-#fotouser{
+.fotouser{
     width: 97px;
     float: left;
     border-radius: @pixel10;/*@pixel10*/
 }
 
-#enlaceeditar{
+.enlaceeditar{
     float: right;
     width: 40px;
     margin-right: @pixel5;/*@pixel5*/
@@ -79,30 +76,31 @@ body{
     }
 }
 
-#datosuser{
+.datosuser{
     float: left;
     margin-left: 11px;
     margin-top: 11px;
 }
 
-#labelnombre{
+.labelnombre{
     font-size: @pixel20;/*@pixel20*/
     font-weight: bold;
+    margin:@pixel5;
 }
 
-#labelcorreo{
+.labelcorreo{
     font-size: 18px;
 }
 
-#tituloofertas{
+.tituloofertas{
     margin-left: @pixel10;/*@pixel10*/
 }
 
-#listaofertas{
+.listaofertas{
     border: 1px solid gray;
     overflow-y: scroll;
     height: 330px;
 }
-#wrapper{
+.wrapper{
     height: 600px;
 }
