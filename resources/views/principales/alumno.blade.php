@@ -9,7 +9,7 @@
                 <div class="panel-heading"  >
                     <div class="infouser">
                         <img src="img/user.jpg" class="fotouser" >
-                        <div id="datosuser">
+                        <div class="datosuser">
                             <label class="labelnombre">{{ $usuario['nombre'] }} {{ $usuario['apellidos'] }}</label>
                             <label class="labelcorreo">{{ $usuario['email'] }}</label>
                         </div>
