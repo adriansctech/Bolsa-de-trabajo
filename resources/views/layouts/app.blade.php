@@ -32,12 +32,12 @@
     <title>Bolsa de trabajo CIP de FP Batoi</title>
 
     <!-- Styles -->
-    <!--<link href="/css/app.css" rel="stylesheet">-->
+    <link href="/css/app.css" rel="stylesheet">
     <!--<link href="/css/cssPrincipal.css" rel="stylesheet">-->
-    <link rel='stylesheet/less' type='text/css' href="css/cssPrincipal.less" />
-    <link rel='stylesheet/less' type='text/css' href="css/custom.less" />
-    <link rel='stylesheet/less' type='text/css' href="css/paginas_principales_usuarios.less" />
-    <link rel='stylesheet/less' type='text/css' href="css/style.less" />
+    <link rel='stylesheet/less' type='text/css' href="/css/cssPrincipal.less" />
+    <link rel='stylesheet/less' type='text/css' href="/css/custom.less" />
+    <link rel='stylesheet/less' type='text/css' href="/css/paginas_principales_usuarios.less" />
+    <link rel='stylesheet/less' type='text/css' href="/css/style.less" />
 
     <!-- Scripts -->
     <!--<script>
@@ -67,7 +67,7 @@
                         
                     </a>
                     <!-- Insertamos el logotipo de CIPFPBATOI -->
-                    <img src="img/Gris_Blan_Curt_Text.jpg" alt="Logotipo de batoi" class="imagenEncabezado">
+                    <img src="/img/Gris_Blan_Curt_Text.jpg" alt="Logotipo de batoi" class="imagenEncabezado">
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
@@ -130,7 +130,7 @@
         </div>
     </footer>
     <!-- Scripts -->
-    <script src="js/app.js"></script>
-    <script src="js/less.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="/js/less.js"></script>
 </body>
 </html>
