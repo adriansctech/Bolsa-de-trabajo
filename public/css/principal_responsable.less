@@ -1,3 +1,5 @@
+@import "variables.less";
+@import "Mixins.less";
 body{
     font-family: Calibri, Arial;
 }
@@ -9,31 +11,31 @@ body{
     margin: auto;
 }
 .customnav {
-    height: 80px;
+    height: @pixel80;
 }
 #infouser{
     border: 1px solid gray;
-    margin-right: 50px;
-    margin-left: 50px;
-    height: 100px;
-    margin-top: 10px;
+    margin-right: @pixel50;
+    margin-left: @pixel50;
+    height: @pixel100;
+    margin-top: @pixel10;
 }
 #ofertas{
     border: 1px solid gray;
-    margin-right: 50px;
-    margin-left: 50px;
+    margin-right: @pixel50;
+    margin-left: @pixel50;
     height: 400px;
-    margin-top: 10px;
+    margin-top: @pixel10;
 }
 #fotouser{
-    width: 100px;
+    width: @pixel100;
     float: left;
 }
 #enlaceeditar{
     float: right;
     width: 40px;
-    margin-right: 5px;
-    margin-top: 5px;
+    margin-right: @pixel5;
+    margin-top: @pixel5;
 }
 #datosuser{
     float: left;
@@ -41,7 +43,7 @@ body{
     margin-top: 11px;
 }
 #labelnombre{
-    font-size: 20px;
+    font-size: @pixel20;
     font-weight: bold;
 }
 #labelcorreo{

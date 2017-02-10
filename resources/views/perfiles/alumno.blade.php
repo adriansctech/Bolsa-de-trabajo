@@ -3,13 +3,12 @@
 @section('content')
 <div id="wrapper">
 	<main>
-
 		<div class="container contenido">
 			<div class="row">
 				<div class="Principal">
 					<div class="imagen">
 						<!--Foto de prefil-->
-						<img src="../img/user.jpg">
+						<img src="/img/user.jpg">
 					</div>
 
 					<div class="datosPrincipales"> 
