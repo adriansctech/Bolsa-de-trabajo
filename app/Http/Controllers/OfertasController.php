@@ -51,7 +51,50 @@ class OfertasController extends Controller
         return view('principales.alumno', array('ofertas'=>$ofertas,'usuario'=>$datosUsuario));
     }
 
+    public function getOfertasEmpresa(){
+        $usuario = User::findOrFail(Auth::User()->email);
 
+        if ($usuario->Tipo!=null) {
+
+
+           $datosUsuario = array(
+               'email' => Auth::User()->email,
+               'nombre' => $usuario->Tipo->nombre,
+               'web' => $usuario->Tipo->web,
+               'logo' => $usuario->Tipo->logo,
+               );
+
+        }else{
+
+            $datosUsuario = array(
+                'email' => Auth::User()->email,
+                'nombre' => '',
+                'web' => '',
+                'logo' => '',
+                );
+
+        }
+      
+        $ofertas=Oferta::all();
+
+        return view('principales.empresa', array('ofertas'=>$ofertas,'usuario'=>$datosUsuario));
+    }
+
+    public function chooseHomeUser(){
+
+       
+
+        if(Auth::User()->tipo == "alumno"){
+
+            return redirect("/alumno");
+
+        }else{
+
+            return redirect("/empresa");
+
+        }
+
+    }
 
     //Recoge el id y devuelve la vista con la oferta asociada a este
     public function getOferta($id){

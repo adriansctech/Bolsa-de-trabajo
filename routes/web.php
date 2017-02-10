@@ -34,10 +34,20 @@ Route::get('/perfil/responsable', 'PerfilController@perfilResponsable');
 //User
 //Route::delete('/user/delete/{id}','UsersController@deleteUser');
 
+Route::get('/', 'OfertasController@chooseHomeUser');
+
     Route::group(['middleware' => 'tipoUsuario:alumno'], function(){
-    Route::get('/', 'OfertasController@getOfertasAlumno');
+    Route::get('/alumno', 'OfertasController@getOfertasAlumno');
     Route::post('/perfil', 'PerfilController@editAlumno');
     Route::post('/perfil', 'PerfilController@editAlumno');
+
+
+});
+
+    Route::group(['middleware' => 'tipoUsuario:empresa'], function(){
+    Route::get('/empresa', 'OfertasController@getOfertasEmpresa');
+    Route::post('/perfil', 'PerfilController@editEmpresa');
+    Route::post('/perfil', 'PerfilController@editEmpresa');
 
 
 });
