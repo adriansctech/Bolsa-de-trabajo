@@ -14,7 +14,7 @@ class CreateProvinciasTable extends Migration
     public function up()
     {
         Schema::create('provincias', function (Blueprint $table) {
-            $table->integer('id')->unique();
+            $table->increments('id')->unique();
             $table->string('nombre',45);
             $table->timestamps();
         });

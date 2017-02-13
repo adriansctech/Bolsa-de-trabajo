@@ -14,7 +14,7 @@ class CreatePoblacionesTable extends Migration
     public function up()
     {
         Schema::create('poblaciones', function (Blueprint $table) {
-            $table->integer('id')->unique();
+            $table->increments('id')->unique();
             $table->string('nombre',45);
             $table->integer('provincia')->unique()->references('id')->on('provincias');
             $table->timestamps();
