@@ -24,6 +24,11 @@ small{
 	color: #e7e9ec;
 
 }
+@media (min-width:768px){
+	.navbar_header{
+		clear:both;
+	}
+}
 
 .imagenEncabezado{
 	width: @pixel75;
@@ -33,7 +38,12 @@ small{
 	margin-bottom: @pixel10;
 }
 
+.navbar-right{
+	float:right;
+}
+
 .listaencabezado{
+	
 	list-style:none;
 	margin: @pixel10;
 	background-color:@colorFondoContenido;
@@ -52,8 +62,15 @@ small{
 	}	
 }
 
-.navbar-right{
-	float:right;
+#email,#password{
+	clear:both;
+	width:200px;
+}
+.col-md-offset-2{
+	clear:both;
+	width:90%;
+	padding:5%;
+	height:340px;
 }
 
 .botonSalir{
@@ -78,15 +95,15 @@ small{
 }
 
 .login{
+
 	font-size:1em;
 	background-color: @colorFondoContenido;
-	width: 300px;
-	margin: 150px 0px 110px 490px;
+	width: 40%;
+	margin: 100px 0px 110px 417px;
 	box-shadow: 3px 3px 7px #999;
 	border-radius: @pixel5;
 
 	.row{
-		margin: @pixel10;
 		padding: @pixel10;
 		
 	}	
