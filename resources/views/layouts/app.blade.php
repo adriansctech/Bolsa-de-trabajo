@@ -15,10 +15,6 @@
     <meta name="viewport" content="width=device-width initial-scale=1.0" />
     <!-- favicon -->
     <link rel="icon" type="image/png" href="img/Gris_Blan_Curt_Text.jpg" sizes="32x32"/>
-    <!--<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">-->
-
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Scripts -->
@@ -38,6 +34,7 @@
     <link rel='stylesheet/less' type='text/css' href="/css/paginas_principales_usuarios.less" />    
     <link rel='stylesheet/less' type='text/css' href="/css/style.less" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel='stylesheet/less' type='text/css' href="/css/media.css" />
 
     <!-- Scripts -->
     <!--<script>
@@ -47,73 +44,47 @@
     </script>-->
 </head>
 <body>
-    <div id="app">
-        <nav class="navbar navbar-default navbar-static-top navCustom">
-            <div class="container">
-                <div class="navbar-header">
-                    
-                    <!-- Collapsed Hamburger -->
-                    <!--
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                        <span class="sr-only">Toggle Navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-			-->
-
-                    <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        
+    <!--<div id="app">-->
+    <div class="row">
+        <div class="col-xs-2 col-xs-offset-1 col-md-2 col-md-offset-2">
+            <a href="{{ url('/') }}">
+                <img src="/img/Gris_Blan_Curt_Text.jpg" alt="Logotipo de batoi" class="imagenEncabezado">
+            </a>
+        </div>
+        <div class="col-xs-9 col-md-2 col-md-offset-6">
+            @if (Auth::guest())
+                <ul>
+                    <li>
+                        <a href="{{ url('/login') }}">Login</a>
+                    </li>
+                    <li>
+                        <a href="{{ url('/register') }}">Register</a>
+                    </li>
+                </ul>
+                
+            @else                           
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        {{ Auth::user()->name }} <span class="caret"></span>
                     </a>
-                    <!-- Insertamos el logotipo de CIPFPBATOI -->
-                    <img src="/img/Gris_Blan_Curt_Text.jpg" alt="Logotipo de batoi" class="imagenEncabezado">
+                    <ul class="dropdown-menu" role="menu">
+                        <li>
+                            <a href="{{ url('/logout') }}"
+                                onclick="event.preventDefault();
+                                         document.getElementById('logout-form').submit();">
+                                Logout
+                            </a>
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <!-- Authentication Links -->
-                        @if (Auth::guest())
-                            <li class="listaencabezado">
-                                <a href="{{ url('/login') }}" class="enlaceencabezado">Login</a>
-                            </li>
-                            <li class="listaencabezado">
-                                <a href="{{ url('/register') }}" class="enlaceencabezado">Register</a>
-                            </li>
-                        @else                           
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li>
-                                        <a href="{{ url('/logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Logout
-                                        </a>
-
-                                        <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </li>
-                                </ul>                                                       
-                            </li>
-                        @endif
-                    </ul>
-
-
-                </div>
-
-                <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                        
-                    </ul>
-                   
-
-                </div>
-            </div>
-        </nav>
+                            <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
+                        </li>
+                    </ul>                                                
+                </li>
+            @endif
+        </div>
+    </div>
+        <!--</div>       -->
 
         @yield('content')
     </div>

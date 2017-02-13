@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="row">
+<div class="container">
+    <div class="row">
     <div class="col-sm-12 col-md-6 col-md-offset-3">
         <h1>Register</h1>
         <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
@@ -62,6 +63,8 @@
         </form>
     </div>
 </div>
+</div>
+
 
 
 @endsection
