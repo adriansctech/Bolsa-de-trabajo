@@ -12,15 +12,15 @@
 					</div>
 
 					<div class="datosPrincipales"> 
-						<h1>Nombre y apellidos</h1><!--Aqui cargariamos el nombre y los apellidos del usuario Alumno-->
+						<h1>{{ $usuario['nombre'] }} {{ $usuario['apellidos'] }}</h1><!--Aqui cargariamos el nombre y los apellidos del usuario Alumno-->
 						<br/>
-						<label>Domicilio: c/calle nº0 0 A</label>
+						<label>Domicilio: {{ $usuario['domicilio'] }}</label>
 						<br/>
-						<label>Localidad: Localidad</label>
+						<label>Localidad: {{ $usuario['poblacion'] }}</label>
 						<br/>
-						<label>Email: email@gmail.com</label>
+						<label>Email: {{ $usuario['email'] }}</label>
 						<br/>
-						<label>Telefono: 666666666</label>
+						<label>Telefono: {{ $usuario['telefono'] }}</label>
 						<br/><br/><br/><br/><br/><br/><br/>
 					</div>
 

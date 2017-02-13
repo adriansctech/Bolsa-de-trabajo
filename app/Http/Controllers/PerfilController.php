@@ -3,6 +3,9 @@
 namespace Bolsa\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
+use Bolsa\User;
+use Bolsa\Alumno;
 
 class PerfilController extends Controller
 {
@@ -37,8 +40,34 @@ class PerfilController extends Controller
         }
         protected function perfilAlumno(){
 
+            $usuario = User::findOrFail(Auth::User()->email);
 
-            return view('perfiles.alumno');
+            if ($usuario->Tipo!=null) {
+
+               $datosUsuario = array(
+                   'email' => Auth::User()->email,
+                   'nombre' => $usuario->Tipo->nombre,
+                   'apellidos' => $usuario->Tipo->apellidos,
+                   'domicilio' => $usuario->Tipo->domicilio,
+                   'telefono' => $usuario->Tipo->tlf,
+                   'poblacion' => $usuario->Tipo->poblacion,
+                   );
+
+            }else{
+
+                $datosUsuario = array(
+                    'email' => Auth::User()->email,
+                    'nombre' => '',
+                    'apellidos' => '',
+                    'domicilio' => '',
+                    'telefono' => '',
+                    'poblacion' => '',
+                    );
+
+            }
+
+        return view('perfiles.alumno', array('usuario'=>$datosUsuario));
+
         }
         protected function perfilEmpresa(){
 
