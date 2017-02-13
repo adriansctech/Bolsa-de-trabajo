@@ -32,7 +32,7 @@
     <title>Bolsa de trabajo CIP de FP Batoi</title>
 
     <!-- Styles -->
-    <link href="/css/app.css" rel="stylesheet">
+   <!-- <link href="/css/app.css" rel="stylesheet">-->
     <link rel='stylesheet/less' type='text/css' href="/css/cssPrincipal.less" />
    <link rel='stylesheet/less' type='text/css' href="/css/custom.less" /> 
     <link rel='stylesheet/less' type='text/css' href="/css/paginas_principales_usuarios.less" />
