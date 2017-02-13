@@ -130,7 +130,7 @@
         </div>
     </footer>
     <!-- Scripts -->
-    <script src="/js/app.js"></script>
-    <script src="/js/less.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/less.js"></script>
 </body>
 </html>
