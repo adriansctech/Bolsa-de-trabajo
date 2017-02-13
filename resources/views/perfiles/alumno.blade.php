@@ -6,9 +6,9 @@
 		<div class="container contenido">
 			<div class="row">
 				<div class="Principal">
-					<div class="imagen">
+					<div >
 						<!--Foto de prefil-->
-						<img src="/img/user.jpg">
+						<img src="/img/user.jpg" class="imagen">
 					</div>
 
 					<div class="datosPrincipales"> 
