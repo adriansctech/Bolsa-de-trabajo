@@ -75,7 +75,7 @@ class OfertasController extends Controller
 
         }
       
-        $ofertas=Oferta::all();
+        $ofertas=Oferta::where('cif','cif123456')->get();
 
         return view('principales.empresa', array('ofertas'=>$ofertas,'usuario'=>$datosUsuario));
     }
