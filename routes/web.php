@@ -46,6 +46,11 @@ Route::get('/', 'OfertasController@chooseHomeUser');
 
     Route::group(['middleware' => 'tipoUsuario:empresa'], function(){
     Route::get('/empresa', 'OfertasController@getOfertasEmpresa');
+    Route::post('/empresa', 'OfertasController@newOferta');
+
+    Route::get('/empresa/nuevaOferta', function () {
+    return view('empresa.crearOferta');
+});
     Route::post('/perfil', 'PerfilController@editEmpresa');
     Route::post('/perfil', 'PerfilController@editEmpresa');
 

@@ -51,6 +51,7 @@ class OfertasController extends Controller
         return view('principales.alumno', array('ofertas'=>$ofertas,'usuario'=>$datosUsuario));
     }
 
+//Devuelve los datos para una empresa en concreto, filtradondo las ofertas por CIF
     public function getOfertasEmpresa(){
         $usuario = User::findOrFail(Auth::User()->email);
 
@@ -63,7 +64,7 @@ class OfertasController extends Controller
                'web' => $usuario->Tipo->web,
                'logo' => $usuario->Tipo->logo,
                );
-
+           $ofertas=Oferta::where('cif',$usuario->Tipo)->get();
         }else{
 
             $datosUsuario = array(
@@ -72,14 +73,15 @@ class OfertasController extends Controller
                 'web' => '',
                 'logo' => '',
                 );
-
+            $ofertas=Oferta::where('cif','')->get();
         }
       
-        $ofertas=Oferta::where('cif','cif123456')->get();
+        
 
         return view('principales.empresa', array('ofertas'=>$ofertas,'usuario'=>$datosUsuario));
     }
 
+//Redirige según el tipo de usuario
     public function chooseHomeUser(){
 
        
@@ -96,6 +98,7 @@ class OfertasController extends Controller
 
     }
 
+
     //Recoge el id y devuelve la vista con la oferta asociada a este
     public function getOferta($id){
 
@@ -108,7 +111,9 @@ class OfertasController extends Controller
 
             $oferta = $request->all();
             $o = new Oferta;
-            $o->fill($oferta);//Comprobar que coge los datos de campos correctamente
+            $o->fill($oferta); //Comprobar que coge los datos de campos correctamente*
+            $o->valido=0;
+            $o->cif='123456';
             $o->save();
 
     }
@@ -119,6 +124,14 @@ class OfertasController extends Controller
         $oferta=Oferta::findOrFail($id);
         $oferta->delete();
 
+    }
+
+    public function validarOferta($id){
+
+        $oferta=Oferta::findOrFail($id);
+        $oferta->valido=1;
+        $oferta.save();
+        return $this->getOfertasEmpresa();
     }
 
 }
