@@ -43,8 +43,7 @@
         ]) !!};
     </script>-->
 </head>
-<body>
-    <!--<div id="app">-->
+<body>    
     <div class="row">
         <div class="col-xs-2 col-xs-offset-1 col-md-2 col-md-offset-2">
             <a href="{{ url('/') }}">
@@ -84,12 +83,11 @@
             @endif
         </div>
     </div>
-        <!--</div>       -->
+        
 
         @yield('content')
     </div>
-    <footer>
-        <hr>
+    <footer>        
         <div class="datosBatoi">
             <small>CIP de FP Batoi, Carrer La Serreta, 5 (03802) Alcoi</small>
             <br/>

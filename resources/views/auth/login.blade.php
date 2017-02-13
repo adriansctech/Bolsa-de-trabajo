@@ -1,26 +1,22 @@
 @extends('layouts.app')
 
 @section('content')
-<<<<<<< HEAD
 <div class="row ">
-    <div class="col-sm-12 col-md-6 col-md-offset-3 ">        
+    <div class="col-xs-12 col-md-6 col-md-offset-3">        
         <h1>Login</h1>
         <div class="panel-body">
             <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
                 {{ csrf_field() }}
-=======
-<div class="container ">
-    <div class="row ">
-        <div class="col-xs-6 col-xs-offset-3 col-md-8 col-md-offset-2 ">
-            <div class="panel panel-default">
-                <div class="panel-heading login">Login</div>
+                <div class="panel-heading login">
+                    Login
+                </div>
                 <div class="panel-body login">
                     <form class="form-horizontal " role="form" method="POST" action="{{ url('/login') }}">
                         {{ csrf_field() }}
->>>>>>> c3a202a657f352b60b9a4fe98e563b20b93b998a
-
                 <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                    <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+                    <label for="email" class="col-md-4 control-label">
+                        E-Mail Address
+                    </label>
 
                     <div class="col-md-6">
                         <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
