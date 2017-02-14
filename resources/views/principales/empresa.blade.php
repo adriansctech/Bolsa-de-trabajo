@@ -7,7 +7,7 @@
             <div class="panel panel-default ">
                 <!-- cabecera de la pagina -->
                 <div class="panel-heading " >
-                    <div class="infouser ">
+                    <div class="infouser  ">
                         <img src="img/user.jpg" class="fotouser">
                         <div class="datosuser">
                             <label class="labelnombre col-md-12 col-xs-12">{{ $usuario['nombre'] }}</label>
@@ -20,20 +20,21 @@
                 <!-- contenido de la pagina -->
                 <div class="panel-body ofertas col-md-12 ">
                     <div class="oferta col-md-12">
-                        <h2 class="tituloofertas">Ofertas disponibles</h2>
+                        <h2 class="titulo" >Ofertas disponibles</h2>
+                        <p class="informacion">descripcion</p>
                         @foreach( $ofertas as $oferta )
                         <hr/>
                         <h2>Puesto:</h2>
-                         <h3>{{$oferta['puesto']}}</h3>
+                         <p>{{$oferta['puesto']}}</p>
 
                          <h2>Descripción:</h2>
-                          <h3>{{$oferta['descripcion']}}</h3>
+                          <p>{{$oferta['descripcion']}}</p>
 
                           <h2>Contrato:</h2>
-                           <h3>{{$oferta['contrato']}}</h3>
+                           <p>{{$oferta['contrato']}}</p>
 
                            <h2>Empresa:</h2>
-                            <h3>{{$oferta['cif']}}</h3>
+                            <p>{{$oferta['cif']}}</p>
 
                         @endforeach
                     </div>  
