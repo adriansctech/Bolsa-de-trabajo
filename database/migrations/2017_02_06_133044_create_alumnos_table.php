@@ -24,7 +24,6 @@ class CreateAlumnosTable extends Migration
             $table->string('foto',255);
             $table->boolean('valido');
             $table->boolean('informacionOfertas');
-            $table->integer('poblacion')->references('id')->on('poblaciones');
             $table->timestamps();
         });
     }

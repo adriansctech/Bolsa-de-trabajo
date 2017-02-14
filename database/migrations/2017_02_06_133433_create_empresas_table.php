@@ -26,7 +26,6 @@ class CreateEmpresasTable extends Migration
             $table->string('logo');
             $table->integer('tlf');
             $table->integer('tlfContacto');
-            $table->integer('poblacion')->references('id')->on('poblaciones');
             $table->timestamps();
         });
     }
