@@ -115,6 +115,7 @@ class OfertasController extends Controller
             $o->valido=0;
             $o->cif='123456';
             $o->save();
+            return redirect('/empresa');
 
     }
 
@@ -131,7 +132,7 @@ class OfertasController extends Controller
         $oferta=Oferta::findOrFail($id);
         $oferta->valido=1;
         $oferta.save();
-        return $this->getOfertasEmpresa();
+        
     }
 
 }
