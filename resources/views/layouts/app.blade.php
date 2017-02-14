@@ -64,12 +64,13 @@
                     </ul>
                     
                 @else                           
-                    <li class="dropdown">
+                   <!-- <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             {{ Auth::user()->name }} <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li>
+                            class="dropdown-menu"
+                        </a>-->
+                        <ul class="col-md-2 col-md-offset-4" role="menu">
+                            <li class="botonSalir">
                                 <a href="{{ url('/logout') }}"
                                     onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
@@ -81,7 +82,7 @@
                                 </form>
                             </li>
                         </ul>                                                
-                    </li>
+                   <!-- </li>-->
                 @endif
             </div>
             <hr class="col-xs-12 col-md-10 col-md-offset-1">

@@ -19,26 +19,15 @@
                 </div>
                 <!-- contenido de la pagina -->
                 <div  class="panel-body ofertas">
-                   
+                   @foreach( $ofertas as $oferta )
                     <div class="oferta">
-                        <h2 class="tituloofertas">Ofertas disponibles</h2>
-                        @foreach( $ofertas as $oferta )
-                        <hr/>
-                        <h2>Puesto:</h2>
-                         <h3>{{$oferta['puesto']}}</h3>
-
-                         <h2>Descripción:</h2>
-                          <h3>{{$oferta['descripcion']}}</h3>
-
-                          <h2>Contrato:</h2>
-                           <h3>{{$oferta['contrato']}}</h3>
-
-                           <h2>Empresa:</h2>
-                            <h3>{{$oferta['cif']}}</h3>
-
-                        @endforeach
+                        
+                        <h2>Puesto: {{$oferta['puesto']}}</h2>
+                        <h3>Descripción: {{$oferta['descripcion']}}</h3>
+                        <h3>Contrato: {{$oferta['contrato']}}</h3>
+                        <h3>Empresa: {{$oferta['cif']}}</h3>
                     </div>
-                     
+                      @endforeach
                 </div>
             </div>
         </div>
