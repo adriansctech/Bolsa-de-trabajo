@@ -44,53 +44,58 @@
     </script>-->
 </head>
 <body>
-    <!--<div id="app">-->
-    <div class="row">
-        <div class="col-xs-2 col-xs-offset-1 col-md-2 col-md-offset-2">
-            <a href="{{ url('/') }}">
-                <img src="/img/Gris_Blan_Curt_Text.jpg" alt="Logotipo de batoi" class="imagenEncabezado">
-            </a>
-        </div>
-        <div class="col-xs-9 col-md-2 col-md-offset-6">
-            @if (Auth::guest())
-                <ul>
-                    <li>
-                        <a href="{{ url('/login') }}">Login</a>
-                    </li>
-                    <li>
-                        <a href="{{ url('/register') }}">Register</a>
-                    </li>
-                </ul>
-                
-            @else                           
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                        {{ Auth::user()->name }} <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li>
-                            <a href="{{ url('/logout') }}"
-                                onclick="event.preventDefault();
-                                         document.getElementById('logout-form').submit();">
-                                Logout
-                            </a>
-
-                            <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-                                {{ csrf_field() }}
-                            </form>
+    <header>
+        <!--<div id="app">-->
+        <div class="row">
+            <div class="col-xs-2 col-xs-offset-1 col-md-2 col-md-offset-2">
+                <a href="{{ url('/') }}">
+                    <img src="/img/Gris_Blan_Curt_Text.jpg" alt="Logotipo de batoi" class="imagenEncabezado">
+                </a>
+            </div>
+            <div >
+                @if (Auth::guest())
+                    <ul class="col-xs-9 col-md-2 col-md-offset-4">
+                        <li class="listaencabezado ">
+                            <a href="{{ url('/login') }}">Login</a>
                         </li>
-                    </ul>                                                
-                </li>
-            @endif
+                        <li class="listaencabezado ">
+                            <a href="{{ url('/register') }}">Register</a>
+                        </li>
+                    </ul>
+                    
+                @else                           
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            {{ Auth::user()->name }} <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="{{ url('/logout') }}"
+                                    onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                    Logout
+                                </a>
+
+                                <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+                            </li>
+                        </ul>                                                
+                    </li>
+                @endif
+            </div>
+            <hr class="col-xs-12 col-md-10 col-md-offset-1">
         </div>
-    </div>
+        
+    </header>
+    
         <!--</div>       -->
 
         @yield('content')
     </div>
-    <footer>
-        <hr>
-        <div class="datosBatoi">
+    <footer class="col-xs-12 col-md-12">
+        <hr class="col-xs-12 col-md-10 col-md-offset-1">
+        <div class="datosBatoi col-xs-12 col-md-3 col-md-offset-1">
             <small>CIP de FP Batoi, Carrer La Serreta, 5 (03802) Alcoi</small>
             <br/>
             <small>Tel.: 966 52 76 60, Fax: 966 52 76 61</small>
