@@ -14,7 +14,7 @@
     <meta name="lang" content="es-ES" />
     <meta name="viewport" content="width=device-width initial-scale=1.0" />
     <!-- favicon -->
-    <link rel="icon" type="image/png" href="img/Gris_Blan_Curt_Text.jpg" sizes="32x32"/>
+    <link rel="icon" type="image/png" href="/img/Gris_Blan_Curt_Text.jpg" sizes="32x32"/>
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Scripts -->
@@ -107,8 +107,8 @@
         </div>
     </footer>
     <!-- Scripts -->
-    <script src="js/app.js"></script>
-    <script src="js/less.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="/js/less.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 </html>
