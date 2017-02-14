@@ -10,9 +10,9 @@
                     <div class="infouser">
                         <img src="img/user.jpg" class="fotouser" >
                         <div class="datosuser">
-                            <label class="labelnombre">{{ $usuario['nombre'] }}</label>
+                            <label class="labelnombre">{{ $usuario['nombre'] }} {{ $usuario['apellidos'] }}</label>
+                            <br>
                             <label class="labelcorreo">{{ $usuario['email'] }}</label>
-                            <label class="labelWeb">{{ $usuario['web'] }}</label>
                         </div>
                         <img src="img/editar.png" class="enlaceeditar">
                     </div>
