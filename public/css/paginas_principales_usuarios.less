@@ -3,25 +3,21 @@
 
 
 .divgeneral{
-    width: 80%;
     background-color: #ffffff;
     box-shadow: 2px 2px 5px #999;     
 }
 
 .genericsize {
-    width: 600px;
     margin: auto;
 }
 
-.customnav {
-    height: 80px;
-}
+
 
 .ofertaboton input{
-    width: 90%;
+    /*width: 90%;
     height: 40px;
     margin-left: 45px;
-    padding: 10;
+    padding: 10;*/
     background-color: @colorFondoContenido;
     border:1px solid #00a0dc;
     color: #00a0dc;
@@ -33,27 +29,21 @@
 }
 
 .infouser{
-    border: 1px solid gray;
-    margin-right: @pixel50;
-    margin-left: @pixel50;
-    margin-top: @pixel10;
-    margin-bottom: @pixel10;
     height: @pixel100;
     border-radius: @pixel10;
     box-shadow: 2px 2px 5px #999;  
 }
 
 .ofertas{   
-    margin-right: @pixel50;
-    margin-left: @pixel50;
     height: @pixel400;
     margin-top: @pixel10;
+    border-radius: @pixel10;
+    box-shadow: 2px 2px 5px #999;  
 }
 
 .oferta{
     color: #4d4d4d ;
     border: 1px solid #cccccc;
-    margin:@pixel10;
     border-radius: @pixel10;
     &:hover{
         background-color: #cccccc;
@@ -68,11 +58,11 @@
 
 .enlaceeditar{
     float: right;
-    width: 40px;
+    width: 5%;
     margin-right: @pixel5;
     margin-top: @pixel5;
     &:hover{
-        width: 45px;
+        width: 7%;
         border:1px solid  #00a0dc;
         border-radius: @pixel5;
     }
@@ -85,18 +75,13 @@
 }
 
 .labelnombre{
-    font-size: @pixel20;
+   
     font-weight: bold;
     margin:@pixel5;
 }
 
-.labelcorreo{
-    font-size: 18px;
-}
 
-.tituloofertas{
-    margin-left: @pixel10;
-}
+
 
 .listaofertas{
     border: 1px solid gray;
@@ -105,4 +90,26 @@
 }
 .wrapper{
     height: 600px;
+}
+
+@media (min-width:342px)and(max-width:480px){
+   label{
+    clear:both;
+    font-size:0.8em;
+   }
+  
+}
+@media (min-width:480px)and(max-width:640px){
+   label{
+    clear:both;
+    font-size:1.0em;
+   }
+  
+}
+@media (min-width:640px){
+   label{
+    clear:both;
+    font-size:1.2em;
+   }
+  
 }

@@ -12,10 +12,8 @@ header{
 }
 
 footer{
-	background-color: @backgroundColorHeaderFooter;
-	position: absolute;
+	background-color: @backgroundColorHeaderFooter;	
     bottom: 0;
-	
 }
 
 small{
@@ -44,7 +42,6 @@ small{
 }
 
 .imagenEncabezado{
-	width:8%;
 	border-radius: @pixel20;
 }
 
@@ -52,23 +49,19 @@ small{
 	float:right;
 }
 
-.listaencabezado{
-	
+.listaencabezado{	
 	list-style:none;
 	border-radius: @pixel5;
-	/*float:right;*/
+	float:right;
 	.enlaceencabezado{
 		text-decoration: none;
-		 
+		box-shadow: 3px 3px 7px #999;
+		border-radius: @pixel5;
 	}
 	&:hover{
 		background-color:#0077B5;
 	}	
 }
-
-
-
-
 .botonSalir{
 	float: right;
 	border-radius: @pixel20;
@@ -78,8 +71,8 @@ small{
 
 .contenido{
 	background-color: @colorFondoContenido;
-	box-shadow: 3px 3px 7px #999;
-	border-radius: @pixel5;
+	/*box-shadow: 3px 3px 7px #999;
+	border-radius: @pixel5;*/
 	
 }
 
@@ -92,7 +85,8 @@ small{
 	
 }
 
-.botonlogin{
+.botonlogin, .botonregister{
+	/*Cuando estamos en ventana de login*/
 	.botonesPrincipales()
 
 }
@@ -101,8 +95,9 @@ small{
 	font-size:0.8em;	
 }
 
-
+/* Para borrar desde aqui si funciona bien lo demas
 .botonregister{
+	/*Cuando estamos en ventana de register
 	.botonesPrincipales()
 
-}
+}*/

@@ -45,19 +45,19 @@
 </head>
 <body>    
     <div class="row">
-        <div class="col-xs-2 col-xs-offset-1 col-md-2 col-md-offset-2">
+        <div class="col-xs-4 col-xs-offset-1 col-md-2 col-md-offset-2">
             <a href="{{ url('/') }}">
                 <img src="/img/Gris_Blan_Curt_Text.jpg" alt="Logotipo de batoi" class="imagenEncabezado">
             </a>
         </div>
-        <div class="col-xs-9 col-md-2 col-md-offset-6">
+        <div class="col-xs-7 col-md-2 col-md-offset-6">
             @if (Auth::guest())
                 <ul>
-                    <li>
-                        <a href="{{ url('/login') }}">Login</a>
+                    <li class="listaencabezado">
+                        <a href="{{ url('/login') }}" class="enlaceencabezado">Login</a>
                     </li>
-                    <li>
-                        <a href="{{ url('/register') }}">Register</a>
+                    <li class="listaencabezado">
+                        <a href="{{ url('/register') }}" class="enlaceencabezado">Register</a>
                     </li>
                 </ul>
                 
