@@ -14,11 +14,12 @@ class CreateCiclosAlumnosTable extends Migration
     public function up()
     {
         Schema::create('ciclosAlumnos', function (Blueprint $table) {
-            $table->integer('ciclo')->unique()->references('id')->on('ciclos');
-            $table->string('alumno',125)->unique()->references('email')->on('alumnos');
+            $table->integer('ciclo')->references('id')->on('ciclos');
+            $table->string('alumno',125)->references('email')->on('alumnos');
             $table->date('finicio');
             $table->date('ffin');
             $table->integer('nota');
+            $table->primary(['ciclo','alumno']);
             $table->timestamps();
         });
     }

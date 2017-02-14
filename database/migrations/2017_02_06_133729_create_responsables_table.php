@@ -14,7 +14,7 @@ class CreateResponsablesTable extends Migration
     public function up()
     {
         Schema::create('responsables', function (Blueprint $table) {
-            $table->string('email',125)->unique()->references('email')->on('users');
+            $table->string('email',125)->primary()->references('email')->on('users');
             $table->string('nombre',45);
             $table->integer('tlf');
             $table->string('foto');

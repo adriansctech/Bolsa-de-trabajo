@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Bolsa\Oferta;
 use Auth;
 use Bolsa\User;
+use Bolsa\Ciclo;
+use Bolsa\cicloOferta;
 
 class OfertasController extends Controller
 {
@@ -108,13 +110,25 @@ class OfertasController extends Controller
 
     //Crear nueva oferta segun los parametros de $request
     public function newOferta(Request $request){
+            $usuario = User::findOrFail(Auth::User()->email);
 
             $oferta = $request->all();
             $o = new Oferta;
-            $o->fill($oferta); //Comprobar que coge los datos de campos correctamente*
+            $o->fill($oferta); 
             $o->valido=0;
             $o->cif='123456';
             $o->save();
+            //ciclos requeridos para la oferta
+            foreach ($oferta['ciclo'] as $ciclo) {
+                $ciclo=strtolower($ciclo);
+                $cicloReq = new cicloOferta;
+                $ciclo = Ciclo::where('ciclos', '=' ,$ciclo)->firstOrFail();
+               // $ofer = Oferta::findOrFail()
+                $cicloReq->ciclo=$ciclo->id;
+                $cicloReq->ofertas=$o->id;
+                $cicloReq->save();
+            }
+           
             return redirect('/empresa');
 
     }
