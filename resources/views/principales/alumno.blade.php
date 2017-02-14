@@ -14,7 +14,7 @@
                             <br>
                             <label class="labelcorreo">{{ $usuario['email'] }}</label>
                         </div>
-                        <img src="img/editar.png" class="enlaceeditar">
+                        <a href="{{ url('/alumno/perfil') }}"><img src="img/editar.png" class="enlaceeditar"></a>
                     </div>
                 </div>
                 <!-- contenido de la pagina -->

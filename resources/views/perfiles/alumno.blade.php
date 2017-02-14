@@ -10,20 +10,18 @@
 						<!--Foto de prefil-->
 						<img src="/img/user.jpg" class="imagen">
 					</div>
-
+					<!-- DATOS PRINCIPALES -->
 					<div class="datosPrincipales"> 
 						<h1>{{ $usuario['nombre'] }} {{ $usuario['apellidos'] }}</h1><!--Aqui cargariamos el nombre y los apellidos del usuario Alumno-->
 						<br/>
 						<label>Domicilio: {{ $usuario['domicilio'] }}</label>
-						<br/>
-						<label>Localidad: {{ $usuario['poblacion'] }}</label>
 						<br/>
 						<label>Email: {{ $usuario['email'] }}</label>
 						<br/>
 						<label>Telefono: {{ $usuario['telefono'] }}</label>
 						<br/><br/><br/><br/><br/><br/><br/>
 					</div>
-
+					<!-- CICLOS -->
 					<div class="ciclosCursados">
 						<h2>Ciclos cursados:</h2>
 						<!--Div en el que cargamos los ciclos que ha marcado el alumno como que los ha cursado-->
@@ -36,7 +34,7 @@
 						<br/>
 						<hr>
 					</div>
-
+					<!-- DATOS SECUNDARIOS -->
 					<div class="datosSecundarios">
 						<!--Div de los idiomas, opcion de trabajar fuera y CV-->
 						<span>Selecciona los idiomas con sus niveles</span><br/>
@@ -47,12 +45,14 @@
 								<li>idioma3 nivel</li>
 							</ul>
 						<br/>
-						<label>Valenciano : Si/No <!--Segun la opcion que tenga guardada aparecera si o no--></label>
-						<label>Nivel: nivel</label>
-						<br/>
-						<label>Con opción a trabajar fuera: Si/No <!--Segun la opcion que tenga guardada aparecera si o no--></label>
-						<br/>
-						<label>Enlaza tu CV: enlaceCV</label>
+						@if($usuario['trabajoFuera'] == 0)
+							<label>Con opción a trabajar fuera: NO</label>
+							<br/>
+						@else
+							<label>Con opción a trabajar fuera: SI</label>
+							<br/>
+						@endif
+						<label>Currículum Vitae: {{ $usuario['cv'] }}</label>
 						<br/>
 					</div>
 					<br/><br/><br/>	
