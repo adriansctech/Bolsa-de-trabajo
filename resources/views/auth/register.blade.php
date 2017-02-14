@@ -45,7 +45,7 @@
 
               <div class="form-group">
                 <label for="tipo" class="col-md-4 control-label">Tipo de usuario</label>
-                <div class="col-md-6"> 
+                <div class="col-md-8"> 
                     <select class="col-md-6 selectregister" name="tipo">
                         <option value="alumno">Alumno</option>
                         <option value="empresa">Empresa</option>

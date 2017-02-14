@@ -14,12 +14,13 @@ class CreateCiclosTable extends Migration
     public function up()
     {
         Schema::create('ciclos', function (Blueprint $table) {
-            $table->increments('id')->unique();
+            $table->increments('id');
             $table->string('ciclos',50);
             $table->integer('departamento')->references('id')->on('departamentos');;
             $table->string('responsable',50)->references('email')->on('users');
             $table->timestamps();
         });
+        
     }
 
     /**

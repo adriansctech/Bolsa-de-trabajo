@@ -14,8 +14,9 @@ class CreateCiclosOfertasTable extends Migration
     public function up()
     {
         Schema::create('ciclosOfertas', function (Blueprint $table) {
-            $table->integer('ciclo')->unique()->references('id')->on('ciclos');
-            $table->integer('ofertas')->unique()->references('id')->on('ofertas');
+            $table->integer('ciclo')->references('id')->on('ciclos');
+            $table->integer('ofertas')->references('id')->on('ofertas');
+            $table->primary(['ciclo','ofertas']);
             $table->timestamps();
         });
     }

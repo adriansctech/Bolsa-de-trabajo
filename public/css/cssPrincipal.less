@@ -8,12 +8,13 @@ body{
 
 header{
    background-color: @backgroundColorHeaderFooter;
-   border-radius: @pixel10;
+   padding-top:5px;
+   padding-bottom:5px;
 }
 
 footer{
-	background-color: @backgroundColorHeaderFooter;	
-    bottom: 0;
+	background-color: @backgroundColorHeaderFooter;
+	
 }
 
 small{
@@ -31,17 +32,17 @@ small{
 	/*Boton de logout*/
 	list-style:none;
 	background-color:@colorFondoContenido;
-	box-shadow: 3px 3px 7px #999;
-	border-radius: @pixel5;
 	float:right;
 	&:hover{
 		color:#ffffff;
 		background-color:#0077B5;
 	}	
+	.bordebotones();
 
 }
 
 .imagenEncabezado{
+	width:8%;
 	border-radius: @pixel20;
 }
 
@@ -49,25 +50,23 @@ small{
 	float:right;
 }
 
-.listaencabezado{	
+.listaencabezado,.botonSalir{
+	/*text-decoration: none;
 	list-style:none;
 	border-radius: @pixel5;
-	float:right;
-	.enlaceencabezado{
-		text-decoration: none;
-		box-shadow: 3px 3px 7px #999;
-		border-radius: @pixel5;
-	}
+	
 	&:hover{
 		background-color:#0077B5;
-	}	
+	}	*/
+	text-decoration: none;
+	list-style:none;
+	float:right;
+	padding:5px;
+	.botonesPrincipales()
+
 }
-.botonSalir{
-	float: right;
-	border-radius: @pixel20;
-	background-image: url('salir.png') no-repeat;
-	
-}
+
+
 
 .contenido{
 	background-color: @colorFondoContenido;
@@ -79,14 +78,12 @@ small{
 .login{
 
 	background-color: @colorFondoContenido;
-	box-shadow: 3px 3px 7px #999;
-	border-radius: @pixel5;
+	.bordebotones()
 
 	
 }
 
-.botonlogin, .botonregister{
-	/*Cuando estamos en ventana de login*/
+.botonlogin,.botonregister{
 	.botonesPrincipales()
 
 }
@@ -94,10 +91,3 @@ small{
 .btn-link{
 	font-size:0.8em;	
 }
-
-/* Para borrar desde aqui si funciona bien lo demas
-.botonregister{
-	/*Cuando estamos en ventana de register
-	.botonesPrincipales()
-
-}*/

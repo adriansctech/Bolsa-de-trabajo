@@ -1,8 +1,36 @@
-@media (min-width: 768px) {
-  
+/*@media (min-width: 768px) {
+  .imagenEncabezado {
+    width: 40%;
+  };
 }
 @media (max-width: 767px){
 	.imagenEncabezado {
-		width: 85%;
+		width: 50%;
 	};	
+}*/
+/*Medias para el encabezado, solo modifica la imagen y los botones en tamaño*/
+@media (min-width: 320px) and (max-width: 500px){
+	.imagenEncabezado {
+		width: 40px;
+	}	
+	.listaencabezado{
+		font-size: 0.7em;
+	}
+}
+
+@media (min-width: 500px) and (max-width: 767px){
+	.imagenEncabezado {
+		width: 44px;
+	}	
+	.listaencabezado{
+		font-size: 0.8em;
+	}
+}
+@media (min-width: 768px){
+	.imagenEncabezado {
+		width: 40%;
+	}	
+	.listaencabezado{
+		font-size: 1em;
+	}
 }
