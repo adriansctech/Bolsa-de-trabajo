@@ -19,7 +19,7 @@ class PerfilController extends Controller
         $this->middleware('auth');
     }
 
-        protected function editAlumno(Request $request){
+        protected function saveAlumno(Request $request){
             
             $a = new Alumno;
             $a->fill($request->all());
@@ -27,19 +27,20 @@ class PerfilController extends Controller
 
         }
 
-        protected function editEmpresa(Request $request){
+        protected function saveEmpresa(Request $request){
             $e = new Empresa;
             $e->fill($request->all());
             $e->save();
         }
 
-        protected function editResponsable(Request $request){
+        protected function saveResponsable(Request $request){
             $r = new Responsable;
             $r->fill($request->all());
             $e->save();
         }
 
-        protected function perfilAlumnoEditar(){
+
+        protected function editAlumno(){
 
             $usuario = User::findOrFail(Auth::User()->email);
 
@@ -78,7 +79,7 @@ class PerfilController extends Controller
         }
 
 
-        protected function perfilAlumnoMostrar(){
+        protected function showAlumno(){
 
             $usuario = User::findOrFail(Auth::User()->email);
             
@@ -114,6 +115,44 @@ class PerfilController extends Controller
 
         }
 
+        //MODIFICAR PARA LOS DATOS DE LA EMPRESA
+        protected function editEmpresa(){
+
+            $usuario = User::findOrFail(Auth::User()->email);
+
+          /*  if ($usuario->Tipo!=null) {
+
+            $datosUsuario = array(
+                   'email' => Auth::User()->email,
+                   'nombre' => $usuario->Tipo->nombre,
+                   'apellidos' => $usuario->Tipo->apellidos,
+                   'domicilio' => $usuario->Tipo->domicilio,
+                   'telefono' => $usuario->Tipo->tlf,
+                   'poblacion' => $usuario->Tipo->poblacion,
+                   'cv' => $usuario->Tipo->cvlinkedin,
+                   'trabajoFuera' => $usuario->Tipo->trabajofuera,
+                   'pass' => $usuario->password,
+                   );
+
+            }else{*/
+
+                $datosUsuario = array(
+                    'email' => Auth::User()->email,
+                    'nombre' => '',
+                    'apellidos' => '',
+                    'domicilio' => '',
+                    'telefono' => '',
+                    'poblacion' => '',
+                    'cv' => '',
+                    'trabajoFuera' => '',
+                    'pass' => '',
+                    );
+
+            //}
+
+            return view('perfiles.editar.empresa', array('usuario'=>$datosUsuario));
+
+        }
         protected function perfilEmpresa(){
 
 
