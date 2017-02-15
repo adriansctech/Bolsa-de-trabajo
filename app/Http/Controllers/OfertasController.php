@@ -9,6 +9,8 @@ use Auth;
 use Bolsa\User;
 use Bolsa\Ciclo;
 use Bolsa\cicloOferta;
+use Bolsa\idiomaOferta;
+use Bolsa\Idioma;
 
 class OfertasController extends Controller
 {
@@ -58,15 +60,15 @@ class OfertasController extends Controller
         $usuario = User::findOrFail(Auth::User()->email);
 
         if ($usuario->Tipo!=null) {
-
-
+ 
            $datosUsuario = array(
                'email' => Auth::User()->email,
                'nombre' => $usuario->Tipo->nombre,
                'web' => $usuario->Tipo->web,
                'logo' => $usuario->Tipo->logo,
                );
-           $ofertas=Oferta::where('cif',$usuario->Tipo)->get();
+           $ofertas=Oferta::where('cif',$usuario->Tipo->cif)->get();
+
         }else{
 
             $datosUsuario = array(
@@ -116,17 +118,27 @@ class OfertasController extends Controller
             $o = new Oferta;
             $o->fill($oferta); 
             $o->valido=0;
-            $o->cif='123456';
+            $o->cif=$usuario->Tipo->cif;//
             $o->save();
+
             //ciclos requeridos para la oferta
             foreach ($oferta['ciclo'] as $ciclo) {
                 $ciclo=strtolower($ciclo);
                 $cicloReq = new cicloOferta;
                 $ciclo = Ciclo::where('ciclos', '=' ,$ciclo)->firstOrFail();
-               // $ofer = Oferta::findOrFail()
                 $cicloReq->ciclo=$ciclo->id;
                 $cicloReq->ofertas=$o->id;
                 $cicloReq->save();
+            }
+
+            //idiomas requeridos en cada oferta
+            foreach ($oferta['idiomas'] as $idioma) {
+                $idioma=strtolower($idioma);
+                $idiomaReq = new idiomaOferta;
+                $idioma = Idioma::where('idioma', '=' ,$idioma)->firstOrFail();
+                $idiomaReq->idioma=$idioma->id;
+                $idiomaReq->oferta=$o->id;
+                $idiomaReq->save();
             }
            
             return redirect('/empresa');
