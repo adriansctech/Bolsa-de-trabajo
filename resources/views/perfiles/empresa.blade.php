@@ -7,7 +7,7 @@
             <div class="panel panel-default ">
                 <!-- cabecera de la pagina -->
                 <div class="panel-heading col-md-10 col-md-offset-1 " >
-					<div class="col-xs-12 col-sm-4 col-sm-offset-1 col-md-4 col-md-offset-1">
+					<div class="col-xs-10 col-sm-offset-1 col-sm-4 col-sm-offset-1 col-md-4 col-md-offset-1">
 						<!--Foto de prefil-->
 						<img src="../img/user.jpg " class="imagen ">
 					</div>
@@ -45,7 +45,7 @@
 						<br/>
 					</div>
 				</div>	
-				<input type="button" name="volver" value="Volver" class="col-md-2 col-md-offset-5">
+				<input type="button" name="volver" value="Volver" class="col-md-2 col-md-offset-5 botonVolver">
             </div>
         </div>
     </div>
