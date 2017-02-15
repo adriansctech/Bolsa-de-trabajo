@@ -38,19 +38,23 @@ class PerfilController extends Controller
             $r->fill($request->all());
             $e->save();
         }
-        protected function perfilAlumno(){
+
+        protected function perfilAlumnoEditar(){
 
             $usuario = User::findOrFail(Auth::User()->email);
 
             if ($usuario->Tipo!=null) {
 
-               $datosUsuario = array(
+            $datosUsuario = array(
                    'email' => Auth::User()->email,
                    'nombre' => $usuario->Tipo->nombre,
                    'apellidos' => $usuario->Tipo->apellidos,
                    'domicilio' => $usuario->Tipo->domicilio,
                    'telefono' => $usuario->Tipo->tlf,
                    'poblacion' => $usuario->Tipo->poblacion,
+                   'cv' => $usuario->Tipo->cvlinkedin,
+                   'trabajoFuera' => $usuario->Tipo->trabajofuera,
+                   'pass' => $usuario->password,
                    );
 
             }else{
@@ -62,13 +66,54 @@ class PerfilController extends Controller
                     'domicilio' => '',
                     'telefono' => '',
                     'poblacion' => '',
+                    'cv' => '',
+                    'trabajoFuera' => '',
+                    'pass' => '',
                     );
 
             }
 
-        return view('perfiles.alumno', array('usuario'=>$datosUsuario));
+            return view('perfiles.editar.alumno', array('usuario'=>$datosUsuario));
 
         }
+
+
+        protected function perfilAlumnoMostrar(){
+
+            $usuario = User::findOrFail(Auth::User()->email);
+            
+            if ($usuario->Tipo!=null) {
+
+               $datosUsuario = array(
+                   'email' => Auth::User()->email,
+                   'nombre' => $usuario->Tipo->nombre,
+                   'apellidos' => $usuario->Tipo->apellidos,
+                   'domicilio' => $usuario->Tipo->domicilio,
+                   'telefono' => $usuario->Tipo->tlf,
+                   'poblacion' => $usuario->Tipo->poblacion,
+                   'cv' => $usuario->Tipo->cvlinkedin,
+                   'trabajoFuera' => $usuario->Tipo->trabajofuera,
+                   );
+
+            }else{
+
+                $datosUsuario = array(
+                    'email' => Auth::User()->email,
+                    'nombre' => '',
+                    'apellidos' => '',
+                    'domicilio' => '',
+                    'telefono' => '',
+                    'poblacion' => '',
+                    'cv' => '',
+                    'trabajoFuera' => '',
+                    );
+
+            }
+
+            return view('perfiles.alumno', array('usuario'=>$datosUsuario));
+
+        }
+
         protected function perfilEmpresa(){
 
 

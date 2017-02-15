@@ -26,10 +26,14 @@ Route::post('/ofertas/create','OfertasController@postOferta');
 Route::delete('/ofertas/delete/{id}','OfertasController@deleteOferta');
 
 //RUTAS DE LOS PERFILES
-Route::get('/perfil/alumno', 'PerfilController@perfilAlumno');
+//Route::get('/perfil/alumno', 'PerfilController@perfilAlumno');
 Route::get('/perfil/empresa', 'PerfilController@perfilEmpresa');
 Route::get('/perfil/responsable', 'PerfilController@perfilResponsable');
 
+//mostrar los datos del alumno abriendo la ventana de edicion
+Route::get('/alumno/perfil/editar', 'PerfilController@perfilAlumnoEditar');
+//mostrar los datos del alumno
+Route::get('/alumno/perfil', 'PerfilController@perfilAlumnoMostrar');
 
 //User
 //Route::delete('/user/delete/{id}','UsersController@deleteUser');
@@ -49,8 +53,12 @@ Route::get('/', 'OfertasController@chooseHomeUser');
     Route::post('/empresa', 'OfertasController@newOferta');
 
     Route::get('/empresa/nuevaOferta', function () {
-    return view('empresa.crearOferta');
-});
+        return view('empresa.crearOferta');
+    });
+
+   
+
+
     Route::post('/perfil', 'PerfilController@editEmpresa');
     Route::post('/perfil', 'PerfilController@editEmpresa');
 

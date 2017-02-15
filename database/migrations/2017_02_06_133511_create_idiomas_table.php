@@ -14,9 +14,8 @@ class CreateIdiomasTable extends Migration
     public function up()
     {
         Schema::create('idiomas', function (Blueprint $table) {
-            $table->increments('id')->unique();
+            $table->increments('id');
             $table->string('idioma',45);
-            $table->string('nivel',2);
             $table->timestamps();
         });
     }
