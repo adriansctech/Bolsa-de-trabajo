@@ -4,10 +4,10 @@
 <div class="container contenido">
     <div class="row">
         <div class="col-xs-12 col-md-10 col-md-offset-1">
-            <div class="panel panel-default ">
+            <div class="panel panel-default col-xs-12">
                 <!-- cabecera de la pagina -->
-                <div class="panel-heading col-md-10 col-md-offset-1 " >
-					<div class="col-xs-12 col-sm-4 col-sm-offset-1 col-md-4 col-md-offset-1">
+                <div class="panel-heading col-xs-12 col-md-10 col-md-offset-1 " >
+					<div class="col-xs-12  col-md-4 col-md-offset-1">
 						<!--Foto de prefil-->
 						<img src="../img/user.jpg " class="imagen ">
 					</div>
@@ -20,8 +20,9 @@
 						<label>Email: {{ $usuario['email'] }}</label>
 						<br/>
 						<label>Telefono: {{ $usuario['telefono'] }}</label>
-						<br/><br/><br/><br/><br/><br/><br/>
+				
 					</div>
+				</div>	
 					<div class="panel-body col-xs-12 col-md-10 col-md-offset-1 ">
 						<!-- CICLOS -->
 						<div class="ciclosCursados">
@@ -56,8 +57,9 @@
 							@endif
 							<label>Currículum Vitae: {{ $usuario['cv'] }}</label>
 							<br/>
+							<input type="button" name="volver" value="Volver" class="col-md-2 col-md-offset-5 botonDefecto">
 						</div>
-						<input type="button" name="volver" value="Volver" class="col-md-2 col-md-offset-5 botonDefecto">
+						
 					</div>
 					<br/><br/><br/>	
 				</div>

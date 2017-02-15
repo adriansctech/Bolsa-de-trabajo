@@ -4,15 +4,15 @@
 <div class="container contenido">
     <div class="row">
         <div class="col-xs-12 col-md-10 col-md-offset-1">
-            <div class="panel panel-default ">
+            <div class="panel panel-default col-xs-12">
                 <!-- cabecera de la pagina -->
-                <div class="panel-heading col-md-10 col-md-offset-1 " >
-					<div class="col-xs-10 col-sm-offset-1 col-sm-4 col-sm-offset-1 col-md-4 col-md-offset-1">
+                <div class="panel-heading col-xs-12 col-md-10 col-md-offset-1 " >
+					<div class="col-xs-12  col-md-4 col-md-offset-1">
 						<!--Foto de prefil-->
 						<img src="../img/user.jpg " class="imagen ">
 					</div>
 					<img src="/img/editar.png" class="enlaceeditar">
-					<div class="datosPrincipales col-xs-12 col-sm-6 col-md-6 "> 
+					<div class="datosPrincipales col-xs-12 col-md-6 "> 
 						<h1>Nombre de la empresa</h1>
 						<br/>
 						<label>CIF : 'cif de la empresa'</label>
