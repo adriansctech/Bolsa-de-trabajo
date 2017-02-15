@@ -74,7 +74,7 @@
 						<br/>
 					</div>
 
-					<input type="submit" name="guardar" value="Guardar">
+					<input type="submit" name="guardar" value="Guardar" class="botonDefecto">
 					</form>
 				</div>
 		</div>

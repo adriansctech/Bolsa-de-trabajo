@@ -46,7 +46,7 @@
 						<input type="text" name="descripcion" class="cajadetexto">
 						</div>
 						<br/>
-					<input type="submit" name="guardar" value="Guardar">
+					<input type="submit" name="guardar" value="Guardar" class="botonDefecto">
 				</form>
 				
 			</div>

@@ -57,7 +57,7 @@
 							<label>Currículum Vitae: {{ $usuario['cv'] }}</label>
 							<br/>
 						</div>
-						<input type="button" name="volver" value="Volver" class="col-md-2 col-md-offset-5 botonVolver">
+						<input type="button" name="volver" value="Volver" class="col-md-2 col-md-offset-5 botonDefecto">
 					</div>
 					<br/><br/><br/>	
 				</div>
