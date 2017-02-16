@@ -10,11 +10,11 @@
 					<h1>Nueva oferta</h1>
 				</div>
 			</div>
-			<div class="panel-body col-xs-12 col-md-10 col-md-offset-1 ">	
-				<form action="{{ url('/empresa') }}" method="POST">
+			<div class="panel-body col-xs-12 col-md-12 ">	
+				<form action="{{ url('/empresa') }}" method="POST" class="col-xs-12 col-md-12">
 				{{ csrf_field() }}
 					
-					<div class="datosSecundarios col-xs-12 col-md-10 col-md-offset-1">
+					<div class="datosSecundarios  ">
 						<br/>	
 						<label for="job">Puesto de trabajo :</label>
 						<input type="text" name="puesto" id="job">
@@ -43,7 +43,7 @@
 						</select>
 						<br/>						
 						<label>Descripción:</label><br/>
-						<input type="text" name="descripcion" class="cajadetexto ">					
+						<textarea name="descripcion" rows="7" cols="90" " class="cajadetexto">	</textarea> 				
 						<br/>
 					<input type="submit" name="guardar" value="Guardar" class="botonDefecto">
 				</form>

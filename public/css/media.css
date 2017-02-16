@@ -23,7 +23,26 @@
 		width: 30%;
 		float: none;
 	}
+	label{
+	    clear:both;
+	    font-size:0.8em;
+    }
+    .fotouser{
+    	width:88px;
+    }
+    .infouser{
+   		height: 88px;
+    }
+    .titulo{
+        clear:both;
+        font-size:1.2em;
+    }
+    .informacion{
+        clear:both;
+        font-size:0.8;
+    }
 }
+
 
 @media (min-width: 500px) and (max-width: 767px){
 	.imagenEncabezado {
@@ -35,6 +54,13 @@
 
 	.cajadetexto{
 		width: 140%;
+	}
+	.imagen{
+		width: 30%;
+		float: left;
+		/*margin: 65px 10px 10px 10px;*/
+		padding:0px;
+		.bordeimgenes()
 	}
 }
 @media (min-width: 768px){

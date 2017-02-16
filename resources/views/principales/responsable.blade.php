@@ -6,25 +6,26 @@
         <div class="col-xs-12 col-md-8 col-md-offset-2">
             <div class="col-xs-12 panel panel-default">
                 <!-- cabecera de la pagina -->
-                <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-12 col-md-offset-1 panel-heading" >
-                    <div class="col-xs-12 col-md-4 col-md-offset-1">
-                        <img src="img/user.jpg" class="imagen">
-                        <div class="col-xs-12 col-md-6 datosPrincipales">
+                <div class="col-xs-12  col-md-12  panel-heading" >
+                    <div class="col-xs-12  col-md-4 col-md-offset-1">
+                        <!--Foto de prefil-->
+                        <img src="../img/user.jpg " class="imagen ">
+                    </div>
+                    <img src="/img/editar.png" class="enlaceeditar">
+                    <div class="datosPrincipales col-xs-12 col-md-6 "> 
                             <label id="labelNombre">Nombre Apellido1 Apellido2</label><br>
                             <label id="labelCorreo">usuario@gmail.com</label>
                         </div>
-                        <img src="img/editar.png" class="enlaceeditar">
                     </div> 
                 </div>
-                 <div>                    
-                    <div>
-                        <input type="submit" value="Confirmar alumnos">
-                        <input type="submit" value="Confirmar ofertas">
-                    </div>
-                    <div>
-                        <input type="submit" value="Dar de alta empresa">
-                        <input type="submit" value="Listar empresas">  
-                    </div>
+                 <div class="divresponsable">                    
+                    
+                    <input class="col-xs-12  col-md-5 col-md-offset-1 botonesprincipalesresponsable" type="submit" value="Confirmar alumnos">
+                    <input class="col-xs-12  col-md-5 botonesprincipalesresponsable" type="submit" value="Confirmar ofertas">
+                
+                    <input class="col-xs-12  col-md-5 col-md-offset-1 botonesprincipalesresponsable" type="submit" value="Dar de alta empresa">
+                    <input class="col-xs-12  col-md-5 botonesprincipalesresponsable" type="submit" value="Listar empresas">  
+                    <br/>
                 </div>                  
             </div>
         </div>
