@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Auth;
 use Bolsa\User;
 use Bolsa\Alumno;
+use Bolsa\Ciclo;
+use Bolsa\Idioma;
 
 class PerfilController extends Controller
 {
@@ -44,6 +46,11 @@ class PerfilController extends Controller
 
             $usuario = User::findOrFail(Auth::User()->email);
 
+            //obtener un array con todos los ciclos mediante el modelo
+            $ciclos = Ciclo::all();
+            //obtener un array con todos los idiomas mediante el modelo
+            $idiomas = Idioma::all();
+
             if ($usuario->Tipo!=null) {
 
             $datosUsuario = array(
@@ -74,7 +81,7 @@ class PerfilController extends Controller
 
             }
 
-            return view('perfiles.editar.alumno', array('usuario'=>$datosUsuario));
+            return view('perfiles.editar.alumno', array('usuario'=>$datosUsuario, 'ciclos'=>$ciclos, 'idiomas'=>$idiomas));
 
         }
 
