@@ -153,16 +153,104 @@ class PerfilController extends Controller
             return view('perfiles.editar.empresa', array('usuario'=>$datosUsuario));
 
         }
+        protected function editResponsable(){
+
+            $usuario = User::findOrFail(Auth::User()->email);
+
+
+                $datosUsuario = array(
+                    'email' => Auth::User()->email,
+                    'nombre' => ''
+                    );
+
+
+            return view('perfiles.editar.responsable', array('usuario'=>$datosUsuario));
+
+        }
         protected function perfilEmpresa(){
 
 
             return view('perfiles.empresa');
         }
+
         protected function perfilResponsable(){
 
 
             return view('perfiles.responsable');
         }
 
+        public function responsablePrincipal(){
+
+            $usuario = User::findOrFail(Auth::User()->email);
+
+            if ($usuario->Tipo!=null) {
+            
+               $datosUsuario = array(
+                   'email' => Auth::User()->email,
+                   'nombre' => $usuario->Tipo->nombre,
+                   'foto' => $usuario->Tipo->foto
+                   );
+
+            }else{
+
+                $datosUsuario = array(
+                    'email' => Auth::User()->email,
+                    'nombre' => '',
+                    'foto' => ''
+
+                    );
+            }
+
+            return view('principales.responsable', array('usuario'=>$datosUsuario));
+        }
+
+        public function getResponsableEmpresas(){
+
+
+
+          return view('responsable.empresas');
+
+        }
+
+        public function getResponsableOfertas(){
+
+
+
+          return view('responsable.ofertas');
+
+        }
+
+        public function newEmpresa(){
+
+
+
+          return view('responsable.newEmpresa');
+
+        }
+
+        public function getResponsableAlumnos(){
+
+
+
+          return view('responsable.alumnos');
+
+        }
+
+        public function getAlumno(){
+
+
+
+          return view('responsable.alumno');
+
+        }
+
+        public function getEmpresa(){
+
+
+
+          return view('responsable.empresa');
+
+        }
+        
     }
 

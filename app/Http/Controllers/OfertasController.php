@@ -69,6 +69,7 @@ class OfertasController extends Controller
                );
            $ofertas=Oferta::where('cif',$usuario->Tipo->cif)->get();
 
+
         }else{
 
             $datosUsuario = array(
@@ -77,6 +78,7 @@ class OfertasController extends Controller
                 'web' => '',
                 'logo' => '',
                 );
+
             $ofertas=Oferta::where('cif','')->get();
         }
       
@@ -95,18 +97,21 @@ class OfertasController extends Controller
             return redirect("/alumno");
 
         }else{
+            if (Auth::User()->tipo == "empresa") {
+                return redirect("/empresa");
+       
+        }else{
+            return redirect("/responsable");
 
-            return redirect("/empresa");
-
-        }
+        } }
 
     }
 
 
     //Recoge el id y devuelve la vista con la oferta asociada a este
-    public function getOferta($id){
+    public function getOferta(Request $request){
 
-        return view('allOfertas.show', array('oferta'=>Oferta::findOrFail($id)));
+        return view('allOfertas.show', array('oferta'=>Oferta::findOrFail($request->id)));
 
     }
 
@@ -160,5 +165,6 @@ class OfertasController extends Controller
         $oferta.save();
         
     }
+
 
 }
