@@ -21,7 +21,7 @@
                 <div class="panel-body ofertas col-md-12 mrg-btn25">
                     <div class="row">
                         <div class="col-md-2 col-md-offset-10">
-                            <a href="" class="botonSalir">Añadir oferta</a>
+                            <a href="empresa/nuevaOferta" class="botonSalir">Añadir oferta</a>
                         </div>
                     </div>
                     <div class="oferta col-md-12">
