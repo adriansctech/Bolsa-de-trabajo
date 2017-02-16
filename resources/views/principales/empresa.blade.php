@@ -21,13 +21,19 @@
                 <div class="panel-body ofertas col-md-12 mrg-btn25">
                     <div class="row">
                         <div class="col-md-2 col-md-offset-10">
+<<<<<<< HEAD
                             <a href="empresa/nuevaOferta" class="botonSalir">Añadir oferta</a>
+=======
+                            <a href="/empresa/nuevaOferta" class="botonSalir">Añadir oferta</a>
+>>>>>>> e26edf70819b2660117eac06e0fef524de33da1a
                         </div>
                     </div>
-                    <div class="oferta col-md-12">
+                    <div class="ofertas col-md-12">
                         <h2 class="titulo" >Ofertas disponibles</h2>
                         <p class="informacion">descripcion</p>
                         @foreach( $ofertas as $oferta )
+                        <a href="/oferta/{{$oferta['id']}}">
+                         <div class="oferta">
                         <hr/>
                         <h2>Puesto:</h2>
                          <p>{{$oferta['puesto']}}</p>
@@ -40,7 +46,8 @@
 
                            <h2>Empresa:</h2>
                             <p>{{$oferta['cif']}}</p>
-
+                            </div>
+                            </a>
                         @endforeach
                     </div>  
                 </div>
