@@ -3,25 +3,36 @@
 @section('content')
 <div class="container contenido">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <!-- cabecera de la pagina -->
-                <div class="panel-heading"  >
+        <div class="col-xs-12 col-md-8 col-md-offset-2">
+            <div class="col-xs-12 panel panel-default">            
+                <div class="col-xs-12  col-md-12  panel-heading" >
+                	<div class="col-xs-12  col-md-4 col-md-offset-1">
+						<img src="../img/user.jpg " class="imagen ">
+                	</div>
+                	<img src="/img/editar.png" class="enlaceeditar">
+                	<div class="datosPrincipales"> 
+						<h1>Nombre Usuario Responsable</h1>
+						<br/>
+						<label>Telefono: 'telefono del responsable'</label>
+						<br/>
+						<label>Email : 'email del responsable'</label>
+						<br/>						
+					</div>
                 </div>
             </div>
         </div>
     </div>            
 
-	<div class="Principal">
+	<!--<div class="Principal">
 		<h1>Perfil en edición</h1>
-		<!--<form action="" method="">-->
+		<form action="" method="">
 			<div class="imagen">
-				<!--Foto de prefil-->
+				
 				<img src="../img/user.jpg">
 			</div>
 
 			<div class="datosPrincipales"> 
-				<!-- Datos del responsable -->
+				
 				<label>Nombre:</label>
 				<input type="text" name="nombre">
 				<br/>
@@ -36,7 +47,7 @@
 
 
 			<div class="cambioContraseña">
-				 <!--Div en el que permite cambiar la contraseña-->
+				 
 				<label>Cambio de contraseña</label>
 				<br/> 
 				<label>Contraseña actual:</label>
@@ -50,9 +61,9 @@
 				<br/><br/><br/>
 			</div> 
 			<input type="button" name="volver" value="Volver" class="col-md-2 col-md-offset-5 botonVolver">
-			<!--<input type="submit" name="guardar" value="Guardar">-->
+			<input type="submit" name="guardar" value="Guardar">
 
-		<!--</form>-->
-	</div>
+		</form>
+	</div>-->
 </div>
 @endsection
