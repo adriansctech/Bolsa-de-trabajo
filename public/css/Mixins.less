@@ -1,6 +1,5 @@
 /*En este archivo van las funciones de less*/
 .botonesPrincipales{
-	/*Botones de Login y Register*/
 	color:#0077B5;
 	background-color:#ffffff;
 	border:1px solid #0077B5;
@@ -12,7 +11,21 @@
 		background-color:#0077B5;
 	}
 }
+.botonespordefecto{
+	.bordebotones();
+	color:#ffffff;
+	background-color:#0077B5;
+	border:1px solid #ffffff;
+	&:hover{
+		color:#0077B5;
+		background-color:#ffffff;
+	}
+}
 .bordebotones{
 	box-shadow: 3px 3px 7px #2E2E2E;
 	border-radius: 10px;
+}
+.bordeimgenes{
+	box-shadow: 4px 4px 7px #086A87;
+	border-radius: 3px;
 }

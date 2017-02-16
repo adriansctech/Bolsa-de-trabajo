@@ -20,6 +20,8 @@
                 <!-- contenido de la pagina -->
                 <div  class="panel-body ofertas">
                    @foreach( $ofertas as $oferta )
+
+                   <a href="">
                     <div class="oferta">
                         
                         <h2>Puesto: {{$oferta['puesto']}}</h2>
@@ -27,6 +29,7 @@
                         <h3>Contrato: {{$oferta['contrato']}}</h3>
                         <h3>Empresa: {{$oferta['cif']}}</h3>
                     </div>
+                    </a>
                       @endforeach
                 </div>
             </div>

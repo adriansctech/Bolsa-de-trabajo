@@ -4,8 +4,17 @@
 body{
     font-family: Calibri, Arial;
     background-color: @colorFondo;
+    
 }
-
+.row{
+	margin-right: 0px !important; 
+}
+.panel {
+	margin-top: @pixel25;
+}
+.ajustes {
+	padding-top: @pixel25;
+}
 header{
    background-color: @backgroundColorHeaderFooter;
    padding-top:5px;
@@ -42,7 +51,7 @@ small{
 }
 
 .imagenEncabezado{
-	width:8%;
+	width:60px;;
 	border-radius: @pixel20;
 }
 
@@ -65,13 +74,18 @@ small{
 	.botonesPrincipales()
 
 }
+.botonDefecto{
+	.botonespordefecto();
+	padding:5px;	
+}
+
 
 
 
 .contenido{
-	background-color: @colorFondoContenido;
-	/*box-shadow: 3px 3px 7px #999;
-	border-radius: @pixel5;*/
+	background-color: @colorFondoContenido;	
+	margin-bottom: @pixel25;
+	margin-top: @pixel25;
 	
 }
 

@@ -6,14 +6,13 @@
         <div class="col-xs-12 col-md-10 col-md-offset-1">
             <div class="panel panel-default ">
                 <!-- cabecera de la pagina -->
-                <div class="panel-heading " >
-					
-					<div class="imagen">
+                <div class="panel-heading col-md-10 col-md-offset-1 " >
+					<div class="col-xs-10 col-sm-offset-1 col-sm-4 col-sm-offset-1 col-md-4 col-md-offset-1">
 						<!--Foto de prefil-->
-						<img src="../img/user.jpg">
+						<img src="../img/user.jpg " class="imagen ">
 					</div>
-
-					<div class="datosPrincipales"> 
+					<img src="/img/editar.png" class="enlaceeditar">
+					<div class="datosPrincipales col-xs-12 col-sm-6 col-md-6 "> 
 						<h1>Nombre de la empresa</h1>
 						<br/>
 						<label>CIF : 'cif de la empresa'</label>
@@ -30,7 +29,8 @@
 						<br/><br/><br/>
 					</div>
 				</div>
-				<div class="panel-body col-md-12 ">
+				<div class="panel-body col-xs-12 col-md-10 col-md-offset-1 ">
+
 					<div class="datosSecundarios">
 						<br/>
 						<!--Div donde vamos a poner la persona de contacto de la empresa-->
@@ -45,6 +45,7 @@
 						<br/>
 					</div>
 				</div>	
+				<input type="button" name="volver" value="Volver" class="col-md-2 col-md-offset-5 botonDefecto">
             </div>
         </div>
     </div>
