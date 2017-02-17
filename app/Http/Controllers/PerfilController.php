@@ -10,6 +10,7 @@ use Bolsa\Ciclo;
 use Bolsa\Idioma;
 use Bolsa\cicloAlumno;
 use Bolsa\idiomaAlumno;
+use Bolsa\Empresa;
 
 class PerfilController extends Controller
 {
