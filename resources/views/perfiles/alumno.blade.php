@@ -11,7 +11,7 @@
 						<!--Foto de prefil-->
 						<img src="../img/user.jpg " class="imagen ">
 					</div>
-					<img src="/img/editar.png" class="enlaceeditar">
+					 <a href="{{ url('/alumno/perfil/editar') }}"><img src="/img/editar.png" class="enlaceeditar"></a>
 					<div class="datosPrincipales col-xs-12 col-sm-5 col-md-6 "> 
 						<h1>{{ $usuario['nombre'] }} {{ $usuario['apellidos'] }}</h1><!--Aqui cargariamos el nombre y los apellidos del usuario Alumno-->
 						<br/>
@@ -58,7 +58,7 @@
 						@endif
 						<label>Currículum Vitae: {{ $usuario['cv'] }}</label>
 						<br/>
-						<input type="button" name="volver" value="Volver" class="col-md-2 col-md-offset-5 botonDefecto">
+						<a href="/" class="col-md-2 col-md-offset-5 botonDefecto">Volver</a>
 					</div>
 					
 				</div>

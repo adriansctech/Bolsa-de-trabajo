@@ -11,7 +11,8 @@
                         <!--Foto de prefil-->
                         <img src="../img/user.jpg " class="imagen ">
                     </div>
-                    <img src="/img/editar.png" class="enlaceeditar">
+                    <a href="{{ url('/responsable/perfil/editar') }}"><img src="img/editar.png" class="enlaceeditar"></a>
+                    <a href="{{ url('/responsable/perfil') }}"><img src="/img/ver.png" class="enlaceeditar"></a>
                     <div class="datosPrincipales col-xs-12 col-md-6 "> 
                             <label id="labelNombre">Nombre Apellido1 Apellido2</label><br>
                             <label id="labelCorreo">usuario@gmail.com</label>
@@ -20,11 +21,11 @@
                 </div>
                  <div class="divresponsable">                    
                     
-                    <input class="col-xs-12  col-md-5 col-md-offset-1 botonesprincipalesresponsable" type="submit" value="Confirmar alumnos">
-                    <input class="col-xs-12  col-md-5 botonesprincipalesresponsable" type="submit" value="Confirmar ofertas">
+                    <a class="col-xs-12  col-md-5 col-md-offset-1 botonesprincipalesresponsable" href="responsable/alumnos" >Confirmar alumnos</a>
+                    <a class="col-xs-12  col-md-5 botonesprincipalesresponsable" href="responsable/ofertas" >Confirmar ofertas</a>
                 
-                    <input class="col-xs-12  col-md-5 col-md-offset-1 botonesprincipalesresponsable" type="submit" value="Dar de alta empresa">
-                    <input class="col-xs-12  col-md-5 botonesprincipalesresponsable" type="submit" value="Listar empresas">  
+                    <a class="col-xs-12  col-md-5 col-md-offset-1 botonesprincipalesresponsable" href="responsable/empresas/new">Dar de alta empresa</a>
+                    <a class="col-xs-12  col-md-5 botonesprincipalesresponsable" href="responsable/empresas"> Listar empresas</a> 
                     <br/>
                 </div>                  
             </div>

@@ -9,7 +9,7 @@
                 	<div class="col-xs-12  col-md-4 col-md-offset-1">
 						<img src="../img/user.jpg " class="imagen ">
                 	</div>
-                	<img src="/img/editar.png" class="enlaceeditar">
+                	 <a href="{{ url('/respondable/perfil/editar') }}"><img src="/img/editar.png" class="enlaceeditar"></a>
                 	<div class="col-xs-12  col-md-6 datosPrincipales "> 
 						<h1>Nombre Usuario Responsable</h1>
 						<br/>

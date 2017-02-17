@@ -11,7 +11,7 @@
 						<!--Foto de prefil-->
 						<img src="../img/user.jpg " class="imagen ">
 					</div>
-					<img src="/img/editar.png" class="enlaceeditar">
+					 <a href="{{ url('/empresa/perfil/editar') }}"><img src="/img/editar.png" class="enlaceeditar"></a>
 					<div class="datosPrincipales col-xs-12 col-md-6 "> 
 						<h1>Nombre de la empresa</h1>
 						<br/>
@@ -46,7 +46,7 @@
 					<br/>
 				</div>
 			</div>	
-			<input type="button" name="volver" value="Volver" class="col-md-2 col-md-offset-5 botonDefecto">
+			<a href="/" class="col-md-2 col-md-offset-5 botonDefecto">Volver</a>
         
         </div>
     </div>
