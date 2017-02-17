@@ -35,9 +35,7 @@
 							<input type="checkbox" value="{{ $idioma['idioma'] }}" name="idiomas[]">{{ $idioma['idioma'] }}</input><br>
 
 						@endforeach
-						  <input type="checkbox" value="ingles" name="idiomas[]">Ingles</input><br>
-						  <input type="checkbox" value="frances" name="idiomas[]">Frances</input><br>
-						  <input type="checkbox" value="aleman" name="idiomas[]">Aleman</input>
+	
 
 						</div>
 						<br/>
