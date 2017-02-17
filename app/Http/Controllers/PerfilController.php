@@ -8,6 +8,7 @@ use Bolsa\User;
 use Bolsa\Alumno;
 use Bolsa\Ciclo;
 use Bolsa\Idioma;
+use BOlsa\AlumnosCiclos;
 
 class PerfilController extends Controller
 {
@@ -41,6 +42,45 @@ class PerfilController extends Controller
             $e->save();
         }
 
+        protected function saveEditAlumno(Request $request){
+
+          $alumno = Alumno::findOrFail(Auth::User()->email);
+          //DATOS DEL ALUMNO
+          //obtener los datos de los input
+          $alumno->nombre = $request->input('nombre');
+          $alumno->apellidos = $request->input('apellidos');
+          $alumno->domicilio = $request->input('domicilio');
+          $alumno->email = $request->input('email');
+          $alumno->tlf = $request->input('telefono');
+          $alumno->cvlinkedin = $request->input('enlaceCV');
+          $alumno->trabajofuera = $request->input('trabajoFuera');
+          //guardar
+          $alumno->save();
+          //DATOS DE LOS CICLOS
+      /*    $alumnociclo = AlumnosCiclos::findOfFail(Auth::User()->email);
+
+          if($alumnociclo == null){
+            //recorrer todos los ciclos de la lista
+
+            //crear nuevo registro
+            $alumnociclo = new AlumnosCiclos;
+            $alumnociclo->ciclo =
+            $alumnociclo->alumno = $request->input('email');
+            $alumnociclo->finicio =
+            $alumnociclo->ffin =
+            $alumnociclo->nota =
+            $alumnociclo->empresa =
+
+          }else{
+
+
+
+          }*/
+          
+          //redireccionar
+          return redirect("/alumno/perfil");
+
+        }
 
         protected function editAlumno(){
 
@@ -84,7 +124,6 @@ class PerfilController extends Controller
             return view('perfiles.editar.alumno', array('usuario'=>$datosUsuario, 'ciclos'=>$ciclos, 'idiomas'=>$idiomas));
 
         }
-
 
         protected function showAlumno(){
 

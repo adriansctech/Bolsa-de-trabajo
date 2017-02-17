@@ -5,7 +5,10 @@
 		<main>
 			<div class="Principal">
 				<h1>Perfil en edición</h1>
-				<form action="" method="" >
+				<form method="post" >
+				{{method_field('PUT')}}
+            <!--    {{-- TODO: Protección contra CSRF --}} -->
+                {{ csrf_field() }}
 					<div class="imagen">
 					<!--Foto de prefil-->
 						<img src="../img/user.jpg">
@@ -75,8 +78,10 @@
 						<!--Div en el que cargamos los ciclos que ha marcado el alumno como que los ha cursado-->
 						<br />
 						<h4 id="tituloCiclo"></h4>
+						<label>Fecha inicio:</label>
+						<input type="date" name="inicioCiclo" id="inicioCiclo">
 						<label>Fecha finalizacion:</label>
-						<input type="date" name="finCiclo" id="fechaCiclo">
+						<input type="date" name="finCiclo" id="finCiclo">
 						<br/>
 						<label>Nota ciclo:</label>
 						<input type="number" name="notaCiclo" id="notaCiclo">
@@ -123,7 +128,7 @@
 						@endif
 						<br/>
 						<label>Enlaza tu CV:</label>
-						<input type="trabajoFuera" name="enlaceCV" value="{{ $usuario['cv'] }}">
+						<input type="text" name="enlaceCV" value="{{ $usuario['cv'] }}">
 						<br/>
 					</div>
 
@@ -151,18 +156,20 @@
 		//guardar en la lista el ciclo
 		function guardarCiclo(){
 			var ciclo = document.getElementById("tituloCiclo").innerHTML;
-			var fecha = document.getElementById("fechaCiclo").value;
+			var fechaInicio = document.getElementById("inicioCiclo").value;
+			var fechaFin = document.getElementById("finCiclo").value;
 			var nota = document.getElementById("notaCiclo").value;
 			var empresa = document.getElementById("empresaCiclo").value;
 			//crear li para la lista
 			var ul = document.getElementById("listaCiclos");
 			var li = document.createElement("li");
 			//contenido del li
-			li.appendChild(document.createTextNode(ciclo+" - Fecha finalización: "+fecha+" - Nota: "+nota+" - Empresa: "+empresa));
+			li.appendChild(document.createTextNode(ciclo+" - Fecha Inicio: "+fechaInicio+" - Fecha Finalización: "+fechaFin+" - Nota: "+nota+" - Empresa: "+empresa));
 			ul.appendChild(li);
 			//vaciar los inputs y camibar el valor del select
 			document.getElementById("selectCiclos").selectedIndex = 0;
-			document.getElementById("fechaCiclo").value = "";
+			document.getElementById("inicioCiclo").value = "";
+			document.getElementById("finCiclo").value = "";
 			document.getElementById("notaCiclo").value = "";
 			document.getElementById("empresaCiclo").value = "";
 			//mostrar el div de los datos al cambiar el estado del select
