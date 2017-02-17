@@ -10,16 +10,20 @@
 						<img src="../img/user.jpg " class="imagen ">
                 	</div>
                 	<img src="/img/editar.png" class="enlaceeditar">
-                	<div class="datosPrincipales"> 
+                	<div class="col-xs-12  col-md-6 datosPrincipales "> 
 						<h1>Nombre Usuario Responsable</h1>
 						<br/>
 						<label>Telefono: 'telefono del responsable'</label>
 						<br/>
 						<label>Email : 'email del responsable'</label>
-						<br/>						
+						<br/>	
+
 					</div>
+
                 </div>
+
             </div>
+            <a href="/" class="col-md-2 col-md-offset-5 botonDefecto"> Volver </a>
         </div>
     </div>            
 
