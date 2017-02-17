@@ -44,7 +44,7 @@
     </script>-->
 </head>
 <body>
-    <header>
+    <header >
         <!--<div id="app">-->
         <div class="row">
             <div class="col-xs-2 col-xs-offset-1 col-md-2 col-md-offset-2">
@@ -85,7 +85,7 @@
                    <!-- </li>-->
                 @endif
             </div>
-            <hr class="col-xs-12 col-md-10 col-md-offset-1">
+            <hr class="col-xs-10 col-xs-offset-1 col-md-10 col-md-offset-1">
         </div>
         
     </header>
@@ -94,8 +94,8 @@
 
         @yield('content')
     </div>
-    <footer class="col-xs-12 col-md-12">
-        <hr class="col-xs-12 col-md-10 col-md-offset-1">
+    <footer class="col-xs-12 col-md-12 ">
+        <hr class=" col-md-10 col-md-offset-1">
         <div class="datosBatoi col-xs-12 col-md-3 col-md-offset-1">
             <small>CIP de FP Batoi, Carrer La Serreta, 5 (03802) Alcoi</small>
             <br/>

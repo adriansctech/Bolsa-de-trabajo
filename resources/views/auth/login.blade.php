@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="row">
-    <div class="col-xs-12 col-md-6 col-md-offset-3">        
+    <div class="col-xs-12 col-md-6 col-md-offset-3 contenido">        
         <h1>Login</h1>
         <div class="panel-body">
             <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">

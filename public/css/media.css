@@ -8,6 +8,8 @@
 		width: 50%;
 	};	
 }*/
+@import "variables.less";
+@import "Mixins.less";
 
 @media (min-width: 320px) and (max-width: 500px){
 	.imagenEncabezado {
