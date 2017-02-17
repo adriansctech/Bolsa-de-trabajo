@@ -22,17 +22,23 @@
 						<label>Ciclos :</label>
 						<!--Aqui se cargaran todos los ciclos de batoi-->
 						<div id="ciclosBatoy" class="col-xs-12 col-md-10 col-md-offset-1">
-							<input type="checkbox" name="ciclo[]" value="DAM">DAM <br>
-							<input type="checkbox" name="ciclo[]" value="DAW">DAW <br>
-							<input type="checkbox" name="ciclo[]" value="ASIX">ASIX <br>
+						@foreach ($ciclos as $ciclo)
+							<input type="checkbox" name="ciclo[]" value="{{ $ciclo['ciclos'] }}">{{ $ciclo['ciclos'] }} <br>
+						@endforeach
 						</div>
 						<br/>
 						<label>Idiomas requeridos</label><br/>
 						<!--Aqui se cargaran todos los idiomas con sus niveles -->
 						<div id="idiomas" class="col-xs-12 col-md-10 col-md-offset-1">
+						@foreach ($idiomas as $idioma)
+
+							<input type="checkbox" value="{{ $idioma['idioma'] }}" name="idiomas[]">{{ $idioma['idioma'] }}</input><br>
+
+						@endforeach
 						  <input type="checkbox" value="ingles" name="idiomas[]">Ingles</input><br>
 						  <input type="checkbox" value="frances" name="idiomas[]">Frances</input><br>
 						  <input type="checkbox" value="aleman" name="idiomas[]">Aleman</input>
+
 						</div>
 						<br/>
 						<label>Tipo de contrato</label>

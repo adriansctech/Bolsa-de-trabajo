@@ -8,7 +8,7 @@
                 <!-- cabecera de la pagina -->
                 <div class="panel-heading " >
                     <div class="infouser  ">
-                        <img src="img/user.jpg" class="fotouser">
+                        <img src="{{$usuario['logo']}}" class="fotouser">
                         <div class="datosuser">
                             <label class="labelnombre col-md-12 col-xs-12">{{ $usuario['nombre'] }}</label>
                             <label class="labelcorreo col-md-12 col-xs-12">{{ $usuario['email'] }}</label>
@@ -21,11 +21,9 @@
                 <div class="panel-body ofertas col-md-12 mrg-btn25">
                     <div class="row">
                         <div class="col-md-2 col-md-offset-10">
-<<<<<<< HEAD
+
                             <a href="empresa/nuevaOferta" class="botonSalir">Añadir oferta</a>
-=======
-                            <a href="/empresa/nuevaOferta" class="botonSalir">Añadir oferta</a>
->>>>>>> e26edf70819b2660117eac06e0fef524de33da1a
+
                         </div>
                     </div>
                     <div class="ofertas col-md-12">
