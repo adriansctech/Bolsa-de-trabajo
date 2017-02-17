@@ -27,28 +27,36 @@
 				<div class="panel-body col-xs-12 col-md-10 col-md-offset-1 ">
 					<!-- CICLOS -->
 					<div class="ciclosCursados">
+			
+				
+			
+			
 						<h2>Ciclos cursados:</h2>
 						<!--Div en el que cargamos los ciclos que ha marcado el alumno como que los ha cursado-->
-						<h3>Ciclo_x</h3>
-						<label>Fecha finalizacion: 00/00/00</label>
+						@foreach ($ciclos as $ciclo)
+						<h3>{{ $ciclo->Ciclo->ciclos}}</h3>
+						<label>Fecha finalización: {{ $ciclo->ffin}}</label>
 						<br/>
-						<label>Nota ciclo: 00</label>
+						<label>Nota: {{ $ciclo->nota}}</label>
 						<br/>
-						<label>Empresa de las FCT: empresa</label>
-						<br/>
+						<label>Empresa de las FCT: {{ $ciclo->Ciclo->ciclos}}</label>
 						<hr>
+						@endforeach
 					</div>
 					<!-- DATOS SECUNDARIOS -->
 					<div class="datosSecundarios">
+
 						<!--Div de los idiomas, opcion de trabajar fuera y CV-->
 						<span>Selecciona los idiomas con sus niveles</span><br/>
 						<label>Idiomas:</label>
+
+						@foreach ($idiomas as $idioma)
+						
 							<ul>
-								<li>idioma1 nivel</li>
-								<li>idioma2 nivel</li>
-								<li>idioma3 nivel</li>
+								<li>{{$idioma->Idioma->idioma}} {{$idioma->nivel}}</li>
 							</ul>
-						<br/>
+						@endforeach
+
 						@if($usuario['trabajoFuera'] == 0)
 							<label>Con opción a trabajar fuera: NO</label>
 							<br/>
