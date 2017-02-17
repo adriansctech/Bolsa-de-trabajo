@@ -86,9 +86,9 @@ class OfertasController extends Controller
 
 
     //Recoge el id y devuelve la vista con la oferta asociada a este
-    public function getOferta(Request $request){
+    public function getOferta($id){
 
-        return view('oferta', array('oferta'=>Oferta::findOrFail($request->id)));
+        return view('oferta', array('oferta'=>Oferta::findOrFail($id)));
 
     }
 
@@ -145,9 +145,9 @@ class OfertasController extends Controller
 
     }
 
-    public function validaOferta($id){
+    public function validaOferta(Request $request){
 
-        $oferta=Oferta::findOrFail($id);
+        $oferta=Oferta::findOrFail($request->id);
         $oferta->valido=1;
         $oferta.save();
         

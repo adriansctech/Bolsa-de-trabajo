@@ -43,6 +43,7 @@
 						<hr>
 						@endforeach
 					</div>
+					
 					<!-- DATOS SECUNDARIOS -->
 					<div class="datosSecundarios">
 

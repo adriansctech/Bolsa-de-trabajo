@@ -75,10 +75,10 @@ class PerfilController extends Controller
 
                 $usuario = User::findOrFail(Auth::User()->email);
 
-                //obtener un array con todos los ciclos mediante el modelo
+                //obtener un array con los ciclos del alumno
                 $ciclosAlumno = cicloAlumno::where('alumno',Auth::User()->email)->get();
                 
-                //obtener un array con todos los idiomas mediante el modelo
+                //obtener un array con los idiomas del alumno
                 $idiomasAlumno = idiomaAlumno::where('email',Auth::User()->email)->get();
 
 
@@ -195,18 +195,28 @@ class PerfilController extends Controller
           return view('responsable.alumnos',array('alumnos'=>$alumnos));
 
         }
+        public function validaAlumno(Request $request){
 
-        public function getAlumno(){
+          $alumno=Alumno::findOrFail($request->id);
+          $alumno->valido=1;
+          $alumno.save();
 
-
-
-          return view('responsable.alumno');
+          return view('responsable.alumnos');
 
         }
 
-        public function getEmpresa(){
+        public function getAlumno(Request $request){
+
+          return view('responsable.alumno',array('alumno',Alumno::findOrFail($request->id)));
 
 
+
+        }
+
+
+        public function getEmpresa(Request $request){
+
+          return view('responsable.alumno',array('alumno',Empresa::findOrFail($request->id)));
 
           return view('responsable.empresa');
 

@@ -22,7 +22,7 @@
                 <div  class="panel-body ofertas">
                    @foreach( $ofertas as $oferta )
 
-                   <a href="">
+                   <a href="/oferta/{{$oferta['id']}}">
                     <div class="oferta">
                         
                         <h2>Puesto: {{$oferta['puesto']}}</h2>
