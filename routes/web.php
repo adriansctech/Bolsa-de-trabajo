@@ -12,7 +12,7 @@
 */
 Auth::routes();
 Route::get('/', 'OfertasController@chooseHomeUser');
-Route::get('/oferta/$id', 'OfertasController@getOferta');
+Route::get('/oferta', 'OfertasController@getOferta');
 
 //Alumno
 Route::group(['middleware' => 'tipoUsuario:alumno'], function(){
@@ -29,9 +29,7 @@ Route::group(['middleware' => 'tipoUsuario:empresa'], function(){
     Route::post('/empresa', 'OfertasController@newOferta');
     Route::get('/empresa/perfil', 'PerfilController@perfilEmpresa');
     Route::get('/empresa/perfil/editar', 'PerfilController@editEmpresa');
-    Route::get('/empresa/nuevaOferta', function () {
-        return view('empresa.crearOferta');
-    });
+    Route::get('/empresa/nuevaOferta', 'OfertasController@crearOferta');
 
 });
 
@@ -46,8 +44,8 @@ Route::group(['middleware' => 'tipoUsuario:responsable'], function(){
     Route::get('/responsable/alumnos', 'PerfilController@getResponsableAlumnos');
     Route::post('/responsable/alumnos', 'PerfilController@validaAlumno');
 
-    Route::get('/responsable/ofertas', 'PerfilController@getResponsableOfertas');
-    Route::post('/responsable/ofertas', 'PerfilController@validaOferta');
+    Route::get('/responsable/ofertas', 'OfertasController@getOfertasResponsable');
+    Route::post('/responsable/ofertas', 'OfertasController@validaOferta');
 
     Route::get('/responsable/alumno', 'PerfilController@getAlumno');
     Route::post('/responsable/alumno', 'PerfilController@getEmpresa');

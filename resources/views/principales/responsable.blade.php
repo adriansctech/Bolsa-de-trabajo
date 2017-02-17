@@ -9,13 +9,13 @@
                 <div class="col-xs-12  col-md-12  panel-heading" >
                     <div class="col-xs-12  col-md-4 col-md-offset-1">
                         <!--Foto de prefil-->
-                        <img src="../img/user.jpg " class="imagen ">
+                        <img src="{{ $usuario['foto'] }}" class="imagen ">
                     </div>
                     <a href="{{ url('/responsable/perfil/editar') }}"><img src="img/editar.png" class="enlaceeditar"></a>
                     <a href="{{ url('/responsable/perfil') }}"><img src="/img/ver.png" class="enlaceeditar"></a>
                     <div class="datosPrincipales col-xs-12 col-md-6 "> 
-                            <label id="labelNombre">Nombre Apellido1 Apellido2</label><br>
-                            <label id="labelCorreo">usuario@gmail.com</label>
+                            <label id="labelNombre">{{ $usuario['nombre'] }}</label><br>
+                            <label id="labelCorreo">{{ $usuario['email'] }}</label>
                         </div>
                     </div> 
                 </div>

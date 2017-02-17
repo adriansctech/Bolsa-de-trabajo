@@ -8,7 +8,7 @@
                 <!-- cabecera de la pagina -->
                 <div class="panel-heading"  >
                     <div class="infouser">
-                        <img src="img/user.jpg" class="fotouser" >
+                        <img src="{{ $usuario['foto'] }}" class="fotouser" >
                         <div class="datosuser">
                             <label class="labelnombre">{{ $usuario['nombre'] }} {{ $usuario['apellidos'] }}</label>
                             <br>
