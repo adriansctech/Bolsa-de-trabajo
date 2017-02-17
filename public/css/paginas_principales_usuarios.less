@@ -28,20 +28,29 @@
     }
 }
 
+.añadiroferta{
+    text-align:center;
+    padding:5px;
+    margin-top:5px;
+    margin-bottom:5px;
+    .botonespordefecto()
+}
 .infouser{
     height: @pixel100;
     border-radius: @pixel10;
     box-shadow: 2px 2px 5px #999;  
 }
 
-.ofertas{   
+
+.listado,.ofertas{   
     height: @pixel400;
     margin-top: @pixel10;
     border-radius: @pixel10;
     box-shadow: 2px 2px 5px #999;  
+    overflow:scroll;
 }
 
-.oferta{
+.oferta,.alumno,.empresa{
     color: #4d4d4d ;
     border: 1px solid #cccccc;
     border-radius: @pixel10;
@@ -72,8 +81,7 @@
 .enlaceeditar{
     float: right;
     width: 5%;
-    margin-right: @pixel5;
-    margin-top: @pixel5;
+    margin:10px;
     &:hover{
         width: 7%;
         border:1px solid  #00a0dc;
@@ -96,12 +104,25 @@
 .wrapper{
     height: 600px;
 }
+.botonesprincipalesresponsable{
+    text-align:center;
+    padding-top:25px;
+    padding-bottom:25px;
+    margin-top:10px;
+    .botonespordefecto()
+}
+.divresponsable{
+    margin-top:250px;
+    margin-bottom:150px;
+    padding-bottom:50px;
+}
 
+/*
 
 @media (min-width:320px)and(max-width:480px){
    label{
     clear:both;
-    font-size:0.6em;
+    font-size:0.8em;
    }
    .fotouser{
     width:88px;
@@ -118,18 +139,4 @@
         font-size:0.8;
     }
   
-}
-@media (min-width:480px)and(max-width:640px){
-   label{
-    clear:both;
-    font-size:1.0em;
-   }
-  
-}
-@media (min-width:640px){
-   label{
-    clear:both;
-    font-size:1.2em;
-   }
-  
-}
+}*/

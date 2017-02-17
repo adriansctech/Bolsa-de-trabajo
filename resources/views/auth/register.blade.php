@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container ">
     <div class="row">
-    <div class="col-sm-12 col-md-6 col-md-offset-3">
+    <div class="col-sm-12 col-md-6 col-md-offset-3 contenido">
         <h1>Register</h1>
         <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
             {{ csrf_field() }}

@@ -9,4 +9,5 @@ class cicloOferta extends Model
 {
     protected $table = "ciclosofertas";
     protected $fillable = ['ciclo','ofertas'];
+    
 }
