@@ -18,7 +18,7 @@ class CreateOfertasTable extends Migration
             $table->string('puesto',65);
             $table->boolean('valido');
             $table->string('descripcion');
-            $table->string('cif',9);
+            $table->string('cif',9)->references('cif')->on('empresas');;
             $table->string('contrato',100);
             $table->timestamps();
 

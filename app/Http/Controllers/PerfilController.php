@@ -170,7 +170,6 @@ class PerfilController extends Controller
 
                $usuario = User::findOrFail(Auth::User()->email);
 
-
              $datosUsuario = array(
                  'email' => Auth::User()->email,
                  'cif' => isset($usuario->Tipo->cif)?$usuario->Tipo->cif:'',
@@ -195,29 +194,17 @@ class PerfilController extends Controller
           protected function saveEditEmpresa(Request $request){
 
             $empresa = Empresa::findOrFail(Auth::User()->email);
-            //DATOS DEL ALUMNO
-            //obtener los datos de los input
-            $empresa->fill($request->all());
-            /*
 
-            $empresa->email = $request->input('nombre');
-            $empresa->cif = $request->input('apellidos');
-            $empresa->nombre = $request->input('domicilio');
-            $empresa->actividad = $request->input('email');
-            $empresa->domicilio = $request->input('telefono');
-            $empresa->poblacion = $request->input('enlaceCV');
-            $empresa->tlf = $request->input('trabajoFuera');
-            $empresa->web = $request->input('trabajoFuera');
-            $empresa->nombreContacto = $request->input('trabajoFuera');
-            $empresa->cargoContacto = $request->input('trabajoFuera');
-            $empresa->tlfContacto = $request->input('trabajoFuera');
-            $empresa->emailContacto = $request->input('trabajoFuera');
-            $empresa->logo = $request->input('trabajoFuera');
-            $empresa->sector = $request->input('trabajoFuera');
-            //guardar
-            */
+            foreach ($empresa->Ofertas as $oferta) {
+
+              $oferta->cif=$empresa->cif;
+              $oferta->save();
+            }
+
+            $empresa->fill($request->all());
             $empresa->save();
-         
+
+            
             return redirect("/empresa/perfil");
 
           }

@@ -9,6 +9,7 @@
                 <div class="panel-heading col-md-10 col-md-offset-1 " >
 	                <h1>Perfil en edición</h1>
 					<form action="{{ url('/empresa/perfil') }}" method="POST">
+					{{ csrf_field() }}
 					<div class="col-xs-10 col-sm-offset-1 col-sm-4 col-sm-offset-1 col-md-4 col-md-offset-1">
 						<!--Foto de prefil-->
 						<img src="{{$usuario['logo']}}" class="imagen ">
@@ -32,7 +33,7 @@
 						<input disabled type="email" name="email" id="email" value="{{ $usuario['email'] }}">
 						<br/>
 						<label for="web">Web</label>
-						<input type="url" name="web" id="web" value="{{ $usuario['web'] }}">
+						<input name="web" id="web" value="{{ $usuario['web'] }}">
 						<br/>
 						<label for="sector">Sector</label>
 						<input type="text" name="sector" id="sector" value="{{ $usuario['sector'] }}">

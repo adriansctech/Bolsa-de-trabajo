@@ -32,7 +32,7 @@ Route::group(['middleware' => 'tipoUsuario:empresa'], function(){
     Route::post('/empresa', 'OfertasController@newOferta');
 
     Route::get('/empresa/perfil', 'PerfilController@perfilEmpresa');
-    Route::post('/empresa/perfil', 'PerfilController@editPerfilEmpresa');
+    Route::post('/empresa/perfil', 'PerfilController@saveEditEmpresa');
 
     Route::get('/empresa/perfil/editar', 'PerfilController@editEmpresa');
     Route::get('/empresa/nuevaOferta', 'OfertasController@crearOferta');
