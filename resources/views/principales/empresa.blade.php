@@ -30,7 +30,7 @@
                     
                     <h1>Ofertas</h1>
                     @foreach( $ofertas as $oferta )
-                    <a href="/oferta/{{$oferta['id']}}">
+                    <a href="/empresa/ofertaempresa/{{$oferta['id']}}">
                         <div class="oferta">
                             
                             <h2>Puesto: {{$oferta['puesto']}}</h2>

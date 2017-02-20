@@ -31,6 +31,7 @@ Route::group(['middleware' => 'tipoUsuario:empresa'], function(){
     Route::get('/empresa/perfil', 'PerfilController@perfilEmpresa');
     Route::get('/empresa/perfil/editar', 'PerfilController@editEmpresa');
     Route::get('/empresa/nuevaOferta', 'OfertasController@crearOferta');
+    
 
 });
 
