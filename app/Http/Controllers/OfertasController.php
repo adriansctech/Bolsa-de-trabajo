@@ -172,6 +172,18 @@ class OfertasController extends Controller
 
     }
 
+    public function ofertaEmpresa($id){
+
+      return view('empresa.ofertaEmpresa', array('oferta'=>Oferta::findOrFail($id)));
+
+    }
+
+
+    public function editarOfertaEmpresa($id){
+
+      return view('empresa.editarOfertaEmpresa', array('oferta'=>Oferta::findOrFail($id)));
+
+    }
 
 
 }

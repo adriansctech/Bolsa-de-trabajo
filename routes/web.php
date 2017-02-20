@@ -21,14 +21,19 @@ Route::group(['middleware' => 'tipoUsuario:alumno'], function(){
     //Route::post('/alumno/perfil', 'PerfilController@saveAlumno');
     Route::get('/alumno/perfil', 'PerfilController@perfilAlumno');
     Route::get('/alumno/perfil/editar', 'PerfilController@editAlumno');
-    Route::put('/alumno/perfil/editar', 'PerfilController@saveEditAlumno');
+    Route::post('/alumno/perfil', 'PerfilController@saveEditAlumno');
 });
 
 //Empresa
 Route::group(['middleware' => 'tipoUsuario:empresa'], function(){
     Route::get('/empresa', 'OfertasController@getOfertasEmpresa');
+    Route::get('/empresa/ofertaEmpresa/{id}', 'OfertasController@ofertaEmpresa');
+    Route::get('/empresa/ofertaEditar/{id}', 'OfertasController@editarOfertaEmpresa');
     Route::post('/empresa', 'OfertasController@newOferta');
+
     Route::get('/empresa/perfil', 'PerfilController@perfilEmpresa');
+    Route::post('/empresa/perfil', 'PerfilController@editPerfilEmpresa');
+
     Route::get('/empresa/perfil/editar', 'PerfilController@editEmpresa');
     Route::get('/empresa/nuevaOferta', 'OfertasController@crearOferta');
     

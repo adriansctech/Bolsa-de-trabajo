@@ -156,7 +156,7 @@ class PerfilController extends Controller
       'cargoContacto' => isset($usuario->Tipo->cargoContacto)?$usuario->Tipo->cargoContacto:'',
       'tlfContacto' => isset($usuario->Tipo->tlfContacto)?$usuario->Tipo->tlfContacto:'',
       'emailContacto' => isset($usuario->Tipo->emailContacto)?$usuario->Tipo->emailContacto:'',
-      'logo' => isset($usuario->Tipo->logo)?$usuario->Tipo->logo:'',
+      'logo' => isset($usuario->Tipo->logo)?$usuario->Tipo->logo:'/img/user.jpg',
       'sector' => isset($usuario->Tipo->sector)?$usuario->Tipo->sector:'',
       );
 
@@ -168,22 +168,59 @@ class PerfilController extends Controller
 
             $usuario = User::findOrFail(Auth::User()->email);
 
-                $datosUsuario = array(
-                    'email' => Auth::User()->email,
-                    'nombre' => '',
-                    'apellidos' => '',
-                    'domicilio' => '',
-                    'telefono' => '',
-                    'poblacion' => '',
-                    'cv' => '',
-                    'trabajoFuera' => '',
-                    'pass' => '',
-                    );
+               $usuario = User::findOrFail(Auth::User()->email);
 
+
+             $datosUsuario = array(
+                 'email' => Auth::User()->email,
+                 'cif' => isset($usuario->Tipo->cif)?$usuario->Tipo->cif:'',
+                 'nombre' => isset($usuario->Tipo->nombre)?$usuario->Tipo->nombre:'',
+                 'actividad' => isset($usuario->Tipo->actividad)?$usuario->Tipo->actividad:'',
+                 'domicilio' => isset($usuario->Tipo->domicilio)?$usuario->Tipo->domicilio:'',
+                 'poblacion' => isset($usuario->Tipo->poblacion)?$usuario->Tipo->poblacion:'',
+                 'tlf' => isset($usuario->Tipo->tlf)?$usuario->Tipo->tlf:'',
+                 'web' => isset($usuario->Tipo->web)?$usuario->Tipo->web:'',
+                 'nombreContacto' => isset($usuario->Tipo->nombreContacto)?$usuario->Tipo->nombreContacto:'',
+                 'cargoContacto' => isset($usuario->Tipo->cargoContacto)?$usuario->Tipo->cargoContacto:'',
+                 'tlfContacto' => isset($usuario->Tipo->tlfContacto)?$usuario->Tipo->tlfContacto:'',
+                 'emailContacto' => isset($usuario->Tipo->emailContacto)?$usuario->Tipo->emailContacto:'',
+                 'logo' => isset($usuario->Tipo->logo)?$usuario->Tipo->logo:'/img/user.jpg',
+                 'sector' => isset($usuario->Tipo->sector)?$usuario->Tipo->sector:'',
+                 );
 
             return view('perfiles.editar.empresa', array('usuario'=>$datosUsuario));
 
         }
+
+          protected function saveEditEmpresa(Request $request){
+
+            $empresa = Empresa::findOrFail(Auth::User()->email);
+            //DATOS DEL ALUMNO
+            //obtener los datos de los input
+            $empresa->fill($request->all());
+            /*
+
+            $empresa->email = $request->input('nombre');
+            $empresa->cif = $request->input('apellidos');
+            $empresa->nombre = $request->input('domicilio');
+            $empresa->actividad = $request->input('email');
+            $empresa->domicilio = $request->input('telefono');
+            $empresa->poblacion = $request->input('enlaceCV');
+            $empresa->tlf = $request->input('trabajoFuera');
+            $empresa->web = $request->input('trabajoFuera');
+            $empresa->nombreContacto = $request->input('trabajoFuera');
+            $empresa->cargoContacto = $request->input('trabajoFuera');
+            $empresa->tlfContacto = $request->input('trabajoFuera');
+            $empresa->emailContacto = $request->input('trabajoFuera');
+            $empresa->logo = $request->input('trabajoFuera');
+            $empresa->sector = $request->input('trabajoFuera');
+            //guardar
+            */
+            $empresa->save();
+         
+            return redirect("/empresa/perfil");
+
+          }
 
         protected function editResponsable(){
 
@@ -193,7 +230,7 @@ class PerfilController extends Controller
                    'email' => Auth::User()->email,
                    'nombre' => isset($usuario->Tipo->nombre)?$usuario->Tipo->nombre:'',
                    'tlf' => isset($usuario->Tipo->tlf)?$usuario->Tipo->tlf:'',
-                   'foto' => isset($usuario->Tipo->foto)?$usuario->Tipo->foto:'../img/user.jpg'
+                   'foto' => isset($usuario->Tipo->foto)?$usuario->Tipo->foto:'/img/user.jpg'
                    );
 
             return view('perfiles.editar.responsable', array('usuario'=>$datosUsuario));
@@ -209,7 +246,7 @@ class PerfilController extends Controller
               'email' => Auth::User()->email,
               'nombre' => isset($usuario->Tipo->nombre)?$usuario->Tipo->nombre:'',
               'tlf' => isset($usuario->Tipo->tlf)?$usuario->Tipo->tlf:'',
-           
+              'foto' => isset($usuario->Tipo->foto)?$usuario->Tipo->foto:'/img/user.jpg',
               );
 
             return view('perfiles.responsable', array('usuario'=>$datosUsuario));
@@ -224,7 +261,7 @@ class PerfilController extends Controller
                    'email' => Auth::User()->email,
                    'nombre' => isset($usuario->Tipo->nombre)?$usuario->Tipo->nombre:'',
                    'tlf' => isset($usuario->Tipo->tlf)?$usuario->Tipo->tlf:'',
-                   'foto' => isset($usuario->Tipo->foto)?$usuario->Tipo->foto:'../img/user.jpg'
+                   'foto' => isset($usuario->Tipo->foto)?$usuario->Tipo->foto:'/img/user.jpg'
                    );
 
 
@@ -274,12 +311,12 @@ class PerfilController extends Controller
 
         public function getRAlumno($id){
           $usuario = Alumno::findOrFail($id);
-
+          $usuario->email=htmlentities($usuario->email);
           return view('responsable.alumno',array('usuario',$usuario));
         }
 
 
-        public function getEmpresa(Request $request){
+        public function getREmpresa(Request $request){
 
      
 
