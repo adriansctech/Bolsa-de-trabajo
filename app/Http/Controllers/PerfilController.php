@@ -111,7 +111,7 @@ class PerfilController extends Controller
 
         }
 
-        protected function showAlumno(){
+        protected function perfilAlumno(){
 
                 $usuario = User::findOrFail(Auth::User()->email);
 
@@ -137,6 +137,31 @@ class PerfilController extends Controller
 
                 return view('perfiles.alumno', array('usuario'=>$datosUsuario, 'ciclos'=>$ciclosAlumno, 'idiomas'=>$idiomasAlumno));
         }
+
+       protected function perfilEmpresa(){
+
+    $usuario = User::findOrFail(Auth::User()->email);
+
+
+  $datosUsuario = array(
+      'email' => Auth::User()->email,
+      'cif' => isset($usuario->Tipo->cif)?$usuario->Tipo->cif:'',
+      'nombre' => isset($usuario->Tipo->nombre)?$usuario->Tipo->nombre:'',
+      'actividad' => isset($usuario->Tipo->actividad)?$usuario->Tipo->actividad:'',
+      'domicilio' => isset($usuario->Tipo->domicilio)?$usuario->Tipo->domicilio:'',
+      'poblacion' => isset($usuario->Tipo->poblacion)?$usuario->Tipo->poblacion:'',
+      'tlf' => isset($usuario->Tipo->tlf)?$usuario->Tipo->tlf:'',
+      'web' => isset($usuario->Tipo->web)?$usuario->Tipo->web:'',
+      'nombreContacto' => isset($usuario->Tipo->nombreContacto)?$usuario->Tipo->nombreContacto:'',
+      'cargoContacto' => isset($usuario->Tipo->cargoContacto)?$usuario->Tipo->cargoContacto:'',
+      'tlfContacto' => isset($usuario->Tipo->tlfContacto)?$usuario->Tipo->tlfContacto:'',
+      'emailContacto' => isset($usuario->Tipo->emailContacto)?$usuario->Tipo->emailContacto:'',
+      'logo' => isset($usuario->Tipo->logo)?$usuario->Tipo->logo:'',
+      'sector' => isset($usuario->Tipo->sector)?$usuario->Tipo->sector:'',
+      );
+
+        return view('perfiles.empresa', array('usuario'=>$datosUsuario));
+}
 
         //MODIFICAR PARA LOS DATOS DE LA EMPRESA
         protected function editEmpresa(){
@@ -175,12 +200,7 @@ class PerfilController extends Controller
 
         }
 
-        protected function perfilEmpresa(){
-
-
-            return view('perfiles.empresa');
-        }
-
+    
 
         protected function perfilResponsable(){
 

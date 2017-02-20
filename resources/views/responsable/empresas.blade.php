@@ -12,17 +12,15 @@
 			</div>
 			<div class="panel-body col-xs-12 col-md-10 col-md-offset-1 ">
 				<div class="listado">
-				<a href="">
+
+				 @foreach( $empresas as $empresa )
+				
 					<div class="empresa">
-						<h2>Nombre de la empresa</h2>
+						<h2>{{$empresa->nombre}}</h2>
+
 					</div>
-				</a>	
-					<div class="empresa">
-						<h2>Nombre de la empresa</h2>
-					</div>
-					<div class="empresa">
-						<h2>Nombre de la empresa</h2>
-					</div>
+				
+					@endforeach	
 				</div>
 				<br/>
 				<a href="/" class="col-md-2 col-md-offset-5 botonDefecto"> Volver </a>

@@ -15,15 +15,15 @@ class CreateAlumnosTable extends Migration
     {
         Schema::create('alumnos', function (Blueprint $table) {
             $table->string('email',125)->primary()->references('email')->on('users');
-            $table->string('nombre',45);
-            $table->string('apellidos',150);
-            $table->string('domicilio',100);
-            $table->integer('tlf');
-            $table->boolean('trabajofuera');
-            $table->string('cvlinkedin',100);
-            $table->string('foto',255);
-            $table->boolean('valido');
-            $table->boolean('informacionOfertas');
+            $table->string('nombre',45)->nullable();
+            $table->string('apellidos',150)->nullable();
+            $table->string('domicilio',100)->nullable();
+            $table->integer('tlf')->nullable();
+            $table->boolean('trabajofuera')->nullable();
+            $table->string('cvlinkedin',100)->nullable();
+            $table->string('foto',255)->nullable();
+            $table->boolean('valido')->default(false);
+            $table->boolean('informacionOfertas')->nullable();
             $table->timestamps();
         });
     }

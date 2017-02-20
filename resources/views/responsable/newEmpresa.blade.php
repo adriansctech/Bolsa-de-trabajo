@@ -44,14 +44,12 @@
 							 <!--Div en el que permite cambiar la contraseña-->
 							<label>Cambio de contraseña</label>
 							<br/> 
-							<label for="actualpass">Contraseña actual:</label>
+							<label for="actualpass">Contraseña:</label>
 							<input type="password" name="contraseñaActual" id="actualpass">
 							<br/>
-							<label for="newpass">Nueva Contraseña:</label>
+							<label for="newpass">Repite contraseña:</label>
 							<input type="password" name="nuevaContraseña" id="newpass">
 							<br/>
-							<label for="repeatpass">Repite la contraseña:</label>
-							<input type="password" name="repeticionContraseña" id="repeatpass">
 							
 						</div> 
 

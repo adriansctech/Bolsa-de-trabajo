@@ -19,7 +19,7 @@ Route::group(['middleware' => 'tipoUsuario:alumno'], function(){
 
     Route::get('/alumno', 'OfertasController@getOfertasAlumno');
     //Route::post('/alumno/perfil', 'PerfilController@saveAlumno');
-    Route::get('/alumno/perfil', 'PerfilController@showAlumno');
+    Route::get('/alumno/perfil', 'PerfilController@perfilAlumno');
     Route::get('/alumno/perfil/editar', 'PerfilController@editAlumno');
     Route::put('/alumno/perfil/editar', 'PerfilController@saveEditAlumno');
 });
@@ -53,5 +53,4 @@ Route::group(['middleware' => 'tipoUsuario:responsable'], function(){
     Route::get('/responsable/alumno/{id}', 'PerfilController@getRAlumno');
     Route::get('/responsable/oferta/{id}', 'PerfilController@getROferta');
 
-    //Route::get('/', 'OfertasController@getOfertasResponsable');
 });

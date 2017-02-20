@@ -28,7 +28,7 @@
                         <h2>Puesto: {{$oferta['puesto']}}</h2>
                         <h3>Descripción: {{$oferta['descripcion']}}</h3>
                         <h3>Contrato: {{$oferta['contrato']}}</h3>
-                        <h3>Empresa: {{$oferta['cif']}}</h3>
+                        <h3>Empresa: {{$oferta->Empresa->nombre}}</h3>
                     </div>
                     </a>
                       @endforeach

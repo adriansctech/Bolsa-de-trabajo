@@ -3,6 +3,9 @@
 namespace Bolsa\Http\Controllers\Auth;
 
 use Bolsa\User;
+use Bolsa\Alumno;
+use Bolsa\Empresa;
+use Bolsa\Responsable;
 use Validator;
 use Bolsa\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -63,14 +66,23 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-       
-            return User::create([
+       $user=User::create([
                
                 'email' => $data['email'],
                 'password' => bcrypt($data['password']),
                 'tipo' =>$data['tipo'],
                
             ]);
+
+            if ($data['tipo']=='alumno') {
+                Alumno::create(
+                    ['email'=>$data['email']]);
+            }else{
+                Empresa::create(
+                    ['email'=>$data['email']]);
+            }
+
+            return $user;
         
         
     }
