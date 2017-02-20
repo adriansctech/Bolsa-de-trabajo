@@ -155,7 +155,7 @@ class OfertasController extends Controller
 
 
     public function getOfertasResponsable(){
-      $ofertas=Oferta::where('valido',0);
+      $ofertas=Oferta::where('valido',0)->get();
 
       return view('responsable.ofertas',array('ofertas'=>$ofertas));
     }
