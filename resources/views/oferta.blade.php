@@ -17,12 +17,11 @@
 					<div id="ciclosBatoy ">
 						<!--Aqui se cargaran los ciclos de la BD de esta oferta-->
 						
-
+						<ul>
 						@foreach($oferta->cicloOferta as $ciclo)
-						
-
-						<label>{{$ciclo->ciclos}}</label><br/>
+						<li>{{$ciclo->ciclos}}</li>
 						@endforeach
+						</ul>
 					</div>
 
 					<br/>
