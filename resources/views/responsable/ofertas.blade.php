@@ -21,12 +21,14 @@
 				<div class="listado">
 
 					@foreach( $ofertas as $oferta )
-					<div class="oferta">
-					<p>Puesto: {{$oferta->puesto}}</p>
-					<p>Contrato: {{$oferta->contrato}}</p>
-					<p>Descripción: {{$oferta->descripcion}}</p>
-					<p>Empresa: {{$oferta->cif}}</p>
-					</div>
+					<a href="/responsable/oferta/{{$oferta['id']}}">
+						<div class="oferta">
+							<p>Puesto: {{$oferta->puesto}}</p>
+							<p>Contrato: {{$oferta->contrato}}</p>
+							<p>Descripción: {{$oferta->descripcion}}</p>
+							<p>Empresa: {{$oferta->cif}}</p>
+						</div>
+					</a>
 						@endforeach	
 					
 

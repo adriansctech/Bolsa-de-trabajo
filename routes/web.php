@@ -51,6 +51,6 @@ Route::group(['middleware' => 'tipoUsuario:responsable'], function(){
     Route::post('/responsable/ofertas', 'OfertasController@validaOferta');
 
     Route::get('/responsable/alumno/{id}', 'PerfilController@getRAlumno');
-    Route::get('/responsable/oferta/{id}', 'PerfilController@getROferta');
+    Route::get('/responsable/oferta/{id}', 'OfertasController@getROferta');
 
 });

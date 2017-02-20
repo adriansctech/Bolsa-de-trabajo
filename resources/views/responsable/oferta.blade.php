@@ -16,10 +16,11 @@
 
 					<div id="ciclosBatoy ">
 						<!--Aqui se cargaran los ciclos de la BD de esta oferta-->
-						<ul>
 						
-							<li>ciclo</li>
-							
+						<ul>
+						@foreach($oferta->cicloOferta as $ciclo)
+						<li>{{$ciclo->ciclos}}</li>
+						@endforeach
 						</ul>
 					</div>
 
@@ -27,9 +28,10 @@
 					<label>Idiomas requeridos</label><br/>
 						<!--Aqui se cargaran todos los idiomas con sus niveles, que esten guardados en la BD de la oferta -->
 						<ul>
-							<li>idoma 1 nivel</li>
-							<li>idoma 2 nivel</li>
-							<li>idoma 3 nivel</li>
+						@foreach($oferta->idiomaOferta as $idioma)
+							<li>{{$idioma->idioma}}</li>
+							
+						@endforeach	
 						</ul>
 					<br/>
 					<label>Tipo de contrato: {{$oferta['contrato']}}</label><br/><br/>
@@ -42,13 +44,13 @@
 
 					<!--Estos datos se cargaran de la BD de Empresa-->
 					<h2>Persona de contacto</h2>
-					<label>Nombre : </label>
+					<label>Nombre : {{$oferta->Empresa->nombreContacto}} </label>
 					<br/>
-					<label>Cargo :</label>
+					<label>Cargo : {{$oferta->Empresa->cargoContacto}}</label>
 					<br/>
-					<label>Telefono: </label>
+					<label>Telefono: {{$oferta->Empresa->tlfContacto}}</label>
 					<br/>
-					<label>Email: </label>
+					<label>Email: {{$oferta->Empresa->emailContacto}} </label>
 					<br/>
 					
 					<a href="/" class="col-md-2 col-md-offset-5 botonDefecto"> Confirmar </a>
