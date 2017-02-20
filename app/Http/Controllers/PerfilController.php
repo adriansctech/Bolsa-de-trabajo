@@ -203,9 +203,18 @@ class PerfilController extends Controller
     
 
         protected function perfilResponsable(){
+          $usuario = User::findOrFail(Auth::User()->email);
+          $datosUsuario = array(
+            
+              'email' => Auth::User()->email,
+              'nombre' => isset($usuario->Tipo->nombre)?$usuario->Tipo->nombre:'',
+              'tlf' => isset($usuario->Tipo->tlf)?$usuario->Tipo->tlf:'',
+           
+              );
 
+           
 
-            return view('perfiles.responsable');
+            return view('perfiles.responsable', array('usuario'=>$datosUsuario));
         }
 
 
