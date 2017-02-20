@@ -6,7 +6,7 @@
         <div class="col-xs-12 col-md-8 col-md-offset-2">
             <div class="col-xs-12 panel panel-default">
                 <!-- cabecera de la pagina -->
-                <form action="" method="">
+                <form action="" method="POST">
 	                <div class="col-xs-12  col-md-12  panel-heading" >
 						<h1>Alta de empresa</h1>
 					

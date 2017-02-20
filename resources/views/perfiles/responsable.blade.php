@@ -9,13 +9,13 @@
                 	<div class="col-xs-12  col-md-4 col-md-offset-1">
 						<img src="/img/user.jpg " class="imagen ">
                 	</div>
-                	 <a href="{{ url('/respondable/perfil/editar') }}"><img src="/img/editar.png" class="enlaceeditar"></a>
+                	 <a href="{{ url('/responsable/perfil/editar') }}"><img src="/img/editar.png" class="enlaceeditar"></a>
                 	<div class="col-xs-12  col-md-6 datosPrincipales "> 
-						<h1>Nombre Usuario Responsable</h1>
+						<h1>{{$usuario['nombre']}}</h1>
 						<br/>
-						<label>Telefono: 'telefono del responsable'</label>
+						<label>Telefono: {{$usuario['tlf']}}</label>
 						<br/>
-						<label>Email : 'email del responsable'</label>
+						<label>Email : {{$usuario['email']}}</label>
 						<br/>	
 
 					</div>
