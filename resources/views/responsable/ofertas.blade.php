@@ -19,8 +19,13 @@
 			@else
 			<!--Estas 2 clases estan en paginas_principales_usuarios.less-->
 				<div class="listado">
-					<div class="oferta">
-					</div>
+				 @foreach( $ofertas as $oferta )
+				 	<a href="/responsable/oferta/{{$oferta['id']}}">
+						<div class="oferta">
+							<h2>Puesto: {{$oferta['puesto']}}</h2>
+						</div>
+					</a>	
+				 @endforeach	
 				</div>
 			@endif
 			<br/>

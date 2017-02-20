@@ -19,11 +19,13 @@
 			@else
 				<!--Estas 2 clases estan en paginas_principales_usuarios.less-->
 				 @foreach( $alumnos as $alumno )
+				 <a href="/responsable/alumno/{{$alumno['email']}}">
 					<div class="listado">
 						<div class="alumno">
 						<h2>Nombre: {{ $alumno['nombre'] }} {{ $alumno['apellidos'] }}</h2>
 						</div>
 					</div>
+				</a>
 				 @endforeach	
 			@endif
 			<br/>

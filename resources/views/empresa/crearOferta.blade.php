@@ -19,9 +19,10 @@
 						<label for="job">Puesto de trabajo :</label>
 						<input type="text" name="puesto" id="job">
 						<br/>
-						<label>Ciclos :</label>
+						<label>Ciclos :</label><br/>
 						<!--Aqui se cargaran todos los ciclos de batoi-->
 						<div id="ciclosBatoy" class="col-xs-12 col-md-10 col-md-offset-1">
+
 						@foreach ($ciclos as $ciclo)
 							<input type="checkbox" name="ciclo[]" value="{{ $ciclo['ciclos'] }}">{{ $ciclo['ciclos'] }} <br>
 						@endforeach
@@ -51,7 +52,7 @@
 						<br/>
 					<input type="submit" name="guardar" value="Guardar" class="botonDefecto">
 				</form>
-				
+				<a href="/" class="botonDefecto">Cancelar</a>
 			</div>
 			
 		</div>

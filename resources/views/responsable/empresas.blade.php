@@ -12,9 +12,11 @@
 			</div>
 			<div class="panel-body col-xs-12 col-md-10 col-md-offset-1 ">
 				<div class="listado">
+				<a href="">
 					<div class="empresa">
 						<h2>Nombre de la empresa</h2>
 					</div>
+				</a>	
 					<div class="empresa">
 						<h2>Nombre de la empresa</h2>
 					</div>
@@ -22,6 +24,8 @@
 						<h2>Nombre de la empresa</h2>
 					</div>
 				</div>
+				<br/>
+				<a href="/" class="col-md-2 col-md-offset-5 botonDefecto"> Volver </a>
 			</div>
 		</div>
 	</div>
