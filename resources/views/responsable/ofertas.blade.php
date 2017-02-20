@@ -19,10 +19,18 @@
 			@else
 			<!--Estas 2 clases estan en paginas_principales_usuarios.less-->
 				<div class="listado">
+					@foreach( $ofertas as $oferta )
 					<div class="oferta">
+					<p>Puesto: {{$oferta->puesto}}</p>
+					<p>Contrato: {{$oferta->contrato}}</p>
+					<p>Descripción: {{$oferta->descripcion}}</p>
+					<p>Empresa: {{$oferta->cif}}</p>
 					</div>
+						@endforeach	
+					
 				</div>
 			@endif
+			
 			<br/>
 			<a href="/" class="col-md-2 col-md-offset-5 botonDefecto"> Volver </a>
 			</div>

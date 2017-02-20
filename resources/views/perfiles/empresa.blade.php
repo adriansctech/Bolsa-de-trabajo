@@ -13,19 +13,19 @@
 					</div>
 					 <a href="{{ url('/empresa/perfil/editar') }}"><img src="/img/editar.png" class="enlaceeditar"></a>
 					<div class="datosPrincipales col-xs-12 col-md-6 "> 
-						<h1>Nombre de la empresa</h1>
+						<h1>{{ $usuario['nombre'] }}</h1>
 						<br/>
-						<label>CIF : 'cif de la empresa'</label>
+						<label>CIF : {{ $usuario['cif'] }}</label>
 						<br/>
-						<label>Domicilio : 'direccion de la sede de la empresa</label>
+						<label>Domicilio : {{ $usuario['domicilio'] }}</label>
 						<br/>
-						<label>Telefono : 'telefono de la empresa'</label>
+						<label>Telefono : {{ $usuario['tlf'] }}</label>
 						<br/>
-						<label>Email: 'email de la empresa'</label>
+						<label>Email: {{ $usuario['email'] }}</label>
 						<br/>
-						<label>Web : 'web de la empresa'</label>
+						<label>Web : {{ $usuario['web'] }}</label>
 						<br/>
-						<label>Sector: 'sector de la empresa'</label>
+						<label>Sector: {{ $usuario['sector'] }}</label>
 						<br/><br/><br/>
 					</div>
 				</div>
@@ -36,13 +36,13 @@
 					<br/>
 					<!--Div donde vamos a poner la persona de contacto de la empresa-->
 					<h2>Persona de contacto</h2>
-					<label>Nombre : 'nombre de la persona de contacto'</label>
+					<label>Nombre : {{ $usuario['nombreContacto'] }}</label>
 					<br/>
-					<label>Cargo : 'cargo de la persona'</label>
+					<label>Cargo : {{ $usuario['cargoContacto'] }}</label>
 					<br/>
-					<label>Telefono: 'telefono'</label>
+					<label>Telefono:{{ $usuario['tlfContacto'] }}</label>
 					<br/>
-					<label>Email: 'email'</label>
+					<label>Email: {{ $usuario['emailContacto'] }}</label>
 					<br/>
 				</div>
 			</div>	
