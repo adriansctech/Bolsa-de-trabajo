@@ -13,7 +13,19 @@ protected $fillable = ['id', 'puesto', 'contrato','valido','descripcion','cif','
 
         
               return  $this->hasOne('\Bolsa\Empresa','cif','cif');
-}
+	}
+
+    public function cicloOferta(){
+
+    		
+            return  $this->BelongsToMany(Ciclo::class,'ciclosofertas','ofertas','ciclo');
+	}
+
+    public function idiomaOferta(){
+
+    		
+            return  $this->BelongsToMany(Idioma::class,'ofertasIdiomas','oferta','idioma');
+	}
 
 
 }

@@ -16,20 +16,23 @@
 
 					<div id="ciclosBatoy ">
 						<!--Aqui se cargaran los ciclos de la BD de esta oferta-->
-						<ul>
 						
-							<li>ciclo</li>
-							
-						</ul>
+
+						@foreach($oferta->cicloOferta as $ciclo)
+						
+
+						<label>{{$ciclo->ciclos}}</label><br/>
+						@endforeach
 					</div>
 
 					<br/>
 					<label>Idiomas requeridos</label><br/>
 						<!--Aqui se cargaran todos los idiomas con sus niveles, que esten guardados en la BD de la oferta -->
 						<ul>
-							<li>idoma 1 nivel</li>
-							<li>idoma 2 nivel</li>
-							<li>idoma 3 nivel</li>
+						@foreach($oferta->idiomaOferta as $idioma)
+							<li>{{$idioma->idioma}}</li>
+							
+						@endforeach	
 						</ul>
 					<br/>
 					<label>Tipo de contrato: {{$oferta['contrato']}}</label><br/><br/>
