@@ -262,5 +262,10 @@ class PerfilController extends Controller
 
         }
         
+        public function getRAlumno($id){
+
+            return view('responsable.alumno', array('alumno'=>Alumno::findOrFail($id)));
+
+        }
     }
 

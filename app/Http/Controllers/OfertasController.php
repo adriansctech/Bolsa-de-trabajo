@@ -166,4 +166,12 @@ class OfertasController extends Controller
 
     }
 
+    public function getROferta($id){
+
+        return view('responsable.oferta', array('oferta'=>Oferta::findOrFail($id)));
+
+    }
+
+
+
 }
