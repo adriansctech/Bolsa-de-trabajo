@@ -170,7 +170,6 @@ class PerfilController extends Controller
 
                $usuario = User::findOrFail(Auth::User()->email);
 
-
              $datosUsuario = array(
                  'email' => Auth::User()->email,
                  'cif' => isset($usuario->Tipo->cif)?$usuario->Tipo->cif:'',
