@@ -13,7 +13,7 @@
                     </div>
                     <a href="{{ url('/responsable/perfil/editar') }}"><img src="img/editar.png" class="enlaceeditar"></a>
                     <a href="{{ url('/responsable/perfil') }}"><img src="/img/ver.png" class="enlaceeditar"></a>
-                    <div class="datosPrincipales col-xs-12 col-md-6 "> 
+                    <div class="datosuser col-xs-12 col-md-6 "> 
                             <label id="labelNombre">{{ $usuario['nombre'] }}</label><br>
                             <label id="labelCorreo">{{ $usuario['email'] }}</label>
                         </div>

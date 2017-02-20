@@ -9,10 +9,10 @@
                 <div class="panel-heading col-xs-12 col-md-10 col-md-offset-1 " >
 					<div class="col-xs-12 col-sm-5 col-md-4 col-md-offset-1">
 						<!--Foto de prefil-->
-						<img src="../img/user.jpg " class="imagen ">
+						<img src="/img/user.jpg " class="imagen ">
 					</div>
 					 <a href="{{ url('/alumno/perfil/editar') }}"><img src="/img/editar.png" class="enlaceeditar"></a>
-					<div class="datosPrincipales col-xs-12 col-sm-5 col-md-6 "> 
+					<div class=" col-xs-12 col-sm-5 col-md-6 datosPrincipales "> 
 						<h1>{{ $usuario['nombre'] }} {{ $usuario['apellidos'] }}</h1><!--Aqui cargariamos el nombre y los apellidos del usuario Alumno-->
 						<br/>
 						<label>Domicilio: {{ $usuario['domicilio'] }}</label>

@@ -3,23 +3,23 @@
 @section('content')
 <div class="container contenido">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
+        <div class="col-xs-12 col-md-8 col-md-offset-2">
+            <div class="col-xs-12 panel panel-default">
                 <!-- cabecera de la pagina -->
-                <div class="panel-heading"  >
-                    <div class="infouser">
-                        <img src="{{ $usuario['foto'] }}" class="fotouser" >
-                        <div class="datosuser">
-                            <label class="labelnombre">{{ $usuario['nombre'] }} {{ $usuario['apellidos'] }}</label>
-                            <br>
-                            <label class="labelcorreo">{{ $usuario['email'] }}</label>
-                        </div>
-                        <a href="{{ url('/alumno/perfil/editar') }}"><img src="img/editar.png" class="enlaceeditar"></a>
-                    <a href="{{ url('/alumno/perfil') }}"><img src="/img/ver.png" class="enlaceeditar"></a>
+                <div class="col-xs-12  col-md-12  panel-heading" >
+                    <div class="col-xs-12  col-md-4 col-md-offset-1">
+                        <img src="{{ $usuario['foto'] }}" class="imagen" >
                     </div>
+                    <div class=" datosuser">
+                        <label class="labelnombre">{{ $usuario['nombre'] }} {{ $usuario['apellidos'] }}</label>
+                        <br>
+                        <label class="labelcorreo">{{ $usuario['email'] }}</label>
+                    </div>
+                    <a href="{{ url('/alumno/perfil/editar') }}"><img src="img/editar.png" class="enlaceeditar"></a>
+                    <a href="{{ url('/alumno/perfil') }}"><img src="/img/ver.png" class="enlaceeditar"></a>
                 </div>
                 <!-- contenido de la pagina -->
-                <div  class="panel-body ofertas">
+                <div  class="panel-body ofertas col-md-12 mrg-btn25">
                    @foreach( $ofertas as $oferta )
 
                    <a href="/oferta/{{$oferta['id']}}">
