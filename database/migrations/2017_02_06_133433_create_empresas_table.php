@@ -26,7 +26,7 @@ class CreateEmpresasTable extends Migration
             $table->string('logo')->nullable();
             $table->integer('tlf')->nullable();
             $table->integer('tlfContacto')->nullable();
-            $table->integer('sector')->nullable();
+            $table->string('sector')->nullable();
             $table->timestamps();
         });
     }

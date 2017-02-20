@@ -34,13 +34,12 @@ class OfertasController extends Controller
                'email' => Auth::User()->email,
                'nombre' => isset($usuario->Tipo->nombre)?$usuario->Tipo->nombre:'',
                'apellidos' => isset($usuario->Tipo->apellidos)?$usuario->Tipo->apellidos:'',
-               'foto' => isset($usuario->Tipo->foto)?$usuario->Tipo->foto:'../img/user.jpg',
+               'foto' => isset($usuario->Tipo->foto)?$usuario->Tipo->foto:'/img/user.jpg',
                );
 
 
       
         $ofertas=Oferta::all();
-
 
         return view('principales.alumno', array('ofertas'=>$ofertas,'usuario'=>$datosUsuario));
     }
