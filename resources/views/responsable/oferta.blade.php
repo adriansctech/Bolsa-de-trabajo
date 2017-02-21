@@ -54,7 +54,10 @@
 					<label>Email: {{$oferta->Empresa->emailContacto}} </label>
 					<br/>
 					
-					<a href="/" class="col-md-2 col-md-offset-5 botonDefecto"> Confirmar </a>
+					<form method="POST" action="{{ url('/responsable/ofertas') }}">
+					{{ csrf_field() }}
+					<input hidden name="id" value="{{$oferta['id']}}">
+					<button type="submit" class="col-md-2 col-md-offset-5 botonDefecto">Confirmar</button></form>
 				</div>	
 				<a href="/" class="col-md-2 col-md-offset-5 botonDefecto"> Volver </a>
 			</div>

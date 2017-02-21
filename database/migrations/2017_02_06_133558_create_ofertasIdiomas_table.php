@@ -15,7 +15,7 @@ class CreateOfertasIdiomasTable extends Migration
     {
         Schema::create('ofertasIdiomas', function (Blueprint $table) {
             $table->integer('oferta')->references('id')->on('ofertas');
-            $table->integer('idioma')->references('id')->on('idiomas');
+            $table->string('idioma',45)->references('idioma')->on('idiomas');
             $table->primary(['oferta','idioma']);
             $table->timestamps();
         });
