@@ -27,7 +27,7 @@
 						<input type="text" name="domicilio" id="address" value="{{ $usuario['domicilio'] }}">
 						<br/>
 						<label for="phone">Telefono</label>
-						<input type="tel" name="telefono" size="9" id="phone" value=" {{ $usuario['tlf'] }}">
+						<input type="tel" name="tlf" size="9" id="phone" value=" {{ $usuario['tlf'] }}">
 						<br/>
 						<label for="email">Email</label>
 						<input disabled type="email" name="email" id="email" value="{{ $usuario['email'] }}">
