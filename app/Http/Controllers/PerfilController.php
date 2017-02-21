@@ -193,13 +193,7 @@ class PerfilController extends Controller
 
           protected function saveEditEmpresa(Request $request){
 
-            $empresa = Empresa::findOrFail(Auth::User()->email);
-
-            foreach ($empresa->Ofertas as $oferta) {
-
-              $oferta->cif=$empresa->cif;
-              $oferta->save();
-            }
+            $empresa = Empresa::findOrFail(Auth::User()->alumno);
 
             $empresa->fill($request->all());
             $empresa->save();
@@ -288,18 +282,21 @@ class PerfilController extends Controller
         }
         public function validaAlumno(Request $request){
 
-          $alumno=Alumno::findOrFail($request->id);
+          $alumno=Alumno::findOrFail($request->email);
           $alumno->valido=1;
-          $alumno.save();
+          $alumno->save();
 
-          return view('responsable.alumnos');
+          return redirect('/responsable/alumnos');
 
         }
 
         public function getRAlumno($id){
+
           $usuario = Alumno::findOrFail($id);
-          $usuario->email=htmlentities($usuario->email);
-          return view('responsable.alumno',array('usuario',$usuario));
+          $ciclos = $usuario->Ciclos;
+          $idiomas = $usuario->Idiomas;
+
+          return view('responsable.alumno',compact('usuario','ciclos','idiomas'));
         }
 
 

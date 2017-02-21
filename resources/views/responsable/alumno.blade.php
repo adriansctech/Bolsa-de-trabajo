@@ -63,8 +63,11 @@
 						@endif
 						<label>Currículum Vitae: {{ $usuario['cv'] }}</label>
 						<br/>
-						<a href="/" class="col-md-2 col-md-offset-5 botonDefecto">Volver</a>
-						<a href="/" class="col-md-2 col-md-offset-5 botonDefecto">Confirmar</a>
+						<a href="/responsable/alumnos" class="col-md-2 col-md-offset-5 botonDefecto">Volver</a>
+						<form method="POST" action="{{ url('/responsable/alumnos') }}">
+						{{ csrf_field() }}
+						<input hidden name="email" value="{{$usuario['email']}}">
+						<button type="submit" class="col-md-2 col-md-offset-5 botonDefecto">Confirmar</button></form>
 					</div>
 					
 				</div>

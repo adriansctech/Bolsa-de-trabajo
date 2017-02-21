@@ -15,7 +15,7 @@ class CreateAlumnosIdiomasTable extends Migration
     {
         Schema::create('alumnosIdiomas', function (Blueprint $table) {
             $table->string('email',125)->references('email')->on('alumnos');
-            $table->integer('idioma')->references('id')->on('idiomas');
+            $table->string('idioma',45)->references('idioma')->on('idiomas');
             $table->string('nivel',2);
             $table->primary(['email','idioma']);
             $table->timestamps();

@@ -148,8 +148,8 @@ class OfertasController extends Controller
 
         $oferta=Oferta::findOrFail($request->id);
         $oferta->valido=1;
-        $oferta.save();
-        
+        $oferta->save();
+        return redirect('/responsable/ofertas');
     }
 
 
