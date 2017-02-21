@@ -10,6 +10,8 @@ use Bolsa\Ciclo;
 use Bolsa\cicloOferta;
 use Bolsa\idiomaOferta;
 use Bolsa\Idioma;
+use Bolsa\Alumno;
+use Bolsa\Empresa;
 
 class OfertasController extends Controller
 {
@@ -27,7 +29,10 @@ class OfertasController extends Controller
 
     //Recoge todas las ofertas de la base de datos y las pasa como parametro "ofertas" a la vista "allOfertas"
     public function getOfertasAlumno(){
+
         $usuario = User::findOrFail(Auth::User()->email);
+        $perfil= Alumno::find(Auth::User()->email);
+        if($perfil->nombre!=null){
 
   
            $datosUsuario = array(
@@ -42,12 +47,17 @@ class OfertasController extends Controller
         $ofertas=Oferta::all();
 
         return view('principales.alumno', array('ofertas'=>$ofertas,'usuario'=>$datosUsuario));
+      }else{
+        return redirect('/alumno/perfil/editar');
+      }
     }
 
 //Devuelve los datos para una empresa en concreto, filtradondo las ofertas por 
 
     public function getOfertasEmpresa(){
         $usuario = User::findOrFail(Auth::User()->email);
+        $perfil= Empresa::find(Auth::User()->email);
+        if($perfil->nombre!=null){
  
            $datosUsuario = array(
                'email' => Auth::User()->email,
@@ -60,7 +70,10 @@ class OfertasController extends Controller
 
         
 
-        return view('principales.empresa', array('ofertas'=>$ofertas,'usuario'=>$datosUsuario));
+          return view('principales.empresa', array('ofertas'=>$ofertas,'usuario'=>$datosUsuario));
+         }else{
+        return redirect('/empresa/perfil/editar');
+      }
     }
 
 //Redirige según el tipo de usuario
