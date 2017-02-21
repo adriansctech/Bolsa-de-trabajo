@@ -193,7 +193,7 @@ class PerfilController extends Controller
 
           protected function saveEditEmpresa(Request $request){
 
-            $empresa = Empresa::findOrFail(Auth::User()->alumno);
+            $empresa = Empresa::findOrFail(Auth::User()->email);
 
             $empresa->fill($request->all());
             $empresa->save();
