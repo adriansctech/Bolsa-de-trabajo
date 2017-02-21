@@ -24,7 +24,7 @@ protected $fillable = ['id', 'puesto', 'contrato','valido','descripcion','cif','
     public function idiomaOferta(){
 
     		
-            return  $this->BelongsToMany(Idioma::class,'ofertasIdiomas','oferta','idioma');
+            return  $this->BelongsToMany(Idioma::class,'ofertasidiomas','oferta','idioma');
 	}
 
 

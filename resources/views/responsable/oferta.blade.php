@@ -18,6 +18,7 @@
 						<!--Aqui se cargaran los ciclos de la BD de esta oferta-->
 						
 						<ul>
+						
 						@foreach($oferta->cicloOferta as $ciclo)
 						<li>{{$ciclo->ciclos}}</li>
 						@endforeach
