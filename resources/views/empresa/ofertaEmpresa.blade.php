@@ -8,7 +8,7 @@
         <div class="col-xs-12 col-md-8 col-md-offset-2">
             <div class="col-xs-12 panel panel-default"> 
                 <div class="col-xs-12  col-md-12  panel-heading" >
-                	<a href=""><img src="/img/editar.png" class="enlaceeditar"></a>
+                	<a href="/empresa/ofertaEditar/{{$oferta['id']}}"><img src="/img/editar.png" class="enlaceeditar"></a>
                 	<a href=""><img src="/img/borrar.png" class="enlaceeditar"></a>
                		 <!--En esta vista deberan aparecer todos los datos de la oferta-->
 					<h1>{{ $oferta['puesto'] }}</h1>

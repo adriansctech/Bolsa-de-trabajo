@@ -32,7 +32,7 @@ class OfertasController extends Controller
 
         $usuario = User::findOrFail(Auth::User()->email);
         $perfil= Alumno::find(Auth::User()->email);
-        if($perfil->nombre!=null){
+        if($perfil->nombre!=null && $perfil->valido==1){
 
   
            $datosUsuario = array(
