@@ -218,6 +218,18 @@ class PerfilController extends Controller
 
         }
 
+        protected function saveEditResponsable(Request $request){
+
+          $empresa = Responsable::findOrFail(Auth::User()->email);
+
+          $empresa->fill($request->all());
+          $empresa->save();
+
+          
+          return redirect("/responsable/perfil");
+
+        }
+
     
 
         protected function perfilResponsable(){
@@ -264,13 +276,23 @@ class PerfilController extends Controller
         public function newEmpresa(Request $request){
           $usuario=new User;
           $usuario->fill($request->all());
+          $usuario->password=null;
+          $usuario->tipo='empresa';
+          if ($request->pass==$request->pass2) {
+            $usuario->password=$request->pass;
+          }else{
+
+            redirect('/responsable/empresas/new');
+
+          }
           $usuario->save();
 
           $e = new Empresa;
           $e->fill($request->all()); 
           $e->save();
 
-          return view('responsable.newEmpresa');
+          //Cambiar a la empresa en concreto
+          return redirect('/responsable/empresas');
 
         }
 
@@ -280,6 +302,8 @@ class PerfilController extends Controller
           return view('responsable.alumnos',array('alumnos'=>$alumnos));
 
         }
+
+
         public function validaAlumno(Request $request){
 
           $alumno=Alumno::findOrFail($request->email);

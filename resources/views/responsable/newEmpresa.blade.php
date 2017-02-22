@@ -6,7 +6,8 @@
         <div class="col-xs-12 col-md-8 col-md-offset-2">
             <div class="col-xs-12 panel panel-default">
                 <!-- cabecera de la pagina -->
-                <form action="" method="POST">
+                <form action="{{ url('/responsable/empresas') }}" method="POST">
+                {{ csrf_field() }}
 	                <div class="col-xs-12  col-md-12  panel-heading" >
 						<h1>Alta de empresa</h1>
 					
@@ -32,7 +33,7 @@
 							<input type="email" name="email" id="email">
 							<br/>
 							<label for="web">Web</label>
-							<input type="url" name="web" id="web">
+							<input name="web" id="web">
 							<br/>
 							<label for="sector">Sector</label>
 							<input type="text" name="sector" id="sector">
@@ -45,10 +46,10 @@
 							<label>Cambio de contraseña</label>
 							<br/> 
 							<label for="actualpass">Contraseña:</label>
-							<input type="password" name="contraseñaActual" id="actualpass">
+							<input type="password" name="pass" id="actualpass">
 							<br/>
 							<label for="newpass">Repite contraseña:</label>
-							<input type="password" name="nuevaContraseña" id="newpass">
+							<input type="password" name="pass2" id="newpass">
 							<br/>
 							
 						</div> 
