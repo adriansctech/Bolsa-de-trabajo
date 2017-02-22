@@ -218,6 +218,18 @@ class PerfilController extends Controller
 
         }
 
+        protected function saveEditResponsable(Request $request){
+
+          $empresa = Responsable::findOrFail(Auth::User()->email);
+
+          $empresa->fill($request->all());
+          $empresa->save();
+
+          
+          return redirect("/responsable/perfil");
+
+        }
+
     
 
         protected function perfilResponsable(){

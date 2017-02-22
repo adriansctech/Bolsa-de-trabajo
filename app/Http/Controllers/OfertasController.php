@@ -150,9 +150,9 @@ class OfertasController extends Controller
     }
 
     //Borra la oferta especificada
-    public function deleteOferta($id){
+    public function deleteOferta(Request $request){
 
-        $oferta=Oferta::findOrFail($id);
+        $oferta=Oferta::findOrFail($request->oferta);
         $oferta->delete();
 
     }
