@@ -9,11 +9,16 @@
             <div class="col-xs-12 panel panel-default"> 
                 <div class="col-xs-12  col-md-12  panel-heading" >
 
-                	<a href="/empresa/ofertaEditar/{{$oferta['id']}}"><img src="/img/editar.png" class="enlaceeditar"></a>
+                	
 
-                	<form method="POST" action="{{ url('/responsable/empresas') }}"><input value="" src="/img/borrar.png" type="image" class="enlaceborrar">
+                	<form method="POST" action="{{ url('/empresa') }}">
+                	{{ csrf_field() }}	
+                	<input value="submit" src="/img/borrar.png" type="image" class="enlaceeditar">
                 	<input hidden type="" name="oferta" value="{{ $oferta['id'] }}">
                 	</form>
+
+                	<a href="/empresa/ofertaEditar/{{$oferta['id']}}"><img src="/img/editar.png" class="enlaceeditar"></a>
+                	
                		 <!--En esta vista deberan aparecer todos los datos de la oferta-->
 					<h1>{{ $oferta['puesto'] }}</h1>
 				</div>

@@ -142,7 +142,7 @@ class OfertasController extends Controller
                 $idiomaReq->save();
             }
            
-            return redirect('/empresa');
+            return redirect('/empresa/ofertaEmpresa/'.$o["id"].'');
 
     }
 
@@ -151,7 +151,7 @@ class OfertasController extends Controller
 
         $oferta=Oferta::findOrFail($request->oferta);
         $oferta->delete();
-
+        return redirect('/empresa');
     }
 
     public function validaOferta(Request $request){
@@ -190,8 +190,11 @@ class OfertasController extends Controller
 
     public function editarOfertaEmpresa($id){
 
-      return view('empresa.editarOfertaEmpresa', array('oferta'=>Oferta::findOrFail($id)));
+        $oferta=Oferta::findOrFail($id);
+        $ciclos=$oferta->cicloOferta;
+        $idiomas=$oferta->idiomaOferta;
 
+      return view('empresa.editarOfertaEmpresa', compact('oferta','ciclos','idiomas'));
     }
 
 }

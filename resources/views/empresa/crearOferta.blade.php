@@ -11,7 +11,7 @@
 				</div>
 			</div>
 			<div class="panel-body col-xs-12 col-md-12 ">	
-				<form action="{{ url('/empresa') }}" method="POST" class="col-xs-12 col-md-12">
+				<form action="{{ url('/empresa/ofertaEmpresa') }}" method="POST" class="col-xs-12 col-md-12">
 				{{ csrf_field() }}
 					
 					<div class="datosSecundarios  ">
