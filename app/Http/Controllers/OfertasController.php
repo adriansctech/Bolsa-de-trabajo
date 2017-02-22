@@ -65,11 +65,8 @@ class OfertasController extends Controller
                'web' => isset($usuario->Tipo->web)?$usuario->Tipo->web:'',
                'logo' => isset($usuario->Tipo->logo)?$usuario->Tipo->logo:'../img/user.jpg',
                );
-           $ofertas=Oferta::where('cif',isset($usuario->Tipo->cif)?$usuario->Tipo->cif:'')->get();
-
-
-        
-
+           $ofertas=Oferta::where('cif',isset($usuario->Tipo->cif)?$usuario->Tipo->cif:'')->where('valido',1)->get();
+           
           return view('principales.empresa', array('ofertas'=>$ofertas,'usuario'=>$datosUsuario));
          }else{
         return redirect('/empresa/perfil/editar');
@@ -150,9 +147,9 @@ class OfertasController extends Controller
     }
 
     //Borra la oferta especificada
-    public function deleteOferta($id){
+    public function deleteOferta(Request $request){
 
-        $oferta=Oferta::findOrFail($id);
+        $oferta=Oferta::findOrFail($request->oferta);
         $oferta->delete();
 
     }
@@ -196,6 +193,5 @@ class OfertasController extends Controller
       return view('empresa.editarOfertaEmpresa', array('oferta'=>Oferta::findOrFail($id)));
 
     }
-
 
 }

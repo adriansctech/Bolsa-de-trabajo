@@ -28,6 +28,7 @@ Route::group(['middleware' => 'tipoUsuario:alumno'], function(){
 Route::group(['middleware' => 'tipoUsuario:empresa'], function(){
     Route::get('/empresa', 'OfertasController@getOfertasEmpresa');
     Route::get('/empresa/ofertaEmpresa/{id}', 'OfertasController@ofertaEmpresa');
+    Route::post('/empresa', 'OfertasController@deleteOferta');
     Route::get('/empresa/ofertaEditar/{id}', 'OfertasController@editarOfertaEmpresa');
     Route::post('/empresa', 'OfertasController@newOferta');
 
