@@ -23,25 +23,30 @@
 						<!--Aqui se cargaran todos los ciclos de batoi-->
 						<div id="ciclosBatoy" class="col-xs-12 col-md-10 col-md-offset-1">
 
-						@foreach ($ciclos as $ciclo)
-							<!--@if($oferta->idCicloOferta == $ciclo['id'])
-								<input type="checkbox" name="ciclo[]" value="{{ $ciclo['ciclos'] }}" checked>{{ $ciclo['ciclos'] }} <br>
-							@else-->
-								<input type="checkbox" name="ciclo[]" value="{{ $ciclo['ciclos'] }}">{{ $ciclo['ciclos'] }} <br>
-							<!--@endif-->	
+						@foreach ($todoslosciclos as $ciclo)
+							@foreach ($ciclos as $cicloOferta)
+								@if($ciclo['id'] == $cicloOferta['id'])
+									<input type="checkbox" name="ciclo[]" value="{{ $ciclo['ciclos'] }}" checked>{{ $cicloOferta['ciclos'] }} <br>
+								@else
+									<input type="checkbox" name="ciclo[]" value="{{ $ciclo['ciclos'] }}" >{{ $ciclo['ciclos'] }} <br>
+								@endif	
+							@endforeach
 						@endforeach
 						</div>
 						<br/>
 						<label>Idiomas requeridos</label><br/>
 						<!--Aqui se cargaran todos los idiomas con sus niveles -->
 						<div id="idiomas" class="col-xs-12 col-md-10 col-md-offset-1">
-						@foreach ($idiomas as $idioma)
-
-							<input type="checkbox" value="{{ $idioma['idioma'] }}" name="idiomas[]">{{ $idioma['idioma'] }}</input><br>
-
-						@endforeach
+						@foreach ($todoslosidiomas as $idioma)	
+							@foreach ($idiomas as $idiomaOferta)
+								@if($idioma['id'] == $idiomaOferta['id'])
+									<input type="checkbox" value="{{ $idioma['idioma'] }}" name="idiomas[]" checked>{{ $idiomaOferta['idioma'] }}</input><br>
+								@else
+									<input type="checkbox" value="{{ $idioma['idioma'] }}" name="idiomas[]">{{ $idiomaOferta['idioma'] }}</input><br>
+								@endif
+							@endforeach
 	
-
+						@endforeach
 						</div>
 						<br/>
 						<label>Tipo de contrato</label>

@@ -13,7 +13,7 @@
 
                 	<form method="POST" action="{{ url('/empresa') }}">
                 	{{ csrf_field() }}	
-                	<input value="submit" src="/img/borrar.png" type="image" class="enlaceeditar">
+                	<input value="submit" src="/img/borrar.png" type="image" class="enlaceborrar">
                 	<input hidden type="" name="oferta" value="{{ $oferta['id'] }}">
                 	</form>
 

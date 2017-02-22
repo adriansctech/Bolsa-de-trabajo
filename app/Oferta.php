@@ -16,7 +16,7 @@ protected $fillable = ['id', 'puesto', 'contrato','valido','descripcion','cif','
 	}
 
     public function idCicloOferta(){
-        return  $this->hasOne('\Bolsa\cicloOferta','id','ciclo');
+        return  $this->hasOne('\Bolsa\cicloOferta','ciclo','id');
     }
 
     public function cicloOferta(){

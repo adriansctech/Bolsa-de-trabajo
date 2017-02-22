@@ -194,7 +194,10 @@ class OfertasController extends Controller
         $ciclos=$oferta->cicloOferta;
         $idiomas=$oferta->idiomaOferta;
 
-      return view('empresa.editarOfertaEmpresa', compact('oferta','ciclos','idiomas'));
+        $todoslosciclos=Ciclo::All();
+        $todoslosidiomas=Idioma::All();
+
+      return view('empresa.editarOfertaEmpresa', compact('oferta','ciclos','idiomas','todoslosciclos','todoslosidiomas'));
     }
 
 }
