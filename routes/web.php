@@ -46,7 +46,7 @@ Route::group(['middleware' => 'tipoUsuario:responsable'], function(){
     Route::get('/responsable/perfil/editar', 'PerfilController@editResponsable');
     Route::get('/responsable', 'PerfilController@responsablePrincipal');
     Route::get('/responsable/empresas', 'PerfilController@getResponsableEmpresas');
-    Route::post('/responsable/empresa', 'PerfilController@newEmpresa');
+    Route::post('/responsable/empresas', 'PerfilController@newEmpresa');
     Route::get('/responsable/empresas/new', function(){return view('responsable.newEmpresa');});
     Route::get('/responsable/empresa/{id}', 'PerfilController@getEmpresa');
 
