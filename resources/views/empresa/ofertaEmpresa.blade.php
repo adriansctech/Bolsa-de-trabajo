@@ -11,7 +11,7 @@
 
                 	<a href="/empresa/ofertaEditar/{{$oferta['id']}}"><img src="/img/editar.png" class="enlaceeditar"></a>
 
-                	<form method="POST" action="{{ url('/responsable/empresas') }}"><input value="" src="/img/borrar.png" type="image" class="enlaceeditar">
+                	<form method="POST" action="{{ url('/responsable/empresas') }}"><input value="" src="/img/borrar.png" type="image" class="enlaceborrar">
                 	<input hidden type="" name="oferta" value="{{ $oferta['id'] }}">
                 	</form>
                		 <!--En esta vista deberan aparecer todos los datos de la oferta-->

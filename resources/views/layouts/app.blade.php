@@ -107,8 +107,8 @@
         </div>
         <div class="col-xs-12 col-md-3 col-md-offset-5">
             <small>http://www.cipfpbatoi.es/</small><br/>
-            <a href="https://www.facebook.com/CIP-FP-Batoi-950788681680013/"><img src="/img/facebook.png" class="facebook"></a>
-            <a href="https://twitter.com/TicFp"><img src="/img/twitter.png" class="twitter"></a>
+            <a href="https://www.facebook.com/CIP-FP-Batoi-950788681680013/"><img src="http://www.cipfpbatoi.es/wp-content/uploads/2016/01/facebook.png" class="facebook"></a>
+            <a href="https://twitter.com/TicFp"><img src="http://www.cipfpbatoi.es/wp-content/uploads/2016/01/twitter.png" class="twitter"></a>
         </div> 
     </footer>
     <!-- Scripts -->
