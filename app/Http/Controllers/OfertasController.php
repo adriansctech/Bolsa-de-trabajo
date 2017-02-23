@@ -191,8 +191,14 @@ class OfertasController extends Controller
     public function editarOfertaEmpresa($id){
 
         $oferta=Oferta::findOrFail($id);
-        $ciclos=$oferta->cicloOferta;
-        $idiomas=$oferta->idiomaOferta;
+        $ciclosO=$oferta->cicloOferta;
+        $idiomasO=$oferta->idiomaOferta;
+        foreach ($idiomasO as $idioma) {
+          $idiomas[$idioma->id] = $idioma->id ;
+        }
+        foreach ($ciclosO as $ciclo) {
+          $cicloss[$ciclo->id] = $ciclo->id ;
+        }
 
         $todoslosciclos=Ciclo::All();
         $todoslosidiomas=Idioma::All();
