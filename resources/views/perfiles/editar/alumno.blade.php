@@ -58,7 +58,18 @@
 
 						<div class="ciclos">
 							<label>Ciclos cursados en Batoi</label>
+							@foreach ($ciclosAlumno as $clicloAlumno)
+							<ul>
+								<li>{{$clicloAlumno->ciclo}} <br> 
+									Fecha de inicio: {{$clicloAlumno->finicio}} <br>
+									Fecha fin: {{$clicloAlumno->ffin}} <br>
+									Nota: {{$clicloAlumno->nota}} <br>
+									Empresa de prácticas: {{$clicloAlumno->empresa}}
+								</li>
+							</ul>
+							@endforeach
 							<!-- lista de los ciclos guardados -->
+							<label>Selecciona los ciclos que has cursado en Batoi</label>
 							<strong>
 								<ul id="listaCiclos"></ul>
 							</strong>
@@ -176,20 +187,33 @@
 			var fechaFin = document.getElementById("finCiclo").value;
 			var nota = document.getElementById("notaCiclo").value;
 			var empresa = document.getElementById("empresaCiclo").value;
-			//crear li para la lista
-			var ul = document.getElementById("listaCiclos");
-			var li = document.createElement("li");
-			//contenido del li
-			li.appendChild(document.createTextNode(ciclo+" - Fecha Inicio: "+fechaInicio+" - Fecha Finalización: "+fechaFin+" - Nota: "+nota+" - Empresa: "+empresa));
-			ul.appendChild(li);
-			//vaciar los inputs y camibar el valor del select
-			document.getElementById("selectCiclos").selectedIndex = 0;
-			document.getElementById("inicioCiclo").value = "";
-			document.getElementById("finCiclo").value = "";
-			document.getElementById("notaCiclo").value = "";
-			document.getElementById("empresaCiclo").value = "";
-			//mostrar el div de los datos al cambiar el estado del select
-			document.getElementById("infoCiclos").style.display = 'none';
+
+			var usuario = document.getElementById("email").value;
+			var datos = {ciclo:ciclo, alumno:usuario, finicio:fechaInicio, ffin:fechaFin, nota:nota, empresa:empresa};
+
+			$.ajax({
+				type: "POST",
+				url: "http://bolsadetrabajo.app/api/alumno/perfil/editar",
+				data: datos,
+				success: function() {
+
+					//crear li para la lista
+					var ul = document.getElementById("listaCiclos");
+					var li = document.createElement("li");
+					//contenido del li
+					li.appendChild(document.createTextNode(ciclo+" - Fecha Inicio: "+fechaInicio+" - Fecha Finalización: "+fechaFin+" - Nota: "+nota+" - Empresa: "+empresa));
+					ul.appendChild(li);
+					//vaciar los inputs y camibar el valor del select
+					document.getElementById("selectCiclos").selectedIndex = 0;
+					document.getElementById("inicioCiclo").value = "";
+					document.getElementById("finCiclo").value = "";
+					document.getElementById("notaCiclo").value = "";
+					document.getElementById("empresaCiclo").value = "";
+					//mostrar el div de los datos al cambiar el estado del select
+					document.getElementById("infoCiclos").style.display = 'none';
+
+				}
+			});
 		}
 		//mostrar el desplegable del idioma
 		function checkIdioma(){
@@ -245,5 +269,5 @@
 			});
 
 			}
-			
+
 	</script>

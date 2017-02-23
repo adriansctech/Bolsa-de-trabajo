@@ -77,6 +77,8 @@ class PerfilController extends Controller
             $idiomas = Idioma::all();
             //obtener los idiomas del alumno logueado
             $idiomasAlumno = idiomaAlumno::where("email", Auth::User()->email)->get();
+            //obtener los ciclos del alumno logueado
+            $ciclosAlumno = AlumnosCiclos::where("alumno", Auth::User()->email)->get();
 
 
 
@@ -91,7 +93,7 @@ class PerfilController extends Controller
           'trabajoFuera' => isset($usuario->Tipo->trabajofuera)?$usuario->Tipo->trabajofuera:'',
           );
 
-            return view('perfiles.editar.alumno', array('usuario'=>$datosUsuario, 'ciclos'=>$ciclos, 'idiomas'=>$idiomas, 'idiomasAlumno'=>$idiomasAlumno));
+            return view('perfiles.editar.alumno', array('usuario'=>$datosUsuario, 'ciclos'=>$ciclos, 'idiomas'=>$idiomas, 'idiomasAlumno'=>$idiomasAlumno, 'ciclosAlumno'=>$ciclosAlumno));
 
         }
 
@@ -105,9 +107,8 @@ class PerfilController extends Controller
                 //obtener los idiomas del alumno logueado
                 $idiomasAlumno = idiomaAlumno::where("email", Auth::User()->email)->get();
                 
-                //obtener un array con los idiomas del alumno
-             //   $idiomasAlumno = $usuario->Tipo->Idiomas;
-              //  dd($idiomasAlumno); 
+                //obtener los ciclos del alumno logueado
+                $ciclosAlumno = AlumnosCiclos::where("alumno", Auth::User()->email)->get();
 
 
 
@@ -122,7 +123,7 @@ class PerfilController extends Controller
               'trabajoFuera' => isset($usuario->Tipo->trabajofuera)?$usuario->Tipo->trabajofuera:'',
               );
 
-                return view('perfiles.alumno', array('usuario'=>$datosUsuario, 'ciclos'=>$ciclosAlumno, 'idiomas'=>$idiomasAlumno));
+                return view('perfiles.alumno', array('usuario'=>$datosUsuario, 'ciclos'=>$ciclosAlumno, 'idiomas'=>$idiomasAlumno, 'ciclosAlumno'=>$ciclosAlumno));
         }
 
        protected function perfilEmpresa(){

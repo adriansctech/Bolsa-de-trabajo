@@ -33,15 +33,17 @@
 			
 						<h2>Ciclos cursados:</h2>
 						<!--Div en el que cargamos los ciclos que ha marcado el alumno como que los ha cursado-->
-						@foreach ($ciclos as $ciclo)
-							<h3>{{ $ciclo->Ciclo->ciclos}}</h3>
-							<label>Fecha finalización: {{ $ciclo->ffin}}</label>
-							<br/>
-							<label>Nota: {{ $ciclo->nota}}</label>
-							<br/>
-							<label>Empresa de las FCT: {{ $ciclo->Ciclo->ciclos}}</label>
-							<hr>
-						@endforeach
+						<label>Ciclos cursados en Batoi</label>
+							@foreach ($ciclosAlumno as $clicloAlumno)
+							<ul>
+								<li>{{$clicloAlumno->ciclo}} <br> 
+									Fecha de inicio: {{$clicloAlumno->finicio}} <br>
+									Fecha fin: {{$clicloAlumno->ffin}} <br>
+									Nota: {{$clicloAlumno->nota}} <br>
+									Empresa de prácticas: {{$clicloAlumno->empresa}}
+								</li>
+							</ul>
+							@endforeach
 					</div>
 					
 					<!-- DATOS SECUNDARIOS -->
