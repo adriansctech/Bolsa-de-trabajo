@@ -197,7 +197,7 @@ class OfertasController extends Controller
           $idiomas[$idioma->id] = $idioma->id ;
         }
         foreach ($ciclosO as $ciclo) {
-          $cicloss[$ciclo->id] = $ciclo->id ;
+          $ciclos[$ciclo->id] = $ciclo->id ;
         }
 
         $todoslosciclos=Ciclo::All();
