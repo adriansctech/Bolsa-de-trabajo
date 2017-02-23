@@ -12,7 +12,8 @@ use Bolsa\AlumnosCiclos;
 use Bolsa\cicloAlumno;
 use Bolsa\idiomaAlumno;
 use Bolsa\Empresa;
-
+use Bolsa\Responsable;
+use Hash;
 class PerfilController extends Controller
 {
     /**
@@ -59,26 +60,7 @@ class PerfilController extends Controller
           $alumno->trabajofuera = $request->input('trabajoFuera');
           //guardar
           $alumno->save();
-          //DATOS DE LOS CICLOS
-      /*    $alumnociclo = AlumnosCiclos::findOfFail(Auth::User()->email);
 
-          if($alumnociclo == null){
-            //recorrer todos los ciclos de la lista
-
-            //crear nuevo registro
-            $alumnociclo = new AlumnosCiclos;
-            $alumnociclo->ciclo =
-            $alumnociclo->alumno = $request->input('email');
-            $alumnociclo->finicio =
-            $alumnociclo->ffin =
-            $alumnociclo->nota =
-            $alumnociclo->empresa =
-
-          }else{
-
-
-
-          }*/
           
           //redireccionar
           return redirect("/alumno/perfil");
@@ -221,11 +203,23 @@ class PerfilController extends Controller
         protected function saveEditResponsable(Request $request){
 
           $empresa = Responsable::findOrFail(Auth::User()->email);
-
+          $usuario = User::findOrFail(Auth::User()->email);
           $empresa->fill($request->all());
-          $empresa->save();
 
-          
+          if(Hash::check($request->Cpass, Auth::User()->password)){
+            if ($request->pass!='') {
+
+              if ($request->pass==$request->pass2) {
+
+                $usuario->password=bcrypt($request->pass);
+
+              }
+            }
+
+          }
+          $empresa->save();
+          $usuario->save();
+
           return redirect("/responsable/perfil");
 
         }
