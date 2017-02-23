@@ -51,13 +51,13 @@ class PerfilController extends Controller
           $alumno = Alumno::findOrFail(Auth::User()->email);
           //DATOS DEL ALUMNO
           //obtener los datos de los input
-          $alumno->nombre = $request->input('nombre');
-          $alumno->apellidos = $request->input('apellidos');
-          $alumno->domicilio = $request->input('domicilio');
-          $alumno->email = $request->input('email');
-          $alumno->tlf = $request->input('telefono');
-          $alumno->cvlinkedin = $request->input('enlaceCV');
-          $alumno->trabajofuera = $request->input('trabajoFuera');
+          $alumno->nombre = $request->nombre;
+          $alumno->apellidos = $request->apellidos;
+          $alumno->domicilio = $request->domicilio;
+          $alumno->email = $request->email;
+          $alumno->tlf = $request->telefono;
+          $alumno->cvlinkedin = $request->enlaceCV;
+          $alumno->trabajofuera = $request->trabajoFuera;
           //guardar
           $alumno->save();
 

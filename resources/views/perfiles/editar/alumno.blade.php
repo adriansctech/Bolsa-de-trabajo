@@ -8,7 +8,8 @@
     <div class="row">
         <div class="col-xs-12 col-md-8 col-md-offset-2">
             <div class="col-xs-12 panel panel-default"> 
-            	<form action="" method="" > 
+            	<form action="{{ url('/alumno/perfil') }}" method="POST"> 
+            	{{ csrf_field() }}
 	                <div class="col-xs-12  col-md-12  panel-heading" >
 						<h1>Perfil en edición</h1>
 					
@@ -31,7 +32,7 @@
 							<input type="text" name="domicilio" value="{{ $usuario['domicilio'] }}">
 							<br/>
 							<label>Email</label>
-							<input type="email" name="email" value="{{ $usuario['email'] }}">
+							<input type="email" name="email" id="email" value="{{ $usuario['email'] }}">
 							<br/>
 							<label>Telefono</label>
 							<input type="tel" name="telefono" size="9" value="{{ $usuario['telefono'] }}">
@@ -105,7 +106,8 @@
 							<label>Selecciona los idiomas con sus niveles</label>
 							<!-- lista de los idiomas guardados -->
 							<strong>
-								<ul id="listaIdiomas"></ul>
+								<ul id="listaIdiomas">
+								</ul>
 							</strong>
 							
 							@foreach ($idiomas as $idioma)
@@ -204,27 +206,69 @@
 			var selectRadio = document.getElementById("nivelIdioma");
 			var idiomaSeleccionado = selectRadio.options[selectRadio.selectedIndex].value;
 
-			if(idiomaSeleccionado == "defecto"){
-				//mensaje informativo
-				alert("Seleccione un nivel del idioma.")
-			}else{	
-				//crear li para la lista
-				var ul = document.getElementById("listaIdiomas");
-				var li = document.createElement("li");
-				//contenido del li
-				li.appendChild(document.createTextNode(radioPulsado+" - "+idiomaSeleccionado));
-				ul.appendChild(li);
-				//vaciar los inputs y camibar el valor del select
-				document.getElementById("nivelIdioma").selectedIndex = 0;
-				//quitar valor del radio
-				for (var i = 0, length = radios.length; i < length; i++) {
-			    	radios[i].checked = false;
-			    }
-			    //ocultar el select y el boton
-			    document.getElementById("nivelIdioma").style.display = 'none';
-				document.getElementById("anyadirIdioma").style.display = 'none';
-			}
+			var usuario = document.getElementById("email").value;
+			var datos = {email:usuario, idioma:radioPulsado, nivel:idiomaSeleccionado};
+		//	var datosIdioma = JSON.stringify(datos);
+
+			$.ajax({
+				type: "POST",
+				url: "http://bolsadetrabajo.app/api/alumno/perfil/editar",
+				data: datos,
+				success: function() {
+					if(idiomaSeleccionado == "defecto"){
+						//mensaje informativo
+						alert("Seleccione un nivel del idioma.")
+					}else{	
+						//crear li para la lista
+						var ul = document.getElementById("listaIdiomas");
+						var li = document.createElement("li");
+						//contenido del li
+						li.appendChild(document.createTextNode(radioPulsado+" - "+idiomaSeleccionado));
+						ul.appendChild(li);
+						//vaciar los inputs y camibar el valor del select
+						document.getElementById("nivelIdioma").selectedIndex = 0;
+						//quitar valor del radio
+						for (var i = 0, length = radios.length; i < length; i++) {
+					    	radios[i].checked = false;
+					    }
+					    //ocultar el select y el boton
+					    document.getElementById("nivelIdioma").style.display = 'none';
+						document.getElementById("anyadirIdioma").style.display = 'none';
+					}
+				}
+			});
 
 			}
 		
+		/*	function estadoIdioma(){
+			if(this.readyState == 4){
+				if(this.status == 200){
+					
+				if(idiomaSeleccionado == "defecto"){
+					//mensaje informativo
+					alert("Seleccione un nivel del idioma.")
+				}else{	
+					//crear li para la lista
+					var ul = document.getElementById("listaIdiomas");
+					var li = document.createElement("li");
+					//contenido del li
+					li.appendChild(document.createTextNode(radioPulsado+" - "+idiomaSeleccionado));
+					ul.appendChild(li);
+					//vaciar los inputs y camibar el valor del select
+					document.getElementById("nivelIdioma").selectedIndex = 0;
+					//quitar valor del radio
+					for (var i = 0, length = radios.length; i < length; i++) {
+				    	radios[i].checked = false;
+				    }
+				    //ocultar el select y el boton
+				    document.getElementById("nivelIdioma").style.display = 'none';
+					document.getElementById("anyadirIdioma").style.display = 'none';
+				}
+
+					}
+				}
+			}*/
+
+//}
+
 	</script>

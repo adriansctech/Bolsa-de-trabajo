@@ -10,7 +10,7 @@ class Alumno extends Model
 
 	protected $primaryKey = 'email';
     protected $keyType = 'string';
-    protected $fillable = ['email', 'nombre', 'apellidos','domicilio','tlf','poblacion','trabajofuera','cvlinkedin','foto','valido'];
+    protected $fillable = ['email', 'nombre', 'apellidos','domicilio','tlf','trabajofuera','cvlinkedin','foto','valido'];
 
         public function Ciclos(){
 
