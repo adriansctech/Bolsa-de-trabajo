@@ -103,6 +103,13 @@
 						<div class="datosSecundarios">
 							<!--Div de los idiomas, opcion de trabajar fuera y CV-->
 							
+							<label>Idiomas guardados</label>
+							@foreach ($idiomasAlumno as $idiomaAlumno)
+							<ul>
+								<li>{{$idiomaAlumno->idioma}} - {{$idiomaAlumno->nivel}}</li>
+							</ul>
+							@endforeach
+
 							<label>Selecciona los idiomas con sus niveles</label>
 							<!-- lista de los idiomas guardados -->
 							<strong>
@@ -208,7 +215,6 @@
 
 			var usuario = document.getElementById("email").value;
 			var datos = {email:usuario, idioma:radioPulsado, nivel:idiomaSeleccionado};
-		//	var datosIdioma = JSON.stringify(datos);
 
 			$.ajax({
 				type: "POST",
@@ -239,36 +245,5 @@
 			});
 
 			}
-		
-		/*	function estadoIdioma(){
-			if(this.readyState == 4){
-				if(this.status == 200){
-					
-				if(idiomaSeleccionado == "defecto"){
-					//mensaje informativo
-					alert("Seleccione un nivel del idioma.")
-				}else{	
-					//crear li para la lista
-					var ul = document.getElementById("listaIdiomas");
-					var li = document.createElement("li");
-					//contenido del li
-					li.appendChild(document.createTextNode(radioPulsado+" - "+idiomaSeleccionado));
-					ul.appendChild(li);
-					//vaciar los inputs y camibar el valor del select
-					document.getElementById("nivelIdioma").selectedIndex = 0;
-					//quitar valor del radio
-					for (var i = 0, length = radios.length; i < length; i++) {
-				    	radios[i].checked = false;
-				    }
-				    //ocultar el select y el boton
-				    document.getElementById("nivelIdioma").style.display = 'none';
-					document.getElementById("anyadirIdioma").style.display = 'none';
-				}
-
-					}
-				}
-			}*/
-
-//}
-
+			
 	</script>

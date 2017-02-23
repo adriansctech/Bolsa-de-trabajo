@@ -29,17 +29,7 @@ class IdiomaController extends Controller
           $alumnoIdioma->save();
 
 
-        }
-        
-        public function verIdiomasEditar(){
-
-     /*     $idiomasAlumno = idiomaAlumno::findOrFail(Auth::User()->email);
-
-          return view('perfiles.alumno', array('idiomas'=>$idiomasAlumno));*/
-
-        }
-
-        
+        } 
         
     }
 

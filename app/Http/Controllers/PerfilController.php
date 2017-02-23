@@ -75,6 +75,8 @@ class PerfilController extends Controller
             $ciclos = Ciclo::all();
             //obtener un array con todos los idiomas mediante el modelo
             $idiomas = Idioma::all();
+            //obtener los idiomas del alumno logueado
+            $idiomasAlumno = idiomaAlumno::where("email", Auth::User()->email)->get();
 
 
 
@@ -89,7 +91,7 @@ class PerfilController extends Controller
           'trabajoFuera' => isset($usuario->Tipo->trabajofuera)?$usuario->Tipo->trabajofuera:'',
           );
 
-            return view('perfiles.editar.alumno', array('usuario'=>$datosUsuario, 'ciclos'=>$ciclos, 'idiomas'=>$idiomas));
+            return view('perfiles.editar.alumno', array('usuario'=>$datosUsuario, 'ciclos'=>$ciclos, 'idiomas'=>$idiomas, 'idiomasAlumno'=>$idiomasAlumno));
 
         }
 
@@ -99,10 +101,13 @@ class PerfilController extends Controller
 
                 //obtener un array con los ciclos del alumno
                 $ciclosAlumno = $usuario->Tipo->Ciclos;
+
+                //obtener los idiomas del alumno logueado
+                $idiomasAlumno = idiomaAlumno::where("email", Auth::User()->email)->get();
                 
                 //obtener un array con los idiomas del alumno
-                $idiomasAlumno = $usuario->Tipo->Idiomas;
-
+             //   $idiomasAlumno = $usuario->Tipo->Idiomas;
+              //  dd($idiomasAlumno); 
 
 
 

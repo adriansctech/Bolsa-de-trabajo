@@ -12,7 +12,7 @@
 						<img src="/img/user.jpg " class="imagen ">
 					</div>
 					 <a href="{{ url('/alumno/perfil/editar') }}"><img src="/img/editar.png" class="enlaceeditar"></a>
-					<div class=" col-xs-12 col-sm-5 col-md-6 datosPrincipales "> 
+					<div class=" col-xs-12 col-sm-5 col-md-6 datosuser "> 
 						<h1>{{ $usuario['nombre'] }} {{ $usuario['apellidos'] }}</h1><!--Aqui cargariamos el nombre y los apellidos del usuario Alumno-->
 						<br/>
 						<label>Domicilio: {{ $usuario['domicilio'] }}</label>
@@ -34,13 +34,13 @@
 						<h2>Ciclos cursados:</h2>
 						<!--Div en el que cargamos los ciclos que ha marcado el alumno como que los ha cursado-->
 						@foreach ($ciclos as $ciclo)
-						<h3>{{ $ciclo->Ciclo->ciclos}}</h3>
-						<label>Fecha finalización: {{ $ciclo->ffin}}</label>
-						<br/>
-						<label>Nota: {{ $ciclo->nota}}</label>
-						<br/>
-						<label>Empresa de las FCT: {{ $ciclo->Ciclo->ciclos}}</label>
-						<hr>
+							<h3>{{ $ciclo->Ciclo->ciclos}}</h3>
+							<label>Fecha finalización: {{ $ciclo->ffin}}</label>
+							<br/>
+							<label>Nota: {{ $ciclo->nota}}</label>
+							<br/>
+							<label>Empresa de las FCT: {{ $ciclo->Ciclo->ciclos}}</label>
+							<hr>
 						@endforeach
 					</div>
 					
@@ -48,13 +48,10 @@
 					<div class="datosSecundarios">
 
 						<!--Div de los idiomas, opcion de trabajar fuera y CV-->
-						<span>Selecciona los idiomas con sus niveles</span><br/>
 						<label>Idiomas:</label>
-
 						@foreach ($idiomas as $idioma)
-						
 							<ul>
-								<li>{{$idioma->Idioma->idioma}} {{$idioma->nivel}}</li>
+								<li>{{$idioma->idioma}} - {{$idioma->nivel}}</li>
 							</ul>
 						@endforeach
 
