@@ -139,7 +139,8 @@ class OfertasController extends Controller
             $o->valido=0;
             $o->cif=$usuario->cif;
             $o->save();
-
+            cicloOferta::where('ofertas',$o->id)->delete();
+            idiomaOferta::where('oferta',$o->id)->delete();
             //ciclos requeridos para la oferta
             foreach ($oferta['ciclo'] as $ciclo) {
 
