@@ -15,7 +15,7 @@
                         <label class="labelcorreo col-md-12 col-xs-12">{{ $usuario['email'] }}</label>
                         <label class="labelWeb col-md-12 col-xs-12">{{ $usuario['web'] }}</label>
                     </div>
-                    <a href="{{ url('/empresa/perfil/editar') }}"><img src="img/editar.png" class="enlaceeditar"></a>
+                    <a href="{{ url('/empresa/perfil/editar') }}"><img src="/img/editar.png" class="enlaceeditar"></a>
                     <a href="{{ url('/empresa/perfil') }}"><img src="/img/ver.png" class="enlaceeditar"></a>
                 </div>
                
@@ -25,7 +25,7 @@
 
                     <div class="col-md-4 col-md-offset-5">
 
-                        <a href="empresa/nuevaOferta" class="añadiroferta">Añadir oferta</a>
+                        <a href="/empresa/nuevaOferta" class="añadiroferta">Añadir oferta</a>
 
                      </div>
                     

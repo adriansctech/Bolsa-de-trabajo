@@ -13,7 +13,7 @@ use Bolsa\cicloAlumno;
 use Bolsa\idiomaAlumno;
 use Bolsa\Empresa;
 
-class IdiomaController extends Controller
+class CiclosController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -21,12 +21,12 @@ class IdiomaController extends Controller
      * @return void
      */
 
-        public function insertarIdiomas(Request $request){
+        public function insertarCiclos(Request $request){
 
           //recibir los valores y guardarlos
-          $alumnoIdioma = new idiomaAlumno;
-          $alumnoIdioma->fill($request->all());
-          $alumnoIdioma->save();
+          $alumnoCiclo = new AlumnosCiclos;
+          $alumnoCiclo->fill($request->all());
+          $alumnoCiclo->save();
 
 
         } 

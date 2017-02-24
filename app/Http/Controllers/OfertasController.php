@@ -32,7 +32,7 @@ class OfertasController extends Controller
 
         $usuario = User::findOrFail(Auth::User()->email);
         $perfil= Alumno::find(Auth::User()->email);
-        if($perfil->nombre!=null && $perfil->valido==1){
+        if($perfil->valido==1){
 
   
            $datosUsuario = array(
@@ -44,7 +44,7 @@ class OfertasController extends Controller
 
 
       
-        $ofertas=Oferta::all();
+        $ofertas=Oferta::where('valido',1)->get();
 
         return view('principales.alumno', array('ofertas'=>$ofertas,'usuario'=>$datosUsuario));
       }else{
@@ -54,13 +54,24 @@ class OfertasController extends Controller
 
 //Devuelve los datos para una empresa en concreto, filtradondo las ofertas por 
 
-    public function getOfertasEmpresa(){
+    public function getOfertasEmpresa($email=null){
+      if ($email!= null) {
+        
+        session()->put('empresa', $email);
+    
+        $usuario = User::findOrFail( session()->get('empresa'));
+        $perfil= Empresa::find( session()->get('empresa'));
+      }else{
         $usuario = User::findOrFail(Auth::User()->email);
         $perfil= Empresa::find(Auth::User()->email);
-        if($perfil->nombre!=null){
- 
+
+      }
+        
+
+        
+      
            $datosUsuario = array(
-               'email' => Auth::User()->email,
+               'email' => $usuario->email,
                'nombre' => isset($usuario->Tipo->nombre)?$usuario->Tipo->nombre:'',
                'web' => isset($usuario->Tipo->web)?$usuario->Tipo->web:'',
                'logo' => isset($usuario->Tipo->logo)?$usuario->Tipo->logo:'../img/user.jpg',
@@ -68,9 +79,7 @@ class OfertasController extends Controller
            $ofertas=Oferta::where('cif',isset($usuario->Tipo->cif)?$usuario->Tipo->cif:'')->where('valido',1)->get();
            
           return view('principales.empresa', array('ofertas'=>$ofertas,'usuario'=>$datosUsuario));
-         }else{
-        return redirect('/empresa/perfil/editar');
-      }
+      
     }
 
 //Redirige según el tipo de usuario
@@ -113,7 +122,13 @@ class OfertasController extends Controller
 
 
     public function newOferta(Request $request){
-            $usuario = User::findOrFail(Auth::User()->email);
+  if (session()->get('empresa')!=null) {
+
+   $usuario = User::findOrFail(session()->get('empresa'));
+  }
+  else{$usuario = User::findOrFail(Auth::User()->email);}
+
+     
 
             $oferta = $request->all();
             $o = new Oferta;
@@ -191,19 +206,10 @@ class OfertasController extends Controller
     public function editarOfertaEmpresa($id){
 
         $oferta=Oferta::findOrFail($id);
-        $ciclosO=$oferta->cicloOferta;
-        $idiomasO=$oferta->idiomaOferta;
-        foreach ($idiomasO as $idioma) {
-          $idiomas[$idioma->id] = $idioma->id ;
-        }
-        foreach ($ciclosO as $ciclo) {
-          $ciclos[$ciclo->id] = $ciclo->id ;
-        }
+        $ciclos=$oferta->cicloOferta;
+        $idiomas=$oferta->idiomaOferta;
 
-        $todoslosciclos=Ciclo::All();
-        $todoslosidiomas=Idioma::All();
-
-      return view('empresa.editarOfertaEmpresa', compact('oferta','ciclos','idiomas','todoslosciclos','todoslosidiomas'));
+      return view('empresa.editarOfertaEmpresa', compact('oferta','ciclos','idiomas'));
     }
 
 }

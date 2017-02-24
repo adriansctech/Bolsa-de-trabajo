@@ -18,3 +18,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('/alumno/perfil/editar', 'IdiomaController@insertarIdiomas');
+Route::post('/alumno/perfil/editar', 'CiclosController@insertarCiclos');

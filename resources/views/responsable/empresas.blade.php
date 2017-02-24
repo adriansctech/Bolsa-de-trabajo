@@ -14,12 +14,13 @@
 				<div class="listado">
 
 				 @foreach( $empresas as $empresa )
-				
+				<a href="/empresa/{{$empresa->email}}">
 					<div class="empresa">
+
 						<h2>{{$empresa->nombre}}</h2>
 
 					</div>
-				
+				</a>
 					@endforeach	
 				</div>
 				<br/>
