@@ -17,11 +17,13 @@ class tipoUsuario
     
     public function handle($request, Closure $next, $tipo)
     {
-
-        if (Auth::User()->tipo==$tipo) {
-           return $next($request);
+        $tipos = explode('-', $tipo);
+        foreach ($tipos as $tipo){
+            if (Auth::User()->tipo==$tipo) {
+                return $next($request);
+            }
         }
-        else{abort(404);}
+        abort(404);
         
     }
 }

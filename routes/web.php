@@ -25,7 +25,7 @@ Route::group(['middleware' => 'tipoUsuario:alumno'], function(){
 });
 
 //Empresa
-Route::group(['middleware' => 'tipoUsuario:empresa'], function(){
+Route::group(['middleware' => 'tipoUsuario:responsable-empresa'], function(){
     Route::get('/empresa', 'OfertasController@getOfertasEmpresa');
     Route::get('/empresa/ofertaEmpresa/{id}', 'OfertasController@ofertaEmpresa');
     Route::post('/empresa', 'OfertasController@deleteOferta');
@@ -60,5 +60,8 @@ Route::group(['middleware' => 'tipoUsuario:responsable'], function(){
 
     Route::get('/responsable/alumno/{id}', 'PerfilController@getRAlumno');
     Route::get('/responsable/oferta/{id}', 'OfertasController@getROferta');
+
+    //Empresa
+    Route::get('/empresa/{email}', 'OfertasController@getOfertasEmpresa');
 
 });
