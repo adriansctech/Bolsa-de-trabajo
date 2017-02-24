@@ -46,13 +46,13 @@
 							<label>Cambio de contraseña</label>
 							<br/> 
 							<label>Contraseña actual:</label>
-							<input type="password" name="contraseñaActual">
+							<input type="password" name="passC">
 							<br/>
 							<label>Nueva Contraseña:</label>
-							<input type="password" name="nuevaContraseña">
+							<input type="password" name="pass1">
 							<br/>
 							<label>Repite la contraseña:</label>
-							<input type="password" name="repeticionContraseña">
+							<input type="password" name="pass2">
 							<br/><br/><br/>
 						</div> 
 

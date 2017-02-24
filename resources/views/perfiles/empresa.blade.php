@@ -47,7 +47,7 @@
 					<br/>
 				</div>
 			</div>	
-			<a href="/" class="col-md-2 col-md-offset-5 botonDefecto">Volver</a>
+			<a href="/empresa" class="col-md-2 col-md-offset-5 botonDefecto">Volver</a>
         
         </div>
     </div>

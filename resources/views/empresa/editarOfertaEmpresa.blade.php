@@ -11,9 +11,9 @@
 				</div>
 			</div>
 			<div class="panel-body col-xs-12 col-md-12 ">	
-				<form action="{{ url('/empresa') }}" method="POST" class="col-xs-12 col-md-12">
+				<form action="{{ url('/empresa/ofertaEmpresa') }}" method="POST" class="col-xs-12 col-md-12">
 				{{ csrf_field() }}
-					
+					<input hidden name="id"  value="{{ $oferta['id'] }}">
 					<div class="datosSecundarios  ">
 						<br/>	
 						<label for="job">Puesto de trabajo :</label>
@@ -61,7 +61,7 @@
 						<br/>
 					<input type="submit" name="guardar" value="Guardar" class="botonDefecto">
 				</form>
-				<a href="/" class="botonDefecto">Cancelar</a>
+				<a href="/empresa" class="botonDefecto">Cancelar</a>
 			</div>
 			
 		</div>

@@ -59,6 +59,21 @@ class PerfilController extends Controller
           $alumno->cvlinkedin = $request->enlaceCV;
           $alumno->trabajofuera = $request->trabajoFuera;
           //guardar
+
+          //Guardado de contraseña
+          $usuario = User::findOrFail(Auth::User()->email);
+          
+          if(Hash::check($request->Cpass, Auth::User()->password)){
+            if ($request->pass!='') {
+
+              if ($request->pass==$request->pass2) {
+
+                $usuario->password=bcrypt($request->pass);
+
+              }
+            }
+          }
+          $usuario->save();
           $alumno->save();
 
           
@@ -189,13 +204,26 @@ $usuario = Empresa::findOrFail(session()->get('empresa'));
             if (session()->get('empresa')!=null) {
 
              $empresa = Empresa::findOrFail(session()->get('empresa'));
+             $usuario = User::findOrFail(session()->get('empresa'));
             }
-            else{$empresa = Empresa::findOrFail(Auth::User()->email);}
+            else{$empresa = Empresa::findOrFail(Auth::User()->email);
+            $usuario = User::findOrFail(Auth::User()->email);}
 
 
+            if(Hash::check($request->Cpass, $usuario->password)){
+              if ($request->pass!='') {
+
+                if ($request->pass==$request->pass2) {
+
+                  $usuario->password=bcrypt($request->pass);
+
+                }
+              }
+
+            }
             
             $empresa->fill($request->all());
-
+            $usuario->save();
             $empresa->save();
 
             
@@ -224,6 +252,7 @@ $usuario = Empresa::findOrFail(session()->get('empresa'));
           $usuario = User::findOrFail(Auth::User()->email);
           $empresa->fill($request->all());
 
+          //Guardado de contraseña
           if(Hash::check($request->Cpass, Auth::User()->password)){
             if ($request->pass!='') {
 
