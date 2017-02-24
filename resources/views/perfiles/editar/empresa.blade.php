@@ -75,8 +75,11 @@
 						<br/>
 					</div>
 
-					<input type="submit" name="guardar" value="Guardar" class="botonDefecto">
+					<input type="submit" name="guardar" value="Guardar" class="col-md-2 col-md-offset-5 botonDefecto">
+					<br/>
+					<a href="/" class="col-md-2 col-md-offset-5 botonDefecto">Cancelar</a>
 					</form>
+					
 				</div>
 		</div>
 	</main>

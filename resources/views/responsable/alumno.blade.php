@@ -12,7 +12,7 @@
 						<img src="../img/user.jpg " class="imagen ">
 					</div>
 					 <a href="{{ url('/alumno/perfil/editar') }}"><img src="/img/editar.png" class="enlaceeditar"></a>
-					<div class="datosPrincipales col-xs-12 col-sm-5 col-md-6 "> 
+					<div class="datosuser col-xs-12 col-sm-5 col-md-6 "> 
 						<h1>{{ $usuario['nombre'] }} {{ $usuario['apellidos'] }}</h1><!--Aqui cargariamos el nombre y los apellidos del usuario Alumno-->
 						<br/>
 						<label>Domicilio: {{ $usuario['domicilio'] }}</label>
@@ -63,13 +63,14 @@
 						@endif
 						<label>Currículum Vitae: {{ $usuario['cv'] }}</label>
 						<br/>
+						<form method="POST" action="{{ url('/responsable/alumnos') }}" class="col-md-2 col-md-offset-5 ">
+							{{ csrf_field() }}
+							<input hidden name="email" value="{{$usuario['email']}}">
+							<button type="submit" class="col-md-12 botonDefecto">Confirmar</button>
+						</form>
 						<a href="/responsable/alumnos" class="col-md-2 col-md-offset-5 botonDefecto">Volver</a>
-						<form method="POST" action="{{ url('/responsable/alumnos') }}">
-						{{ csrf_field() }}
-						<input hidden name="email" value="{{$usuario['email']}}">
-						<button type="submit" class="col-md-2 col-md-offset-5 botonDefecto">Confirmar</button></form>
+						
 					</div>
-					
 				</div>
 
 				<br/><br/><br/>	

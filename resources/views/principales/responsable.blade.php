@@ -7,17 +7,21 @@
             <div class="col-xs-12 panel panel-default">
                 <!-- cabecera de la pagina -->
                 <div class="col-xs-12  col-md-12  panel-heading" >
+
                     <div class="col-xs-12  col-md-4 col-md-offset-1">
                         <!--Foto de prefil-->
                         <img src="{{ $usuario['foto'] }}" class="imagen ">
                     </div>
-                    <a href="{{ url('/responsable/perfil/editar') }}"><img src="img/editar.png" class="enlaceeditar"></a>
-                    <a href="{{ url('/responsable/perfil') }}"><img src="/img/ver.png" class="enlaceeditar"></a>
+
                     <div class="datosuser col-xs-12 col-md-6 "> 
+                            <a href="{{ url('/responsable/perfil/editar') }}"><img src="img/editar.png" class="enlaceeditar"></a>
+                   
+                            <a href="{{ url('/responsable/perfil') }}"><img src="/img/ver.png" class="enlaceeditar"></a>
                             <label id="labelNombre">{{ $usuario['nombre'] }}</label><br>
                             <label id="labelCorreo">{{ $usuario['email'] }}</label>
                         </div>
                     </div> 
+
                 </div>
                  <div class="divresponsable">                    
                     

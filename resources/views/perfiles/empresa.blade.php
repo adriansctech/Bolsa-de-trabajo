@@ -12,7 +12,7 @@
 						<img src="../img/user.jpg " class="imagen ">
 					</div>
 					 <a href="{{ url('/empresa/perfil/editar') }}"><img src="/img/editar.png" class="enlaceeditar"></a>
-					<div class="datosPrincipales col-xs-12 col-md-6 "> 
+					<div class="datosuser col-xs-12 col-md-6 "> 
 						<h1>{{ $usuario['nombre'] }}</h1>
 						<br/>
 						<label>CIF : {{ $usuario['cif'] }}</label>
@@ -21,12 +21,7 @@
 						<br/>
 						<label>Telefono : {{ $usuario['tlf'] }}</label>
 						<br/>
-						<label>Email: {{ $usuario['email'] }}</label>
-						<br/>
-						<label>Web : {{ $usuario['web'] }}</label>
-						<br/>
-						<label>Sector: {{ $usuario['sector'] }}</label>
-						<br/><br/><br/>
+						
 					</div>
 				</div>
 			</div>	
@@ -34,7 +29,13 @@
 
 				<div class="datosSecundarios">
 					<br/>
-					<!--Div donde vamos a poner la persona de contacto de la empresa-->
+					<label>Email: {{ $usuario['email'] }}</label>
+					<br/>
+					<label>Web : {{ $usuario['web'] }}</label>
+					<br/>
+					<label>Sector: {{ $usuario['sector'] }}</label>
+					<br/><br/><br/>
+					<!--Donde vamos a poner la persona de contacto de la empresa-->
 					<h2>Persona de contacto</h2>
 					<label>Nombre : {{ $usuario['nombreContacto'] }}</label>
 					<br/>

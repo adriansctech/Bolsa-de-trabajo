@@ -9,14 +9,12 @@ header{
 
 }
 
+
 .imagenEncabezado{
 	width:60px;;
 	border-radius: @pixel20;
 }
 
-.navbar-right{
-	float:right;
-}
 
 .listaencabezado,.botonSalir{
 	
@@ -35,6 +33,29 @@ header{
 	.botonespordefecto()
 	
 }
+.enlaceborrar{
+	width: 7%;
+    top: -16px;
+    left: 586px;
+    position: relative;
+    &:hover{
+        
+        border:1px solid  #00a0dc;
+        border-radius: @pixel5;
+    }
+}
+.dropdown-menu{
+	/*Boton de logout*/
+	list-style:none;
+	background-color:@colorFondoContenido;
+	float:right;
+	&:hover{
+		color:#ffffff;
+		background-color:#0077B5;
+	}	
+	.bordebotones();
+
+}
 
 /*Footer*/
 
@@ -51,8 +72,6 @@ small{
 	color: #e7e9ec;
 
 }
-
-
 
 .facebook{
 	width:10%;
@@ -76,37 +95,10 @@ input{
 	margin-top:5px;
 }
 
-.row{
-	margin-right: 0px !important; 
-	border:0px;
-	/*padding-bottom: 30px;*/
-}
-.panel {
-	margin-top: @pixel25;
-}
+
 .ajustes {
 	padding-top: @pixel25;
 }
-
-
-
-.dropdown-menu{
-	/*Boton de logout*/
-	list-style:none;
-	background-color:@colorFondoContenido;
-	float:right;
-	&:hover{
-		color:#ffffff;
-		background-color:#0077B5;
-	}	
-	.bordebotones();
-
-}
-
-
-
-
-
 
 .contenido{
 	background-color: @colorFondoContenido;	
@@ -115,6 +107,7 @@ input{
 	.borderedondeado()
 	
 }
+/*Parte de login y register*/
 
 .login{
 
@@ -132,7 +125,7 @@ input{
 .btn-link{
 	font-size:0.8em;	
 }
-
+/*Esta clase se utiliza en el listado de alumnos y ofertas por confirmar*/
 .notificacionlistados{
 	padding-top:30px;
 	padding-bottom:30px;
@@ -143,14 +136,23 @@ input{
 	border-left:4px solid #FF9B75;
 	.bordebotones();
 }
-.enlaceborrar{
-	width: 7%;
-    top: -16px;
-    left: 586px;
-    position: relative;
-    &:hover{
-        
-        border:1px solid  #00a0dc;
-        border-radius: @pixel5;
-    }
+/*Aqui tenemos las clases de boostrap para adaptarlas a nuestro diseño*/
+.wrapper{
+    height: 600px;
 }
+
+.navbar-right{
+	float:right;
+}
+.panel-heading{
+	height:auto;
+	margin-top: 20px;
+}
+.row{
+	margin-right: 0px !important; 
+	border:0px;
+}
+.panel {
+	margin-top: @pixel25;
+}
+

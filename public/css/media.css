@@ -1,15 +1,7 @@
-/*@media (min-width: 768px) {
-  .imagenEncabezado {
-    width: 40%;
-  };
-}
-@media (max-width: 767px){
-	.imagenEncabezado {
-		width: 50%;
-	};	
-}*/
+
 @import "variables.less";
 @import "Mixins.less";
+/*En este fichero css, tenemos todos los medias*/
 
 @media (min-width: 320px) and (max-width: 500px){
 	.imagenEncabezado {

@@ -1,23 +1,36 @@
 @import "variables.less";
 @import "Mixins.less";
 
+/*En este fichero .less, tenemos los estilos para las paginas principales de todos los usuarios*/
+/*Esta clase la utilizamos para la informacion principal del usuario que mostramos el la pagina principal*/
 
+.datosuser{
+    padding: .5em;
+    position:absolute;
+    top:-8px;
+    left:300px;
+}
+
+/*
 .divgeneral{
     background-color: #ffffff;
     box-shadow: 2px 2px 5px #999;     
 }
-
+*/
 .genericsize {
     margin: auto;
 }
 
-
-
+/*Esta clase la utilizamos para el boton de añadir oferta*/
+.añadiroferta{
+    text-align:center;
+    padding:5px;
+    margin-top:5px;
+    margin-bottom:5px;
+    .botonespordefecto()
+}
+/*
 .ofertaboton input{
-    /*width: 90%;
-    height: 40px;
-    margin-left: 45px;
-    padding: 10;*/
     background-color: @colorFondoContenido;
     border:1px solid #00a0dc;
     color: #00a0dc;
@@ -28,20 +41,12 @@
     }
 }
 
-.añadiroferta{
-    text-align:center;
-    padding:5px;
-    margin-top:5px;
-    margin-bottom:5px;
-    .botonespordefecto()
-}
-.infouser{
-    height: @pixel100;
-    border-radius: @pixel10;
-    box-shadow: 2px 2px 5px #999;  
-}
+*/
 
 
+/*Estas clases se utilizan para listar las ofertas en cada principal y en la pagina
+donde el reponsable tiene que ver las ofertas por confirmar, ademas para que el responsable vea 
+el listado de alumnos por confirmar y el listado de todas las empresas*/
 .listado,.ofertas{   
     /*height: @pixel400;*/
     margin-top: @pixel10;
@@ -49,7 +54,8 @@
     box-shadow: 2px 2px 5px #999;  
    /* overflow:scroll;*/
 }
-
+/*Estas clases se utilizan para dar formato a cada oferta, alumno y empresa listada en las mismas 
+paginas que las dos clases anteriores*/
 .oferta,.alumno,.empresa{
     color: #4d4d4d ;
     border: 1px solid #cccccc;
@@ -72,11 +78,8 @@
     }
 }
 
-.fotouser{
-    width: 97px;
-    float: left;
-    border-radius: @pixel10;
-}
+/*Esta clase la utilizamos para el boton de editar el perfil y despues le añadimos el mismo 
+estilo al boton de ver el perfil y el de boorar oferta*/
 
 .enlaceeditar{
     float: right;
@@ -88,24 +91,14 @@
         border-radius: @pixel5;
     }
 }
-
-.datosuser{
-   padding: .5em;
-    
-    position:absolute;
-    top:35px;
-    left:300px;
-}
-
-
+/*Esta clase la utilizamos para el listado de ofertas*/
 .listaofertas{
     border: 1px solid gray;
     overflow-y: scroll;
     height: 330px;
 }
-.wrapper{
-    height: 600px;
-}
+
+/*Esta clase la utilizamos para los botones de la pagina principal de responsable*/
 .botonesprincipalesresponsable{
     text-align:center;
     padding-top:25px;
@@ -113,32 +106,11 @@
     margin-top:10px;
     .botonespordefecto()
 }
+/*Esta clase es para darle un formato en concreto al div que contiene los botones del responsable
+en la pagina principal*/
 .divresponsable{
     margin-top:250px;
     margin-bottom:150px;
     padding-bottom:50px;
 }
 
-/*
-
-@media (min-width:320px)and(max-width:480px){
-   label{
-    clear:both;
-    font-size:0.8em;
-   }
-   .fotouser{
-    width:88px;
-   }
-   .infouser{
-    height: 88px;
-    }
-    .titulo{
-        clear:both;
-        font-size:1.2em;
-    }
-    .informacion{
-        clear:both;
-        font-size:0.8;
-    }
-  
-}*/

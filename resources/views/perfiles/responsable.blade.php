@@ -10,7 +10,7 @@
 						<img src="/img/user.jpg " class="imagen ">
                 	</div>
                 	 <a href="{{ url('/responsable/perfil/editar') }}"><img src="/img/editar.png" class="enlaceeditar"></a>
-                	<div class="col-xs-12  col-md-6 datosPrincipales "> 
+                	<div class="col-xs-12  col-md-6 datosuser "> 
 						<h1>{{$usuario['nombre']}}</h1>
 						<br/>
 						<label>Telefono: {{$usuario['tlf']}}</label>

@@ -12,7 +12,7 @@
                 	<div class="col-xs-12  col-md-4 col-md-offset-1">
 						<img src=src="{{$usuario['foto']}}" class="imagen ">
                 	</div>                	
-                	<div class="datosPrincipales cambioContraseña"> 
+                	<div class="col-xs-12 col-md-12 col-md-offset-0 panel-body datosPrincipales cambioContraseña"> 
 	                	<label for="nameR">Nombre:</label>
 						<input type="text" name="nombre"  id="nameR" value="{{ $usuario['nombre'] }}">
 						<br/>
@@ -31,8 +31,11 @@
 						<label for="rnpassR">Repite la contraseña:</label>
 						<input type="password" name="pass2" id="rnpassR">
 						<br/><br/><br/>
-						<input type="submit" name="guardar" value="Guardar" class="botonDefecto">	
+						<input type="submit" name="guardar" value="Guardar" class="col-md-2 col-md-offset-5 botonDefecto">	
+						<br/>
+						<a href="/" class="col-md-2 col-md-offset-5 botonDefecto">Cancelar</a>
                         </form>
+						
                 	</div>
                 </div>
             </div>
