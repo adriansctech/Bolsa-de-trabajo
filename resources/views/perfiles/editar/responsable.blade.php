@@ -20,7 +20,7 @@
 						<input type="tel" name="telefono" size="9" id="phoneR" value="{{ $usuario['tlf'] }}" >
 						<br/>
 						<label for="emailR">Email: </label>
-						<input type="email" name="email" id="emailR" value="{{ $usuario['email'] }}" >
+						<input disabled type="email" name="email" id="emailR" value="{{ $usuario['email'] }}" >
 						<br/>
 						<label for="apassR">Contraseña actual:</label>
 						<input type="password" name="Cpass" id="apassR" >

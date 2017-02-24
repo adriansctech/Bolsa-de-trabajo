@@ -32,7 +32,7 @@
 							<input type="text" name="domicilio" value="{{ $usuario['domicilio'] }}">
 							<br/>
 							<label>Email</label>
-							<input type="email" name="email" id="email" value="{{ $usuario['email'] }}">
+							<input disabled type="email" name="email" id="email" value="{{ $usuario['email'] }}">
 							<br/>
 							<label>Telefono</label>
 							<input type="tel" name="telefono" size="9" value="{{ $usuario['telefono'] }}">

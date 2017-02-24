@@ -12,6 +12,7 @@ use Bolsa\AlumnosCiclos;
 use Bolsa\cicloAlumno;
 use Bolsa\idiomaAlumno;
 use Bolsa\Empresa;
+use Bolsa\Oferta;
 use Bolsa\Responsable;
 use Hash;
 class PerfilController extends Controller
@@ -194,6 +195,7 @@ $usuario = Empresa::findOrFail(session()->get('empresa'));
                  'emailContacto' => isset($usuario->emailContacto)?$usuario->emailContacto:'',
                  'logo' => isset($usuario->logo)?$usuario->logo:'/img/user.jpg',
                  'sector' => isset($usuario->sector)?$usuario->sector:'',
+                 'ofertas' =>Oferta::where('cif',isset($usuario->cif)?$usuario->cif:''),
                  );
 
             return view('perfiles.editar.empresa', array('usuario'=>$datosUsuario));
