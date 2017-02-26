@@ -57,9 +57,11 @@
 					<form method="POST" action="{{ url('/responsable/ofertas') }}">
 					{{ csrf_field() }}
 					<input hidden name="id" value="{{$oferta['id']}}">
-					<button type="submit" class="col-md-2 col-md-offset-5 botonDefecto">Confirmar</button></form>
+					<button type="submit" class="col-md-12  botonDefecto">Confirmar</button>
+					<a href="/" class="col-md-12 botonDefecto"> Volver </a>
+					</form>
 				</div>	
-				<a href="/" class="col-md-2 col-md-offset-5 botonDefecto"> Volver </a>
+				
 			</div>
 		</div>
 	</div>

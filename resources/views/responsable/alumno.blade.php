@@ -9,7 +9,8 @@
                 <div class="panel-heading col-xs-12 col-md-10 col-md-offset-1 " >
 					<div class="col-xs-12 col-sm-5 col-md-4 col-md-offset-1">
 						<!--Foto de prefil-->
-						<img src="../img/user.jpg " class="imagen ">
+						
+						<img src="{{ $usuario['foto'] }} " class="imagen ">
 					</div>
 					 <a href="{{ url('/alumno/perfil/editar') }}"><img src="/img/editar.png" class="enlaceeditar"></a>
 					<div class="datosuser col-xs-12 col-sm-5 col-md-6 "> 
