@@ -121,8 +121,9 @@ class OfertasController extends Controller
 
     //Devuelve la pagina de crear una nueva oferta
     protected function crearOferta(){
+      $idiomas=Idioma::all();
 
-        return view('empresa.crearOferta', array('ciclos'=>Ciclo::all(),'idiomas'=>Idioma::all()));
+        return view('empresa.crearOferta', array('ciclos'=>Ciclo::all(),'idiomas'=>$idiomas));
     }
 
     //Crea una nueva oferta para la empresa seleccionada, o edita una oferta ya creada
@@ -162,9 +163,10 @@ class OfertasController extends Controller
             foreach ($oferta['idiomas'] as $idioma) {
                 $idioma=strtolower($idioma);
                 $idiomaReq = new idiomaOferta;
-                $idioma = Idioma::where('idioma', '=' ,$idioma)->firstOrFail();
-                $idiomaReq->idioma=$idioma->id;
+                $idioma = Idioma::where('idioma' ,$idioma)->firstOrFail();
+                $idiomaReq->idioma=$idioma->idioma;
                 $idiomaReq->oferta=$o->id;
+
                 $idiomaReq->save();
             }
            //Devuelve la pagina de la nueva oferta
@@ -220,7 +222,7 @@ class OfertasController extends Controller
         
              $idiomasO=$oferta->idiomaOferta;
              foreach ($idiomasO as $idioma) {
-               $idiomas[$idioma->id] = $idioma->id ;
+               $idiomas[$idioma->idioma] = $idioma->idioma ;
              }
              foreach ($ciclosO as $ciclo) {
                $ciclos[$ciclo->id] = $ciclo->id ;

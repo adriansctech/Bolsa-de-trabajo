@@ -39,7 +39,7 @@
 						<div id="idiomas" class="col-xs-12 col-md-10 col-md-offset-1">
 						@foreach ($todoslosidiomas as $idioma  )
 							
-								@if(isset($idiomas[$idioma['id']]))
+								@if(isset($idiomas[$idioma['idioma']]))
 									<input type="checkbox" value="{{ $idioma['idioma'] }}" name="idiomas[]" checked>{{ $idioma['idioma'] }}</input><br>
 								@else
 									<input type="checkbox" value="{{ $idioma['idioma'] }}" name="idiomas[]">{{ $idioma['idioma'] }}</input><br>
