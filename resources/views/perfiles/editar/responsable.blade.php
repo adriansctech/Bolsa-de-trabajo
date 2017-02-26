@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-xs-12 col-md-8 col-md-offset-2">
             <div class="col-xs-12 panel panel-default">  
-                <div class="col-xs-12  col-md-12  panel-heading" >
+                <div class="col-xs-12  col-md-12 panel-heading" >
                 	<h1>Datos del responsable</h1>
                     <form action="{{ url('/responsable/perfil') }}" method="POST">
                     {{ csrf_field() }}

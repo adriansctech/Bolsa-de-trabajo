@@ -27,7 +27,7 @@ class PerfilController extends Controller
         $this->middleware('auth');
     }
 
-
+        //Recoge los datos del alumno editado para guardarlos en la base de datos
         protected function saveEditAlumno(Request $request){
 
           $alumno = Alumno::findOrFail(Auth::User()->email);
@@ -60,11 +60,12 @@ class PerfilController extends Controller
           $alumno->save();
 
           
-          //redireccionar
+          //redireccionar al perfil del alumno
           return redirect("/alumno/perfil");
 
         }
 
+        //Recoge los campos necesarios para cargar en la vista de edición del alumno
         protected function editAlumno(){
 
             $usuario = User::findOrFail(Auth::User()->email);
@@ -95,6 +96,7 @@ class PerfilController extends Controller
 
         }
 
+        //Recoge los campos y carga la vista del perfil del alumno
         protected function perfilAlumno(){
 
                 $usuario = User::findOrFail(Auth::User()->email);
@@ -124,6 +126,7 @@ class PerfilController extends Controller
                 return view('perfiles.alumno', array('usuario'=>$datosUsuario, 'ciclos'=>$ciclosAlumno, 'idiomas'=>$idiomasAlumno, 'ciclosAlumno'=>$ciclosAlumno));
         }
 
+        //Recoge los datos del perfil de la empresa para cargarlos en la vista
        protected function perfilEmpresa(){
 
 if (session()->get('empresa')!=null) {
@@ -152,7 +155,7 @@ $usuario = Empresa::findOrFail(session()->get('empresa'));
         return view('perfiles.empresa', array('usuario'=>$datosUsuario));
 }
 
-        //MODIFICAR PARA LOS DATOS DE LA EMPRESA
+        //Recoge y carga los datos en la vista de editar empresa
         protected function editEmpresa(){
           if (session()->get('empresa')!=null) {
            $usuario = Empresa::findOrFail(session()->get('empresa'));
@@ -184,6 +187,7 @@ $usuario = Empresa::findOrFail(session()->get('empresa'));
 
         }
 
+        //Guarda los datos recibidos desde la vista editar empresa
           protected function saveEditEmpresa(Request $request){
             if (session()->get('empresa')!=null) {
 
@@ -193,7 +197,7 @@ $usuario = Empresa::findOrFail(session()->get('empresa'));
             else{$empresa = Empresa::findOrFail(Auth::User()->email);
             $usuario = User::findOrFail(Auth::User()->email);}
 
-
+            //Guardado de contraseña comprobando comparación entre campos y la guardada en la base de datos
             if(Hash::check($request->Cpass, $usuario->password)){
               if ($request->pass!='') {
 
@@ -215,6 +219,7 @@ $usuario = Empresa::findOrFail(session()->get('empresa'));
 
           }
 
+          //Carga los datos del perfil del responsable ne la vista editar repsonsable
         protected function editResponsable(){
 
             $usuario = User::findOrFail(Auth::User()->email);
@@ -230,13 +235,14 @@ $usuario = Empresa::findOrFail(session()->get('empresa'));
 
         }
 
+        //Guarda los datos introducidos en la vista de editar responsable
         protected function saveEditResponsable(Request $request){
 
           $empresa = Responsable::findOrFail(Auth::User()->email);
           $usuario = User::findOrFail(Auth::User()->email);
           $empresa->fill($request->all());
 
-          //Guardado de contraseña
+          //Guardado de contraseña comprobando comparación entre campos y la guardada en la base de datos
           if(Hash::check($request->Cpass, Auth::User()->password)){
             if ($request->pass!='') {
 
@@ -256,7 +262,7 @@ $usuario = Empresa::findOrFail(session()->get('empresa'));
         }
 
     
-
+        //Devuelve y carga la vista del perfil del responsable
         protected function perfilResponsable(){
           $usuario = User::findOrFail(Auth::User()->email);
           $datosUsuario = array(
@@ -270,7 +276,7 @@ $usuario = Empresa::findOrFail(session()->get('empresa'));
             return view('perfiles.responsable', array('usuario'=>$datosUsuario));
         }
 
-
+        //Carga la vista principal del responsable con sus datos basicos
         public function responsablePrincipal(){
 
             $usuario = User::findOrFail(Auth::User()->email);
@@ -287,6 +293,7 @@ $usuario = Empresa::findOrFail(session()->get('empresa'));
         }
 
 
+        //Carga todas las empresas para ser accesibles desde el responsable desde el listado
         public function getResponsableEmpresas(){
 
           $empresas=Empresa::all();
@@ -297,14 +304,14 @@ $usuario = Empresa::findOrFail(session()->get('empresa'));
         }
 
 
-
+        //Crea una nueva empresa a partir de los datos recogidos de la vista de crear una empresa del responsable
         public function newEmpresa(Request $request){
           $usuario=new User;
           $usuario->fill($request->all());
           $usuario->password=null;
           $usuario->tipo='empresa';
           if ($request->pass==$request->pass2) {
-            $usuario->password=$request->pass;
+            $usuario->password=bcrypt($request->pass);
           }else{
 
             redirect('/responsable/empresas/new');
@@ -321,6 +328,7 @@ $usuario = Empresa::findOrFail(session()->get('empresa'));
 
         }
 
+        //Carga en la lista de alumnos del responsable todos los alumnos que no esten validados en el sistema
         public function getResponsableAlumnos(){
             $alumnos=Alumno::where('valido',0)->get();
 
@@ -328,7 +336,7 @@ $usuario = Empresa::findOrFail(session()->get('empresa'));
 
         }
 
-
+        //Valida el alumno seleccionado
         public function validaAlumno(Request $request){
 
           $alumno=Alumno::findOrFail($request->email);
@@ -339,6 +347,7 @@ $usuario = Empresa::findOrFail(session()->get('empresa'));
 
         }
 
+        //Carga la vista para validar o ver un alumno en concreto
         public function getRAlumno($id){
 
           $usuario = Alumno::findOrFail($id);
@@ -348,14 +357,6 @@ $usuario = Empresa::findOrFail(session()->get('empresa'));
           return view('responsable.alumno',compact('usuario','ciclos','idiomas'));
         }
 
-
-        public function getREmpresa(Request $request){
-
-     
-
-          return view('responsable.empresa');
-
-        }
         }
 
 

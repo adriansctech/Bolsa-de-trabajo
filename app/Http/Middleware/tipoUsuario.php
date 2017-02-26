@@ -5,6 +5,7 @@ namespace Bolsa\Http\Middleware;
 use Closure;
 use Auth;
 
+//Middleware para comprobar el tipo de usuario que esta logueado en el sistema
 class tipoUsuario
 {
     /**
@@ -14,7 +15,7 @@ class tipoUsuario
      * @param  \Closure  $next
      * @return mixed
      */
-    
+    //Recoge todos los tipos que se incluyan separados por '-'
     public function handle($request, Closure $next, $tipo)
     {
         $tipos = explode('-', $tipo);
