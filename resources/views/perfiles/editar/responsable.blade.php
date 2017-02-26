@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-xs-12 col-md-8 col-md-offset-2">
             <div class="col-xs-12 panel panel-default">  
-                <div class="col-xs-12  col-md-12  panel-heading" >
+                <div class="col-xs-12  col-md-12 panel-heading" >
                 	<h1>Datos del responsable</h1>
                     <form action="{{ url('/responsable/perfil') }}" method="POST">
                     {{ csrf_field() }}
@@ -20,7 +20,7 @@
 						<input type="tel" name="telefono" size="9" id="phoneR" value="{{ $usuario['tlf'] }}" >
 						<br/>
 						<label for="emailR">Email: </label>
-						<input type="email" name="email" id="emailR" value="{{ $usuario['email'] }}" >
+						<input disabled type="email" name="email" id="emailR" value="{{ $usuario['email'] }}" >
 						<br/>
 						<label for="apassR">Contraseña actual:</label>
 						<input type="password" name="Cpass" id="apassR" >

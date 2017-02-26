@@ -32,7 +32,7 @@
 							<input type="text" name="domicilio" value="{{ $usuario['domicilio'] }}">
 							<br/>
 							<label>Email</label>
-							<input type="email" name="email" id="email" value="{{ $usuario['email'] }}">
+							<input disabled type="email" name="email" id="email" value="{{ $usuario['email'] }}">
 							<br/>
 							<label>Telefono</label>
 							<input type="tel" name="telefono" size="9" value="{{ $usuario['telefono'] }}">
@@ -46,13 +46,13 @@
 							<label>Cambio de contraseña</label>
 							<br/> 
 							<label>Contraseña actual:</label>
-							<input type="password" name="contraseñaActual">
+							<input type="password" name="Cpass">
 							<br/>
 							<label>Nueva Contraseña:</label>
-							<input type="password" name="nuevaContraseña">
+							<input type="password" name="pass1">
 							<br/>
 							<label>Repite la contraseña:</label>
-							<input type="password" name="repeticionContraseña">
+							<input type="password" name="pass2">
 							<br/><br/><br/>
 						</div> 
 

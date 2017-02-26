@@ -14,7 +14,7 @@
                 	<input hidden type="" name="oferta" value="{{ $oferta['id'] }}">
                 	</form>
                 	
-                	<a href=""><img src="/img/editar.png" class="enlaceeditar"></a>
+                	<a href="/empresa/ofertaEditar/{{$oferta->id}}"><img src="/img/editar.png" class="enlaceeditar"></a>
                		 <!--En esta vista deberan aparecer todos los datos de la oferta-->
 					<h1>{{ $oferta['puesto'] }}</h1>
 				</div>
@@ -59,7 +59,7 @@
 					<br/>
 					<label>Email: {{$oferta->Empresa->emailContacto}} </label>
 					<br/>
-					<a href="/" class="col-md-2 col-md-offset-5 botonDefecto"> Volver </a>
+					<a href="/empresa" class="col-md-2 col-md-offset-5 botonDefecto"> Volver </a>
 				</div>	
 			</div>
 		</div>
