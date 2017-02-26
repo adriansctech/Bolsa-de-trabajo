@@ -27,29 +27,11 @@ class PerfilController extends Controller
         $this->middleware('auth');
     }
 
-        protected function saveAlumno(Request $request){
-            
-            $a = new Alumno;
-            $a->fill($request->all());
-            $a->save();
-
-        }
-
-        protected function saveEmpresa(Request $request){
-            $e = new Empresa;
-            $e->fill($request->all());
-            $e->save();
-        }
-
-        protected function saveResponsable(Request $request){
-            $r = new Responsable;
-            $r->fill($request->all());
-            $e->save();
-        }
 
         protected function saveEditAlumno(Request $request){
 
           $alumno = Alumno::findOrFail(Auth::User()->email);
+
           //DATOS DEL ALUMNO
           //obtener los datos de los input
           $alumno->nombre = $request->nombre;
@@ -61,7 +43,7 @@ class PerfilController extends Controller
           $alumno->trabajofuera = $request->trabajoFuera;
           //guardar
 
-          //Guardado de contraseña
+          //Guardado de contraseña comprobando comparación entre campos y la guardada en la base de datos
           $usuario = User::findOrFail(Auth::User()->email);
           
           if(Hash::check($request->Cpass, Auth::User()->password)){

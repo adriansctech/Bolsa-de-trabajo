@@ -46,7 +46,7 @@
 							<label>Cambio de contraseña</label>
 							<br/> 
 							<label>Contraseña actual:</label>
-							<input type="password" name="passC">
+							<input type="password" name="Cpass">
 							<br/>
 							<label>Nueva Contraseña:</label>
 							<input type="password" name="pass1">
