@@ -37,7 +37,7 @@ class PerfilController extends Controller
           $alumno->nombre = $request->nombre;
           $alumno->apellidos = $request->apellidos;
           $alumno->domicilio = $request->domicilio;
-          $alumno->email = $request->email;
+          $alumno->email = Auth::User()->email;
           $alumno->tlf = $request->telefono;
           $alumno->cvlinkedin = $request->enlaceCV;
           $alumno->trabajofuera = $request->trabajoFuera;
