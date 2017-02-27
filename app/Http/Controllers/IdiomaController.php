@@ -28,6 +28,7 @@ class IdiomaController extends Controller
           $alumnoIdioma->fill($request->all());
           $alumnoIdioma->save();
 
+          return redirect("/alumno/perfil/editar");
 
         } 
         

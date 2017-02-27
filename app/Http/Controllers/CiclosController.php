@@ -28,6 +28,7 @@ class CiclosController extends Controller
           $alumnoCiclo->fill($request->all());
           $alumnoCiclo->save();
 
+           return redirect("/alumno/perfil/editar");
 
         } 
         
