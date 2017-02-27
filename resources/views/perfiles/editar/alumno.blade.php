@@ -193,7 +193,7 @@
 
 			$.ajax({
 				type: "POST",
-				url: "http://bolsadetrabajo.app/api/alumno/perfil/editar",
+				url: "http://bolsadetrabajo.app/api/alumno/perfil/editar/ciclo",
 				data: datos,
 				success: function() {
 
@@ -242,7 +242,7 @@
 
 			$.ajax({
 				type: "POST",
-				url: "http://bolsadetrabajo.app/api/alumno/perfil/editar",
+				url: "http://bolsadetrabajo.app/api/alumno/perfil/editar/idioma",
 				data: datos,
 				success: function() {
 					if(idiomaSeleccionado == "defecto"){

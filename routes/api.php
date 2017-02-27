@@ -16,6 +16,5 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-
-Route::post('/alumno/perfil/editar', 'IdiomaController@insertarIdiomas');
-Route::post('/alumno/perfil/editar', 'CiclosController@insertarCiclos');
+Route::post('/alumno/perfil/editar/ciclo', 'CiclosController@insertarCiclos');
+Route::post('/alumno/perfil/editar/idioma', 'IdiomaController@insertarIdiomas');
