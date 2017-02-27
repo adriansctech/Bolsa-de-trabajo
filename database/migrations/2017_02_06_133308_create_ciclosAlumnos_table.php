@@ -19,6 +19,7 @@ class CreateCiclosAlumnosTable extends Migration
             $table->date('finicio');
             $table->date('ffin');
             $table->integer('nota');
+            $table->string('empresa', 150);
             $table->primary(['ciclo','alumno']);
             $table->timestamps();
         });
