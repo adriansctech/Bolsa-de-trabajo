@@ -21,11 +21,17 @@
 						<input type="text" name="nombre" id="name" value="{{ $usuario['nombre'] }}">
 						<br/>
 						<label for="CIF">CIF</label>
+<<<<<<< HEAD
 						@if($usuario['ofertas']==null)
 						<input  type="text" name="cif" id="CIF" value="{{ $usuario['cif'] }}">
 						@else
 						<input disabled type="text" name="cif" id="CIF" value="{{ $usuario['cif'] }}">
 						@endif
+=======
+						
+						<input type="text" name="cif" id="CIF" value="{{ $usuario['cif'] }}">
+						
+>>>>>>> cec0dbc476620155930342476570ae4e5ed155fd
 						<br/>
 						<label for="address">Domicilio</label>
 						<input type="text" name="domicilio" id="address" value="{{ $usuario['domicilio'] }}">
