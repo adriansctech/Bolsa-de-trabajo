@@ -22,7 +22,7 @@
 						<br/>
 						<label for="CIF">CIF</label>
 						@if($usuario['ofertas']==null)
-						<input type="text" name="cif" id="CIF" value="{{ $usuario['cif'] }}">asfsafs
+						<input  type="text" name="cif" id="CIF" value="{{ $usuario['cif'] }}">
 						@else
 						<input disabled type="text" name="cif" id="CIF" value="{{ $usuario['cif'] }}">
 						@endif

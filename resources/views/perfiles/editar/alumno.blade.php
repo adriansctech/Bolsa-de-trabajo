@@ -32,7 +32,7 @@
 							<input type="text" name="domicilio" value="{{ $usuario['domicilio'] }}">
 							<br/>
 							<label>Email</label>
-							<input disabled type="email" name="email" id="email" value="{{ $usuario['email'] }}">
+							<input type="email" name="email" id="email" value="{{ $usuario['email'] }}">
 							<br/>
 							<label>Telefono</label>
 							<input type="tel" name="telefono" size="9" value="{{ $usuario['telefono'] }}">
@@ -41,7 +41,7 @@
 					</div>
 
 					<div class="panel-body col-xs-12 col-md-10 col-md-offset-1 ">
-						<div class="cambioContraseñaalumno">
+						<div class="col-xs-12 col-md-12 cambioContraseñaalumno">
 							 <!--Div en el que permite cambiar la contraseña-->
 							<label>Cambio de contraseña</label>
 							<br/> 
@@ -56,7 +56,7 @@
 							<br/><br/><br/>
 						</div> 
 
-						<div class="ciclos">
+						<div class="col-xs-12 col-md-12 ciclos ">
 							<label>Ciclos cursados en Batoi</label>
 							@foreach ($ciclosAlumno as $clicloAlumno)
 							<ul>
@@ -70,11 +70,11 @@
 							@endforeach
 							<!-- lista de los ciclos guardados -->
 							<label>Selecciona los ciclos que has cursado en Batoi</label>
-							<strong>
+							<strong class="col-xs-12 col-md-12">
 								<ul id="listaCiclos"></ul>
 							</strong>
 							<!--select con todos los ciclos de batoy-->
-							<div id="ciclosBatoy">	
+							<div id="ciclosBatoy " class="col-xs-12 col-md-12">	
 								<select id="selectCiclos" name="cicloElegido" onchange="valorCambiadoSelect(this.value)">
 									<!-- valor por defecto -->
 									<option value="defecto" selected>- Elige un ciclo -</option>
@@ -88,7 +88,7 @@
 
 					</div>
 					
-					<div class="ciclosCursados" id="infoCiclos" style="display: none;">
+					<div class="col-xs-12 col-md-12 ciclosCursados" id="infoCiclos" style="display: none;">
 					<!--	<h4>Datos opcionales</h4>
 						<div class="masInfo">
 						<span class="adicional"><small>Añade un poco más de información sobre ti para que las empresas puedan <br/> encontrarte más facilmente y contactar contigo.</small></span>
@@ -111,7 +111,7 @@
 						<!-- <hr> -->
 					</div>
 					<br>
-						<div class="datosSecundarios">
+						<div class="col-xs-12 col-md-12 datosSecundarios">
 							<!--Div de los idiomas, opcion de trabajar fuera y CV-->
 							
 							<label>Idiomas guardados</label>
